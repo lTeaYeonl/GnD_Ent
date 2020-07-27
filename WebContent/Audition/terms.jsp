@@ -5,14 +5,17 @@
 <head>
 <meta charset="UTF-8">
 <title>terms</title>
+<script src="cpath"></script>
 <link rel="stylesheet" href="${pageContext.request.contextPath }/css/bootstrap.css" />
-	<script src="${pageContext.request.contextPath }/js/jquery-3.5.1.js">
+ <script src="${pageContext.request.contextPath }/js/jquery-3.5.1.js"></script>
+ <!-- 버튼 전체선택 & 해제 기능 start -->
+	<script>
          $(document).ready(function(){
         	$("#c4").change(function(){
         		$("input:checkbox").prop('checked',$(this).prop('checked'));
         	}); 
         	 $('.chk').on('click',function(){
-        		if($('.chk:checked').length==$('.chk').length{
+        		if($('.chk:checked').length==$('.chk').length){
         		  $('#c4').prop('checked',true);	
         		}else{
         			$('#c4').prop('checked',false);
@@ -21,6 +24,7 @@
          });
 
 	</script>
+	<!-- 버튼 전체선택 & 해제 기능 end -->
 <style>
 	.main {
     position: relative;
@@ -87,6 +91,57 @@
     vertical-align: middle;
 	};
 	
+	.sub_bg {
+	    position: relative;
+	    width: 100%;
+	    height: 370px;
+	    margin: 0 auto;
+	    background: url(../images/sb_bg4.jpg) 50% 0 no-repeat;
+	}
+
+    .sub_bg .bk_bg {
+        position: absolute;
+        width: 100%;
+        height: 370px;
+        margin: 0 auto;
+        background-color: #000;
+        opacity: 0.5;
+    }
+
+	.sub_top {
+	    position: relative;
+	    max-width: 1170px;
+	    margin: 0 auto;
+	    top: 160px;
+	    padding: 0em 15px;
+	}
+	
+	.sub_tt {
+	    position: relative;
+	    width: 100%;
+	    text-align: center;
+	    color: #fff;
+	    font-size: 35px;
+	    line-height: 40px;
+	    font-weight: 500;
+	    padding-top: 25px;
+	}
+	
+	.inner {
+	    position: relative;
+	    width: 700px;
+	    margin: 0 auto;
+	    height: auto;
+	    overflow: hidden;
+	    padding: 6em 15px;
+	}
+
+   .join {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+	}
 	
 	.terms {
 	    position: relative;
@@ -164,63 +219,14 @@
         line-height: 25px;
     }
 	
-	.sub_bg {
-	    position: relative;
-	    width: 100%;
-	    height: 370px;
-	    margin: 0 auto;
-	    background: url(../images/sb_bg4.jpg) 50% 0 no-repeat;
-	}
-
-    .sub_bg .bk_bg {
-        position: absolute;
-        width: 100%;
-        height: 370px;
-        margin: 0 auto;
-        background-color: #000;
-        opacity: 0.5;
-    }
-
-	.sub_top {
-	    position: relative;
-	    max-width: 1170px;
-	    margin: 0 auto;
-	    top: 160px;
-	    padding: 0em 15px;
-	}
 	
-	.sub_tt {
-	    position: relative;
-	    width: 100%;
-	    text-align: center;
-	    color: #fff;
-	    font-size: 35px;
-	    line-height: 40px;
-	    font-weight: 500;
-	    padding-top: 25px;
-	}
-	
-	.inner {
-	    position: relative;
-	    width: 700px;
-	    margin: 0 auto;
-	    height: auto;
-	    overflow: hidden;
-	    padding: 6em 15px;
-	}
-
-   .join {
-    position: relative;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-	}
 	
   
 </style>
 </head>
 <body>
 <div class="main">
+	<!-- 화면 상단에 로고와 함께 화면이동(아직 미구현) -->
 	<div class="header_main">
 		<a href="">
 			<div class="main_logo" alt="gnd엔터테인먼트">
@@ -234,6 +240,7 @@
 				<li class="sub_tt">AUDITION</li>
 			</ul>
 	</div>
+	<!-- 개인 약관 폼 -->
 	<form action="" method="post" name="frm" id="frm" >
 		<input type="hidden" id="agreeyn" name="agreeyn" value/>
 		<input type="hidden" id="gubun" name="gubun" value="n" />
@@ -243,7 +250,7 @@
 			오디션 지원을 위해서 이용약관 및 개인정보 수집 및 이용에 대한 안내를 읽고 동의해 주세요.
 			</div>
 			<div class="terms">
-				<div class="pp_tt">S
+				<div class="pp_tt">
 					</br>이용약관
 					<span>(필수)</span>
 				</div>
@@ -347,7 +354,7 @@ GND 오디션사이트에 오신 것을 환영합니다. GND 온라인 오디션
 					위 약관에 모두 동의합니다.
 					</label>
 				</p>
-				<button type="submit" class="btn_ck" onclick="retrun false" id="agree">동의</button>
+				<button type="submit" class="btn btn-primary2" onclick="retrun false" id="agree">동의</button>
 			</div>
 		</div>
 	</form>
