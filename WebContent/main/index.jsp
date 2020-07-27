@@ -12,7 +12,8 @@
 		integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous /">
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-dark pixed-top">
+	<!-- Top Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark pixed-top">
 		<a class="navbar-brand" href="index.html">
 			<img src="${pageContext.request.contextPath }/image/L_gnd.png" alt="GnD_Logo" />
 		</a>
@@ -51,6 +52,8 @@
 			</a>
 		</div>
 	</nav>
+	<!-- Top Navigation Close -->
+	<!-- Carousel Image -->
 	<div class="container-fluid px-0">
 		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 			<ol class="carousel-indicators">
@@ -138,46 +141,256 @@
 				<span class="sr-only">Next</span>
 			</a>
 		</div>
-		<!-- 최신 뮤직비디오 컨텐츠 -->
+		<!-- Carousel Image Close -->
+		<!-- New Music Video -->
 		<div class="container">
-			<h5 class="center">최신 뮤직비디오</h5>
-			<div class="container mv_modal">
-				<a href="#" class="btn btn-default" data-toggle="modal" data-target="#videoModal"
-					data-theVideo="https://www.youtube.com/embed/O7aVngLigBE">VIDEO</a>
-				<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal"
-					aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-body">
-								<button type="button" class="close" data-dismiss="modal"
-									aria-hidden="true">&times;</button>
-								<div>
-									<iframe width="100%" height="350" src=""></iframe>
+			<div class="row">
+				<div class="col mt-5">
+					<p style="font-size: 12px;color: #a3a3a3;line-height: 1;text-align: center;letter-spacing: 0px;">최신 뮤직비디오</p>
+					<h3 style="font-size: 30px;line-height: 1;text-align: center;letter-spacing: 0px;">New Music Video</h3>
+					<div class="row-fluid">
+						<div class="col-12">
+							<div class="col-4">
+								<button type="button" class="btn btn-default" data-toggle="modal" data-target="#videoModal">
+									<img class="img-fluid" src="${pageContext.request.contextPath }/image/bmc.jpg" alt="music video thumbnail test" />
+								</button>
+								<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+									<div class="modal-dialog" role="document">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title" id="videoModalLabel">Show Video</h5>
+												<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+												</button>
+											</div>
+											<div class="modal-body">
+											</div>
+											<div class="modal-body">
+												<button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+												<button type="button" class="btn btn-primary">save</button>
+											</div>
+										</div>
+									</div>
 								</div>
-							</div>
+								</div>
+							<div class="col-4"></div>
+							<div class="col-4"></div>
+						</div>
+						<div class="col-12">
+							<div class="col-4"></div>
+							<div class="col-4"></div>
+							<div class="col-4"></div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<!-- New Music Video -->
+		<!-- Latest News -->
+		<div class="container">
+			<div class="container">
+				<div class="col mt-5">
+					<p style="font-size: 12px;color: #a3a3a3;line-height: 1;text-align: center;letter-spacing: 0px;">새로운 소식</p>
+					<h3 style="font-size: 30px;line-height: 1;text-align: center;letter-spacing: 0px;">Lastest News</h3>
+				</div>
+			</div>
+			<div class="container">
+				<div class="col mt-5">
+					<div class="row">
+						<div class="card" style="width: 18rem;">
+							<img class="card-img-top" src="${pageContext.request.contextPath }/image/test1.jpg" alt="Card image cap">
+						 	<div class="card-body">
+						    	<h5 class="card-title">앤-마리, 도자 캣과 함께한 싱글 'To Be Young(feat.Doja Cat)' 발매</h5>
+						    	<p class="card-text">2019 국내 음원차트 1위, 앤-마리 새 싱글 ‘To Be Young’ 7월 17일 정오 발매 ‘국민 팝스타’ 앤-마리(Anne-Marie)가 7월 17일 정오에 새 싱글 ‘To Be Young’을 발매한다....</p>
+						    	<a href="#" class="btn btn-primary">더보기 ></a>
+						  	</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container" style="text-align: center;">
+			<div class="col mt-5">
+				<a href="#" style="color: gray">전체보기 <i class="fas fa-caret-right"></i></a>
+			</div>
+		</div>
+		<!-- Latest News Close -->
+		<!-- Official Channel -->
+		<div class="container">
+			<div class="mt-5">
+				<div class="row">
+					<div class="container">
+						<p style="font-size: 12px;color: #a3a3a3;line-height: 1;text-align: center;letter-spacing: 0px;">개노답 엔터테인먼트 공식 채널</p>
+					</div>
+					<div class="col-2">
+						<a href="https://www.facebook.com/warnermusickorea/">
+							<i class="fab fa-facebook-square" style="font-size:10vw"></i>
+						</a>
+					</div>
+					<div class="col-2">
+						<a href="https://www.instagram.com/warnermusickorea/">
+							<i class="fab fa-instagram" style="font-size:10vw"></i>
+						</a>
+					</div>
+					<div class="col-2">
+						<a href="https://www.youtube.com/user/WMK2011">
+							<i class="fab fa-youtube" style="font-size:10vw"></i>
+						</a>
+					</div>
+					<div class="col-2">
+						<a href="https://twitter.com/warner_music_kr">
+							<i class="fab fa-twitter" style="font-size:10vw"></i>
+						</a>
+					</div>
+					<div class="col-2">
+						<a href="https://www.tiktok.com/@warnermusickorea">
+							<i class="fab fa-tiktok" style="font-size:10vw"></i>
+						</a>
+					</div>
+					<div class="col-2">
+						<a href="http://blog.naver.com/PostList.nhn?blogId=warnermusickorea">
+							<i class="fab fa-google" style="font-size:10vw"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Official Channel Close -->
+		<!-- PlayList -->
+		<div class="container">
+			<div class="mt-5">
+				<div class="container">
+					<p style="font-size: 12px;color: #a3a3a3;line-height: 1;text-align: center;letter-spacing: 0px;">플레이리스트</p>
+					<h3 style="text-align: center;">PlayList</h3>
+				</div>
+				<div class="container">
+					<div class="row">
+						<!-- 
+						<div class="col-3 img-fluid" style="background: url('${pageContext.request.contextPath }/image/PL_1.jpg')">
+							<a href="#">
+								개노답뮤직 신작 모음
+							</a>
+						</div>
+						 -->
+						 <div class="col-3">
+					 		<div class="card">
+								<img src="${pageContext.request.contextPath }/image/PL_1.jpg" alt="PlayList_First_Image" class="card-img-top" />
+								<div class="card-body">
+									<h5 class="card-title">
+										개노답뮤직 신작 모음
+									</h5>
+								</div>
+					 		</div>
+						 </div>
+						<div class="col-3">
+							<div class="card">
+								<img src="${pageContext.request.contextPath }/image/PL_2.jpg" alt="PlayList_Second_Image" class="card-img-top" />
+								<div class="card-body">
+									<h5 class="card-title">
+										신나는 댄스팝 뮤직!
+									</h5>
+								</div>
+					 		</div>
+						</div>
+						<div class="col-3">
+							<div class="card">
+								<img src="${pageContext.request.contextPath }/image/PL_3.jpg" alt="PlayList_Third_Image" class="card-img-top" />
+								<div class="card-body">
+									<h5 class="card-title">
+										한글 가사 번역 뮤직비디오
+									</h5>
+								</div>
+					 		</div>
+						</div>
+						<div class="col-3">
+							<div class="card">
+								<img src="${pageContext.request.contextPath }/image/PL_4.jpg" alt="PlayList_Four_Image" class="card-img-top" />
+								<div class="card-body">
+									<h5 class="card-title">
+										비 내리는 날 듣는 감성팝
+									</h5>
+								</div>
+					 		</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- PlayList Close -->
+		<!-- Artist -->
+		<div class="container">
+			<div class="mt-5">
+				<div class="row">
+					<div class="col-3">
+						<a href="#">
+							<img class="img-fluid" src="${pageContext.request.contextPath }/image/AT_tones-and-i_thumb.jpg" alt="Tones-And_I_Thumbnail_Image" />
+						</a>
+					</div>
+					<div class="col-3">
+						<a href="#">
+							<img class="img-fluid" src="${pageContext.request.contextPath }/image/AT_jamie_thumb.jpg" alt="Tones-And_I_Thumbnail_Image" />
+						</a>
+					</div>
+					<div class="col-3">
+						<a href="#">
+							<img class="img-fluid" src="${pageContext.request.contextPath }/image/AT_Lizzo_thumb.jpg" alt="Tones-And_I_Thumbnail_Image" />
+						</a>
+					</div>
+					<div class="col-3">
+						<a href="#">
+							<img class="img-fluid" src="${pageContext.request.contextPath }/image/AT_AnneMarie_thumb.jpg" alt="Tones-And_I_Thumbnail_Image" />
+						</a>
+					</div>
+					<div class="col-3">
+						<a href="#">
+							<img class="img-fluid" src="${pageContext.request.contextPath }/image/AT_ed-sheeran_thumb.jpg" alt="Tones-And_I_Thumbnail_Image" />
+						</a>
+					</div>
+					<div class="col-3">
+						<a href="#">
+							<img class="img-fluid" src="${pageContext.request.contextPath }/image/AT_Cardi-B_thumb.jpg" alt="Tones-And_I_Thumbnail_Image" />
+						</a>
+					</div>
+					<div class="col-3">
+						<a href="#">
+							<img class="img-fluid" src="${pageContext.request.contextPath }/image/AT_coldplay_thumb.jpg" alt="Tones-And_I_Thumbnail_Image" />
+						</a>
+					</div>
+					<div class="col-3">
+						<a href="#">
+							<img class="img-fluid" src="${pageContext.request.contextPath }/image/AT_DuaLipa_thumb.jpg" alt="Tones-And_I_Thumbnail_Image" />
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container" style="text-align: center;">
+			<div class="col mt-4">
+				<a href="#" style="color: gray">전체보기 <i class="fas fa-caret-right"></i></a>
+			</div>
+		</div>
+		<!-- Artist Close-->
+		<!-- News Letter -->
+		<div class="container mt-5" style="text-align:center">
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col">
+					<h3>개노답뮤직 뉴스레터 구독</h3>
+				</div>
+				<div class="col">
+					<p style="font-size: 14px;color: #7c7c7c;line-height: 1.1;text-align: left;letter-spacing: -1px;">개노답뮤직 아티스트와 최신 앨범 소식, <br />이벤트 뉴스 등을 빠르게 이메일로 받아보세요.</p>
+				</div>
+				<div class="col-1">
+					<button class="btn btn-secondary" >구독</button>
+				</div>
+				<div class="col-1"></div>
+			</div>
+		</div>
+		<!-- News Letter Close-->
+		<!-- Instagram Feed -->
+		<!-- Instagram Feed Close -->
 	</div>
 	<script src="${pageContext.request.contextPath }/js/jquery-3.5.1.js"></script>
 	<script src="${pageContext.request.contextPath }/js/bootstrap.js"></script>
-	<script>
-		autoPlayYouTubeModal();
-		//FUNCTION TO GET AND AUTO PLAY YOUTUBE VIDEO FROM DATATAG
-		function autoPlayYouTubeModal() {
-			var trigger = $("body").find('[data-toggle="modal"]');
-			trigger.click(function () {
-				var theModal = $(this).data("target"),
-					videoSRC = $(this).attr("data-theVideo"),
-					videoSRCauto = videoSRC + "?autoplay=1";
-				$(theModal + ' iframe').attr('src', videoSRCauto);
-				$(theModal + ' button.close').click(function () {
-					$(theModal + ' iframe').attr('src', videoSRC);
-				});
-			});
-		}
-	</script>
 </body>
 </html>
