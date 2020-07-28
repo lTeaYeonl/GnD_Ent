@@ -87,61 +87,11 @@
     max-width: 100%;
     margin: 0 auto;
 	};
+	
 	input {
     vertical-align: middle;
 	};
 	
-	.sub_bg {
-	    position: relative;
-	    width: 100%;
-	    height: 370px;
-	    margin: 0 auto;
-	    background: url(../images/sb_bg4.jpg) 50% 0 no-repeat;
-	}
-
-    .sub_bg .bk_bg {
-        position: absolute;
-        width: 100%;
-        height: 370px;
-        margin: 0 auto;
-        background-color: #000;
-        opacity: 0.5;
-    }
-
-	.sub_top {
-	    position: relative;
-	    max-width: 1170px;
-	    margin: 0 auto;
-	    top: 160px;
-	    padding: 0em 15px;
-	}
-	
-	.sub_tt {
-	    position: relative;
-	    width: 100%;
-	    text-align: center;
-	    color: #fff;
-	    font-size: 35px;
-	    line-height: 40px;
-	    font-weight: 500;
-	    padding-top: 25px;
-	}
-	
-	.inner {
-	    position: relative;
-	    width: 700px;
-	    margin: 0 auto;
-	    height: auto;
-	    overflow: hidden;
-	    padding: 6em 15px;
-	}
-
-   .join {
-    position: relative;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-	}
 	
 	.terms {
 	    position: relative;
@@ -219,9 +169,70 @@
         line-height: 25px;
     }
 	
+	.sub_bg {
+	    position: relative;
+	    width: 100%;
+	    height: 370px;
+	    margin: 0 auto;
+	    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS6T57wnTPfO86zfCBdRqumXjKZedkYaDX_TA&usqp=CAU) 50% 0;
+	    visibilty: visible
+	}
+
+    .sub_bg .bk_bg {
+        position: absolute;
+        width: 100%;
+        height: 370px;
+        margin: 0 auto;
+        background-color: #000;
+        opacity: 0.5;
+    }
+
+	.sub_top {
+	    position: relative;
+	    max-width: 1170px;
+	    margin: 0 auto;
+	    top: 160px;
+	    padding: 0em 15px;
+	}
 	
+	.sub_tt {
+	    position: relative;
+	    width: 100%;
+	    text-align: center;
+	    color: #fff;
+	    font-size: 35px;
+	    line-height: 40px;
+	    font-weight: 500;
+	    padding-top: 25px;
+	    list-style:none;
+	}
 	
-  
+	.inner {
+	    position: relative;
+	    width: 700px;
+	    margin: 0 auto;
+	    height: auto;
+	    overflow: hidden;
+	    padding: 6em 15px;
+	}
+
+   .join {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+	}
+	
+  .btn.sub_ck {
+	    border-radius: 0px;
+	    padding: 15px 0;
+	    width: 20%;
+	    margin: 0 40%;
+	    color: #fff;
+	    border: none;
+	    margin-top: 30px;
+	    background-color: #009be6
+	}
 </style>
 </head>
 <body>
@@ -234,7 +245,7 @@
 		</a>
 	</div>
 
-	<div class="sub_bg" style="background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS6T57wnTPfO86zfCBdRqumXjKZedkYaDX_TA&usqp=CAU) 50%">
+	<div class="sub_bg">
 		<div class="bk_bg"></div>
 			<ul class="sub_top">
 				<li class="sub_tt">AUDITION</li>
@@ -354,7 +365,7 @@ GND 오디션사이트에 오신 것을 환영합니다. GND 온라인 오디션
 					위 약관에 모두 동의합니다.
 					</label>
 				</p>
-				<button type="submit" class="btn btn-primary2" onclick="retrun false" id="agree">동의</button>
+				<button type="submit" class="btn sub_ck" onclick="retrun false" id="agree">동의</button>
 			</div>
 		</div>
 	</form>
