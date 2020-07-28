@@ -19,44 +19,7 @@
 	<!-- Main Page -->
 	<div class="main-page">
 		<!-- Top Navigation -->
-		<nav class="navbar navbar-expand-lg" style="background-color:#171717;">
-			<a class="navbar-brand" href="index.jsp">
-				<img src="${pageContext.request.contextPath }/image/L_gnd.png" alt="GnD_Logo" />
-			</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav">
-					<li class="nav-item active">
-						<a class="nav-link" href="#" style="color:white; font-size:12px;">뉴스</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#" style="color:white; font-size:12px;">플레이리스트</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#" style="color:white; font-size:12px;">아티스트</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#" style="color:white; font-size:12px;">뉴스레터 구독</a>
-					</li>
-				</ul>
-			</div>
-			<div class="social-icons">
-				<a href="https://www.facebook.com/warnermusickorea/">
-					<i class="fab fa-facebook-f" style="color: white;"></i>
-				</a>
-				<a href="https://www.instagram.com/warnermusickorea/">
-					<i class="fab fa-youtube" style="color: white;"></i>
-				</a>
-				<a href="https://www.youtube.com/user/WMK2011">
-					<i	class="fab fa-instagram" style="color: white;"></i>
-				</a>
-				<a href="https://twitter.com/Warner_Music_Kr">
-					<i	class="fab fa-twitter" style="color: white;"></i>
-				</a>
-			</div>
-		</nav>
+		<jsp:include page="../top/navbar.jsp"></jsp:include>
 		<!-- Top Navigation Close -->
 		<!-- Main Content -->
 		<div class="main-content">
@@ -672,88 +635,8 @@
 		</div>
 		<!-- Main Content Close -->
 		<!-- Footer -->
-		<div class="footer" style="background-color:#202020;">
-			<div class="container mt-5">
-				<div class="row">
-					<div class="col mt-5">
-						<a href="index.jsp">
-							<img src="${pageContext.request.contextPath }/image/L_gnd.png" alt="GnD_Logo_Image" />
-						</a>
-					</div>
-					<div class="col mt-5">
-						<div class="container">
-							<h3 class="title" style="color:#ffffff; font-size:12px;">
-								<span>CONTACT US</span>
-							</h3>
-						</div>
-						<div class="container">
-							<a href="mailto:clairiamport@gmail.com" style="color:#777777; font-size:12px;">GnDMusic.korea@gmail.com</a>
-						</div>
-					</div>
-					<div class="col mt-5">
-						<div class="container">
-							<h3 class="title"  style="color:#ffffff; font-size:12px;">
-								<span>TERMS AND CONDITIONS</span>
-							</h3>
-						</div>
-						<div class="container">
-							<p>
-								<a href="#" target="_blank" style="color:#777777; font-size:12px;">이용약관</a>
-							</p>
-							<p>
-								<a href="#" target="_blank" style="color:#777777; font-size:12px;">개인정보 처리방침</a>
-							</p>
-							<p>
-								<a href="#" target="_blank" style="color:#777777; font-size:12px;">개인정보 처리방침 - 입사지원자용</a>
-							</p>
-						</div>
-					</div>
-					<div class="col mt-5">
-						<div class="container">
-							<h3 class="title"  style="color:#ffffff; font-size:12px;">
-								<span>SUBSCRIPTION</span>
-							</h3>
-						</div>
-						<div class="container">
-							<p>
-								<a href="#" target="_blank" style="color:#777777; font-size:12px;">뉴스레터 구독</a>
-							</p>
-							<p>
-								<a href="#" target="_blank" style="color:#777777; font-size:12px;">블로그 방문</a>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		<jsp:include page="../bottom/footer.jsp"></jsp:include>
 		<!-- Footer Close -->
-		<!-- Footer-Footer -->
-		<div class="footer" style="background-color:#171717;">
-			<div class="container">
-				<div class="row">
-					<div class="col mt-3" style="color:#898989; font-size:12px;">
-						<p>COPYRIGHT © 2020 GND MUSIC KOREA. All Rights Reserved.</p>
-					</div>
-					<div class="col mt-3">
-						<div class="social-icons float-right">
-							<a href="https://www.facebook.com/warnermusickorea/">
-								<i class="fab fa-facebook-f" style="color: white;"></i>
-							</a>
-							<a href="https://www.instagram.com/warnermusickorea/">
-								<i class="fab fa-youtube" style="color: white;"></i>
-							</a>
-							<a href="https://www.youtube.com/user/WMK2011">
-								<i	class="fab fa-instagram" style="color: white;"></i>
-							</a>
-							<a href="https://twitter.com/Warner_Music_Kr">
-								<i	class="fab fa-twitter" style="color: white;"></i>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Footer-Footer -->
 	</div>
 	<!-- Main Page Close -->
 	<!-- Script -->
