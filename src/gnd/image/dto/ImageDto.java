@@ -16,7 +16,7 @@ public class ImageDto {
 		this.page_id = page_id;
 	}
 
-	public String getAt_id() {
+	public String getAt_id() { 
 		return at_id;
 	}
 

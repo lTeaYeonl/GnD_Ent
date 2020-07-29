@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <!-- /top/navbar.jsp -->
 <nav class="navbar navbar-expand-lg" style="background-color:#171717;">
-	<a class="navbar-brand" href="index.jsp">
+	<a class="navbar-brand" href="${pageContext.request.contextPath }/main/index.jsp">
 		<img src="${pageContext.request.contextPath }/image/L_gnd.png" alt="GnD_Logo" />
 	</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
