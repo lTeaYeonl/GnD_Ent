@@ -1,3 +1,6 @@
+<%@page import="java.util.List"%>
+<%@page import="gnd.image.dto.ImageDto"%>
+<%@page import="gnd.image.dao.ImageDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -24,106 +27,53 @@
 		<!-- Main Content -->
 		<div class="main-content">
 			<!-- Carousel Image -->
+			<%
+				// 모든 아티스트 이미지 목록 가져오기
+				List<ImageDto> list = ImageDao.getinstance().getList(new ImageDto());
+			%>
+			<%if(list.size()!=0){ %>
 			<div class="container-fluid px-0">
-				<div id="carouselExampleIndicators" class="carousel slide"
-					data-ride="carousel">
+				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 					<ol class="carousel-indicators">
-						<li data-target="#carouselExampleIndicators" data-slide-to="0"
-							class="active"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+						<%for (int i=0; i<list.size(); i++){ %>
+							<%if(i==0){ %>
+								<li data-target="#carouselExampleIndicators" data-slide-to="<%=i %>" class="active"></li>
+							<%}else{ %>
+								<li data-target="#carouselExampleIndicators" data-slide-to="<%=i %>"></li>
+							<%} %>
+						<%} %>
 					</ol>
 					<div class="carousel-inner">
+					<%for(int i=0; i<list.size(); i++){ %>
+						<%if(i==0){ %>
 						<div class="carousel-item active">
-							<img class="d-block w-100"
-								src="${pageContext.request.contextPath }/image/M_AnneMarie.png"
-								alt="1 slide">
-							<div class="carousel-caption d-none d-md-block">
-								<h1 class="bg-dark">Anne-Marie</h1>
-								<p class="bg-dark">앤-마리</p>
-							</div>
-						</div>
+						<%}else{ %>
 						<div class="carousel-item">
-							<img class="d-block w-100"
-								src="${pageContext.request.contextPath }/image/M_Cardi-B.jpg"
-								alt="2 slide">
+					<%} %>
+							<img class="d-block w-100" src="${pageContext.request.contextPath }/image/<%=list.get(i).getName() %>" alt="<%=i %> slide" />
 							<div class="carousel-caption d-none d-md-block">
-								<h1>CARDI B</h1>
-								<p>카디 비</p>
+								<h1><%=list.get(i).getE_name()%></h1>
+								<p><%=list.get(i).getK_name()%></p>
 							</div>
 						</div>
-						<div class="carousel-item">
-							<img class="d-block w-100"
-								src="${pageContext.request.contextPath }/image/M_Coldplay.jpg"
-								alt="3 slide">
-							<div class="carousel-caption d-none d-md-block">
-								<h1>COLDPLAY</h1>
-								<p>콜드플레이</p>
-							</div>
-						</div>
-						<div class="carousel-item">
-							<img class="d-block w-100"
-								src="${pageContext.request.contextPath }/image/M_DuaLipa.png"
-								alt="4 slide">
-							<div class="carousel-caption d-none d-md-block">
-								<h1>DUA LIPA</h1>
-								<p>두아 리파</p>
-							</div>
-						</div>
-						<div class="carousel-item">
-							<img class="d-block w-100"
-								src="${pageContext.request.contextPath }/image/M_Ed-Sheeran.jpg"
-								alt="5 slide">
-							<div class="carousel-caption d-none d-md-block">
-								<h1>Ed-Sheeran</h1>
-								<p>에드 시런</p>
-							</div>
-						</div>
-						<div class="carousel-item">
-							<img class="d-block w-100"
-								src="${pageContext.request.contextPath }/image/M_Jamie.png"
-								alt="6 slide">
-							<div class="carousel-caption d-none d-md-block">
-								<h1>Jamie</h1>
-								<p>제이미</p>
-							</div>
-						</div>
-						<div class="carousel-item">
-							<img class="d-block w-100"
-								src="${pageContext.request.contextPath }/image/M_Lizzo.jpg"
-								alt="7 slide">
-							<div class="carousel-caption d-none d-md-block">
-								<h1>Lizzo</h1>
-								<p>리조</p>
-							</div>
-						</div>
-						<div class="carousel-item">
-							<img class="d-block w-100"
-								src="${pageContext.request.contextPath }/image/M_Lukas-Graham.jpg"
-								alt="8 slide">
-							<div class="carousel-caption d-none d-md-block">
-								<h1>LUKAS GRAHAM</h1>
-								<p>루카스 그레이엄</p>
-							</div>
-						</div>
+					<%} %>
 					</div>
-					<a class="carousel-control-prev" href="#carouselExampleIndicators"
-						role="button" data-slide="prev"> <span
-						class="carousel-control-prev-icon" aria-hidden="true"></span> <span
-						class="sr-only">Previous</span>
-					</a> <a class="carousel-control-next" href="#carouselExampleIndicators"
-						role="button" data-slide="next"> <span
-						class="carousel-control-next-icon" aria-hidden="true"></span> <span
-						class="sr-only">Next</span>
+					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+						<span	class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
 					</a>
 				</div>
-				<!-- Carousel Image Close -->
-				<!-- New Music Video -->
+			</div>
+			<%}else{ %>
+				<p class="text-danger">이미지 Data가 없습니다. Data를 추가해 주세요.</p>
+				<a href="${pageContext.request.contextPath }/insert/image_insert_form.jsp">추가하러 가기</a>
+			<%} %>
+			<!-- Carousel Image Close -->
+			<!-- New Music Video -->
 				<div class="container mt-5">
 					<div class="container">
 						<p
