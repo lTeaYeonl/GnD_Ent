@@ -15,15 +15,20 @@
 <head>
 <meta charset="UTF-8">
 <title>/insert/image_insert.jsp</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath }/css/bootstrap.css" />
 </head>
 <body>
 	<%if(isSuccess){ %>
-		<p><strong><%=name %></strong> 파일이 성공적으로 저장 되었습니다.
-			<a href="image_insert_form.jsp">계속 추가하기</a>
-			<a href="${pageContext.request.contextPath }/main/index.jsp">메인 페이지로 돌아가기</a>
-		</p>
+		<div class="container">
+			<p><strong><%=name %></strong> 파일이 성공적으로 저장 되었습니다.
+				<a href="image_insert_form.jsp">계속 추가하기</a>
+				<a href="${pageContext.request.contextPath }/main/index.jsp">메인 페이지로 돌아가기</a>
+			</p>
+		</div>
 	<%}else{ %>
-		<p>저장에 실패 했습니다. <a href="image_insert_form.jsp">다시 저장</a></p>
-	<%} %>
+		<div class="container">
+			<p>저장에 실패 했습니다. <a href="image_insert_form.jsp">다시 저장</a></p>
+		</div>
+		<%} %>
 </body>
 </html>
