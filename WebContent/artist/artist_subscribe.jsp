@@ -37,7 +37,7 @@
 			<div class="row">
 				<div class="col-3">
 					<a
-						href="${pageContext.request.contextPath}/artist/artist_info/at_kim.jsp">
+						href="${pageContext.request.contextPath}/artist/artist_list/artist_info/at_tones-and-i.jsp">
 						<img class="img-fluid"
 						src="${pageContext.request.contextPath }/image/AT_tones-and-i_thumb.jpg"
 						alt="Tones-And_I_Thumbnail_Image" />
@@ -90,7 +90,7 @@
 	</div>
 	<div class="container" style="text-align: center;">
 		<div class="col mt-4">
-			<a href="#" style="color: gray">전체보기 <i
+			<a href="${pageContext.request.contextPath}/artist/artist_list/artist_list.jsp" style="color: gray">전체보기 <i
 				class="fas fa-caret-right"></i></a>
 		</div>
 	</div>
@@ -110,9 +110,10 @@
 			</div>
 			<div class="col-1">
 				<!-- Button trigger modal -->
+				<div class="container">
 				<button type="button" class="btn btn-dark" data-toggle="modal"
 					data-target="#staticBackdrop">구독</button>
-
+				</div>
 				<!-- News Letter Modal -->
 				<div class="modal fade" id="staticBackdrop" data-backdrop="static"
 					data-keyboard="false" tabindex="-1" role="dialog"

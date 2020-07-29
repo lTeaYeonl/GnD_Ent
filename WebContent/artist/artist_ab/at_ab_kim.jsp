@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>/artist/artist_ab/at_ab_kim.jsp</title>
+<title>/artist/artist_ab/at_ab_tones-and-i.jsp</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath }/css/bootstrap.css" />
 

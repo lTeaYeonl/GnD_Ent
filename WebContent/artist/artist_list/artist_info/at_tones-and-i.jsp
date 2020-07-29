@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>/artist_info/at_kim.jsp</title>
-<!-- css 로딩 -->
-<link rel="stylesheet" href="/GnD_Ent/css/bootstrap.css" />
+<title>/artist_info/at_tones-and-i.jsp</title>
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath }/css/bootstrap.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath }/css/bootstrap-grid.css" />
 <!-- fontawesome 에서 제공해주는 icon을 사용하기 위해 로딩  -->
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
@@ -34,6 +36,9 @@
 </style>
 </head>
 <body>
+	<!-- Top Navigation -->
+	
+	<!-- Top Navigation Close -->
 	<!-- top image -->
 	<div class="wrap">
 		<img class="img-fluid"
@@ -131,7 +136,7 @@
 			style="font-size: 30px; color: #000000; line-height: 1; text-align: center; font-family: Abril Fatface; font-weight: 400; font-style: normal; letter-spacing: 1px;">Discography</h3>
 		<div id="img_container col-sm-3">
 			<a
-				href="${pageContext.request.contextPath}/artist/artist_ab/at_ab_kim.jsp">
+				href="${pageContext.request.contextPath}/artist/artist_ab/at_ab_tones-and-i.jsp">
 				<img class="img-fluid"
 				src="${pageContext.request.contextPath }/image/AT_Tones-and-i_ab.jpg"
 				alt="tones_ab_img" />
