@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
+<title>artist_subscribe.jsp</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath }/css/bootstrap.css" />
 <link rel="stylesheet"
@@ -14,7 +16,6 @@
 	crossorigin="anonymous /">
 
 <meta charset="UTF-8">
-<title>artist_subscribe.jsp</title>
 </head>
 <body>
 	<!-- Script -->
@@ -112,7 +113,7 @@
 				<button type="button" class="btn btn-dark" data-toggle="modal"
 					data-target="#staticBackdrop">구독</button>
 
-				<!-- Modal -->
+				<!-- News Letter Modal -->
 				<div class="modal fade" id="staticBackdrop" data-backdrop="static"
 					data-keyboard="false" tabindex="-1" role="dialog"
 					aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -165,6 +166,7 @@
 				       }
 				});
 				</script>
-				<!-- News Letter Close-->
+				<!-- News Letter Modal Close-->
+			
 </body>
 </html>
