@@ -22,6 +22,12 @@
 			<li class="nav-item">
 				<a class="nav-link" href="#" style="color:white; font-size:12px;">뉴스레터 구독</a>
 			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="${pageContext.request.contextPath }/insert/image_insert_form.jsp" style="color:white; font-size:12px;">이미지 정보 입력</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="${pageContext.request.contextPath }/insert/artist_insert_form.jsp" style="color:white; font-size:12px;">아티스트 정보 입력</a>
+			</li>
 		</ul>
 	</div>
 	<div class="social-icons">

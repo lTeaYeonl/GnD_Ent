@@ -9,6 +9,9 @@
 </head>
 <body>
 	<div class="container">
+		<!-- Top Navigation -->
+		<jsp:include page="../top/navbar.jsp"></jsp:include>
+		<!-- Top Navigation Close -->
 		<h1>아티스트 정보 입력 폼</h1>
 		<form action="artist_insert.jsp" method="post" id="artistForm">
 			<div class="form-group">
