@@ -17,7 +17,10 @@
 <title>artist_subscribe.jsp</title>
 </head>
 <body>
-<!-- Artist -->
+	<!-- Top Navigation -->
+	<jsp:include page="../top/navbar.jsp"></jsp:include>
+	<!-- Top Navigation Close -->
+	<!-- Artist -->
 	<div class="container mt-5">
 		<div class="mt-5">
 			<div class="container">
@@ -31,7 +34,9 @@
 			</div>
 			<div class="row">
 				<div class="col-3">
-					<a href="${pageContext.request.contextPath}/artist/artist_info/at_kim.jsp"> <img class="img-fluid"
+					<a
+						href="${pageContext.request.contextPath}/artist/artist_info/at_tones-and-i.jsp">
+						<img class="img-fluid"
 						src="${pageContext.request.contextPath }/image/AT_tones-and-i_thumb.jpg"
 						alt="Tones-And_I_Thumbnail_Image" />
 					</a>
@@ -108,5 +113,12 @@
 		</div>
 	</div>
 	<!-- News Letter Close-->
+	<!-- Footer -->
+	<jsp:include page="../bottom/footer.jsp"></jsp:include>
+	<!-- Footer Close -->
+	<!-- Script -->
+	<script src="${pageContext.request.contextPath }/js/jquery-3.5.1.js"></script>
+	<script src="${pageContext.request.contextPath }/js/bootstrap.js"></script>
+	<!-- Script Close -->
 </body>
 </html>
