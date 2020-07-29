@@ -24,11 +24,13 @@ public class ImageDao {
 			conn = new DbcpBean().getConn();
 			//실행할 sql 문 준비하기 
 			String sql = "INSERT INTO image"
-					+ " (img_id, img_name)"
-					+ " VALUES(image_seq.NEXTVAL, ?)";
+					+ " (img_id, img_name, at_id, page_id)"
+					+ " VALUES(image_seq.NEXTVAL, ?, ?, ?)";
 			pstmt = conn.prepareStatement(sql);
 			//? 에 바인딩 할 값이 있으면 바인딩한다.
 			pstmt.setString(1, dto.getName());
+			pstmt.setString(2, dto.getAt_id());
+			pstmt.setString(3, dto.getPage_id());
 			//sql  문 수행하고 update or insert or delete 된 row 의 갯수 리턴받기 
 			flag = pstmt.executeUpdate();
 		} catch (Exception e) {
