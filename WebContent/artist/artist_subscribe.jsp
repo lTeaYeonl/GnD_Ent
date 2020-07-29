@@ -17,7 +17,11 @@
 <title>artist_subscribe.jsp</title>
 </head>
 <body>
-<!-- Artist -->
+	<!-- Script -->
+	<script src="${pageContext.request.contextPath }/js/jquery-3.5.1.js"></script>
+	<script src="${pageContext.request.contextPath }/js/bootstrap.js"></script>
+	<!-- Script Close -->
+	<!-- Artist -->
 	<div class="container mt-5">
 		<div class="mt-5">
 			<div class="container">
@@ -31,7 +35,9 @@
 			</div>
 			<div class="row">
 				<div class="col-3">
-					<a href="${pageContext.request.contextPath}/artist/artist_info/at_kim.jsp"> <img class="img-fluid"
+					<a
+						href="${pageContext.request.contextPath}/artist/artist_info/at_kim.jsp">
+						<img class="img-fluid"
 						src="${pageContext.request.contextPath }/image/AT_tones-and-i_thumb.jpg"
 						alt="Tones-And_I_Thumbnail_Image" />
 					</a>
@@ -102,11 +108,63 @@
 				</p>
 			</div>
 			<div class="col-1">
-				<button class="btn btn-secondary">구독</button>
-			</div>
-			<div class="col-1"></div>
-		</div>
-	</div>
-	<!-- News Letter Close-->
+				<!-- Button trigger modal -->
+				<button type="button" class="btn btn-dark" data-toggle="modal"
+					data-target="#staticBackdrop">구독</button>
+
+				<!-- Modal -->
+				<div class="modal fade" id="staticBackdrop" data-backdrop="static"
+					data-keyboard="false" tabindex="-1" role="dialog"
+					aria-labelledby="staticBackdropLabel" aria-hidden="true">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="staticBackdropLabel">뉴스레터 구독신청</h5>
+								<button type="button" class="close" data-dismiss="modal"
+									aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<div class="container">
+									<p style="text-align: left;">Warner Music Korea 뉴스레터 구독을 위해
+										다음과 같이 귀하의 개인정보를 수집합니다. 수집된 개인정보는 뉴스레터 발송 이외의 목적으로는 사용되지 않습니다.
+										귀하는 개인정보의 수집 및 이용에 대한 동의를 거부할 수 있으며, 이 경우 뉴스레터 발송을 신청할 수 없습니다.</p>
+									<p style="text-align: left;">
+										<strong>개인정보 수집 및 이용 동의</strong>
+									</p>
+									<ul style="text-align: left;">
+										<li>개인정보 수집 목적 : Warner Music Korea 뉴스레터 발송</li>
+										<li>개인정보 수집 항목 : 이메일 주소</li>
+										<li>보유 이용 기간 : 구독수신거부 전까지</li>
+									</ul>
+									<p style="text-align: left;">
+										<label> 
+											<input type="checkbox" id="confirm" class="confirm" /> 
+											<span>위 내용에 동의 합니다.</span> 
+											<span class="email">
+												<input type="email" placeholder="Email" />
+											</span>
+										</label>
+									</p>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<form action="resetprocess.php">
+									<button type="submit" id="subscbtn" class="btn btn-dark" data-dismiss="modal">신청</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<script>
+				$('#subscbtn').click(function () {
+				       if (!$('#confirm').is(':checked')) {
+				           alert('not checked');
+				           return false;
+				       }
+				});
+				</script>
+				<!-- News Letter Close-->
 </body>
 </html>
