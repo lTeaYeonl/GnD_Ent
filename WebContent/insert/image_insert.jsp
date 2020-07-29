@@ -4,9 +4,13 @@
     pageEncoding="UTF-8"%>
 <%
 	String name=request.getParameter("name");
+	String at_id=request.getParameter("at_id");
+	String page_id=request.getParameter("page_id");
 	// ImageDto 파일 이름 담기
 	ImageDto dto=new ImageDto();
 	dto.setName(name);
+	dto.setAt_id(at_id);
+	dto.setPage_id(page_id);
 	// ImageDao 객체를 이용해서 DB에 저장
 	boolean isSuccess=ImageDao.getinstance().insert(dto);
 %>

@@ -1,7 +1,9 @@
 -- image 파일의 정보를 저장할 테이블 
 CREATE TABLE image(
 	img_id NUMBER PRIMARY KEY,
-	img_name VARCHAR2(100) NOT NULL
+	img_name VARCHAR2(100) NOT NULL,
+	at_id NUMBER,
+	page_id NUMBER
 );
 
 CREATE SEQUENCE image_seq;
