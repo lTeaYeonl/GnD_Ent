@@ -27,12 +27,13 @@
 		<!-- Main Content -->
 		<div class="main-content">
 			<!-- Carousel Image -->
+			<%
+				// 모든 아티스트 이미지 목록 가져오기
+				List<ImageDto> list = ImageDao.getinstance().getList(new ImageDto());
+			%>
+			<%if(list.size()!=0){ %>
 			<div class="container-fluid px-0">
 				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-					<%
-						// 모든 아티스트 이미지 목록 가져오기
-						List<ImageDto> list = ImageDao.getinstance().getList(new ImageDto());
-					%>
 					<ol class="carousel-indicators">
 						<%for (int i=0; i<list.size(); i++){ %>
 							<%if(i==0){ %>
@@ -67,6 +68,10 @@
 					</a>
 				</div>
 			</div>
+			<%}else{ %>
+				<p class="text-danger">이미지 Data가 없습니다. Data를 추가해 주세요.</p>
+				<a href="${pageContext.request.contextPath }/insert/image_insert_form.jsp">추가하러 가기</a>
+			<%} %>
 			<!-- Carousel Image Close -->
 			<!-- New Music Video -->
 				<div class="container mt-5">
