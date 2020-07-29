@@ -6,6 +6,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath }/css/bootstrap.css" />
+<script src="${pageContext.request.contextPath }/js/jquery-3.5.1.js"></script>
+<script src="${pageContext.request.contextPath }/js/bootstrap.js"></script>
 <style>
 
 	.bg_gray {
@@ -20,7 +22,7 @@
 	    width: 100%;
 	    height: 370px;
 	    margin: 0 auto;
-	    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS6T57wnTPfO86zfCBdRqumXjKZedkYaDX_TA&usqp=CAU) 50% 0 no-repeat;
+	    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS6T57wnTPfO86zfCBdRqumXjKZedkYaDX_TA&usqp=CAU) 50% 0;
 	}
 	
 	    .sub_bg .bk_bg {
@@ -138,10 +140,12 @@
 	    width: 100%;
 	    height: auto;
 	    overflow: hidden;
+	    
 	}
 
 	    .inner .f_two li {
 	        float: left;
+	        
 	    }
 	
 	    .inner .f_two .long_ct.cut {
@@ -152,41 +156,6 @@
 	        .inner .f_two .long_ct.cut.no {
 	            margin-right: 0;
 	        }
-	
-	        .inner .f_two .long_ct.cut .ct_txt.file_in {
-	            position: relative;
-	            width: 75%;
-	        }
-	
-	.inner .f_three {
-	    position: relative;
-	    width: 100%;
-	    height: auto;
-	    overflow: hidden;
-	}
-	
-	    .inner .f_three li {
-	        float: left;
-	    }
-	
-	    .inner .f_three .long_ct.cut {
-	        width: 35.90%;
-	        margin-right: 0.5%;
-	    }
-	
-	        .inner .f_three .long_ct.cut.no {
-	            margin-right: 0;
-	        }
-	
-	        .inner .f_three .long_ct.cut .ct_txt {
-	            position: relative;
-	            width: 74%;
-	        }
-	          .inner .f_three .long_ct.cut .ct_txt.file_in {
-	            position: relative;
-	            width: 75%;
-	        }
-	
 	.file {
 	    position: relative;
 	    float: right;
@@ -317,17 +286,50 @@
 </head>
 <body>
 <div class="main">
-	<div class="header_main">
-		<a href="">
-			<div class="main_logo" alt="gnd엔터테인먼트">
-			</div>
+	<!-- /top/navbar.jsp -->
+<nav class="navbar navbar-expand-lg" style="background-color:#171717;">
+	<a class="navbar-brand" href="index.jsp">
+		<img src="${pageContext.request.contextPath }/image/L_gnd.png" alt="GnD_Logo" />
+	</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav">
+			<li class="nav-item active">
+				<a class="nav-link" href="#" style="color:white; font-size:12px;">뉴스</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#" style="color:white; font-size:12px;">플레이리스트</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#" style="color:white; font-size:12px;">아티스트</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#" style="color:white; font-size:12px;">뉴스레터 구독</a>
+			</li>
+		</ul>
+	</div>
+	<div class="social-icons">
+		<a href="https://www.facebook.com/warnermusickorea/">
+			<i class="fab fa-facebook-f" style="color: white;"></i>
+		</a>
+		<a href="https://www.instagram.com/warnermusickorea/">
+			<i class="fab fa-youtube" style="color: white;"></i>
+		</a>
+		<a href="https://www.youtube.com/user/WMK2011">
+			<i	class="fab fa-instagram" style="color: white;"></i>
+		</a>
+		<a href="https://twitter.com/Warner_Music_Kr">
+			<i	class="fab fa-twitter" style="color: white;"></i>
 		</a>
 	</div>
-	<form action="" enctype="multipart/form-data" id="frm" method="post" name="frm" novalidate="novalidate">
+</nav>
+	<form action="signup.jsp" enctype="multipart/form-data" id="frm" method="post" name="frm" novalidate="novalidate">
 	<div class="sub_bg" >
 		<div class="bk_bg"></div>
 			<ul class="sub_top">
-				<li class="sub_tt">AUDITION</li>
+				<li class="sub_tt">Sign Up</li>
 			</ul>
 	</div>
 	<div class="bg_gray">
@@ -337,24 +339,25 @@
 			</div>
 			<div class="long_ct">
 				<label>* 이름</label>
-				<input type="text" class="ct_txt" id="name" name="name" maxlength="20" style="font-weight:700" value />
+				<input type="text" class="ct_txt" id="inf_name" name="inf_name" maxlength="20" style="font-weight:700" value />
 			</div>
 			<div class="long_ct">
 				<label>* 이메일</label>
-				<input type="text" class="ct_txt" id="name" name="name" maxlength="60" style="font-weight:700" value />
-				<button type="submit" class="btn-layer file" id="emailAuth">이메일 인증</button>
+				<input type="text" class="ct_txt" id="inf_email" name="inf_email" maxlength="60" style="font-weight:700" value />
+				<button class="btn-layer file" id="checkBtn">중복확인</button>
+				<span id="checkResult"></span>
 			</div>
 			<ul class="f_two" style="display:">
 				<li class="long_ct cut">
-					<label>
-					*비밀번호
+					<label for="inf_pwd">
+					* 비밀번호
 					<span class="help">숫자,영문,(특수문자) 포함 10자 이상</span> 
 					</label>
-					<input class="ct_txt" id="password" maxlength="20" name="password" type="password" value/>
+					<input class="ct_txt" id="inf_pwd" maxlength="20" name="inf_pwd" type="password"/>
 				</li>
 				<li class="long_ct cut no">
-				<label> *비밀번호 확인</label>
-				<input class="ct_txt" id="confirm_password" maxlength="20" name="confirm_password" type="password" value/>
+				<label for="confirm_password"> * 비밀번호 확인</label>
+				<input class="ct_txt" id="inf_pwd2" maxlength="20" name="inf_pwd2" type="password"/>
 				</li>
 			</ul>
 			<div class="f_cont memberinfo">
@@ -362,7 +365,7 @@
 				<ul class="f_two">
 					<li class="long_ct cut">
 					<label>* 국적</label>
-					<select class="nationality" name="app" id="app">
+					<select class="nationality" name="inf_nt" id="inf_ft">
 						<option value>-선택-</option>
 						<option value="GHANA_0">가나(GHANA)</option>
 						<option value="GABON_1">가봉(GABON)</option>
@@ -390,8 +393,8 @@
 					</select>
 					</li>
 					<li class="long_ct cut no">
-						<label>*지원 분야</label>
-						<select class="nationality" name="nation" id="nation">
+						<label>*좋아하는 가수 분야</label>
+						<select class="nationality" name="inf_sel" id="inf_sel">
 							<option value>-선택-</option>
 							<option value="1">보컬</option>
 							<option value="2">랩(RAP)</option>
@@ -402,7 +405,7 @@
 				<ul class="f_two">
 					<li class="long_ct cut">
 						<label>* 성별</label>
-						<select class="nationality" name="gender" id="gender">
+						<select class="nationality" name="inf_sex" id="inf_sex">
 							<option value>-선택-</option>
 							<option value="1">남(MALE)</option>	
 							<option value="2">여(FEMALE)</option>
@@ -412,304 +415,224 @@
 						<label>*생년월일
 							<span class="help">e.g."2020-07-06"</span>
 						</label>
-						<input class="ct_txt hasDtepicker" id="birth" maxlength="10" name="birth" readonly="True" type="text" value/>
+						<input class="ct_txt hasDtepicker" id="inf_bday" maxlength="10" name="inf_bday" readonly="True" type="text" value/>
 					</li>
 				</ul>
 				<ul class="f_two">
 					<li class="long_ct cut">
 						<label>*신장</label>
-						<input class="ct_txt" id="height" inputmode="numeric" maxlength="3" min="0" name="height" oninput="maxLengthCheck(this)" pattern="[0-9]*" type="number" value/>
+						<input class="ct_txt" id="inf_height" inputmode="numeric" maxlength="3" min="0" name="inf_height" oninput="maxLengthCheck(this)" pattern="[0-9]*" type="number" value/>
 					</li>
 					<li class="long_ct no">
 						<label>*체중</label>
-						<input class="ct_txt" id="weight" inputmode="numeric" maxlength="3" min="0" name="weight" oninput="maxLengthCheck(this)" pattern="[0-9]*" type="number" value/>			
+						<input class="ct_txt" id="inf_weight" inputmode="numeric" maxlength="3" min="0" name="inf_weight" oninput="maxLengthCheck(this)" pattern="[0-9]*" type="number" value/>			
 					</li>
 				</ul>
 				<ul class="f_wto">
 					<li class="long_ct cut">
 						<label>* 휴대폰</label>
-						<input class="ct_txt" id="phone" inputmode="numeric" maxlength="14" min="0" name="phone" oninput="maxLengthCheck(this)" pattern="[0-9]*" type="number" value/>			
+						<input class="ct_txt" id=" inf_phone" inputmode="numeric" maxlength="14" min="0" name=" inf_phone" oninput="maxLengthCheck(this)" pattern="[0-9]*" type="number" value/>			
 					</li>
 				</ul>
 				<ul class="f_two">
 					<li class="long_ct cut">
 						<label>* 직업<span class="help">회사명/학교명을 입력해 주세요.(예:OO기업/고등학교)</span></label>
-						<input class="ct_txt" id="job" maxlength="30" name="job" type="text" value/>
+						<input class="ct_txt" id="inf_job" maxlength="30" name="inf_job" type="text" value/>
 					</li>
 					<li class="long_ct cut no">
 						<label>SNS 주소</label>
-						<input class="ct_txt" id="sns" maxlength="100" name="sns" style="ime-mode:disabled;" type="text" value/>
+						<input class="ct_txt" id="inf_sns" maxlength="100" name="inf_sns" style="ime-mode:disabled;" type="text" value/>
 					</li>
 				</ul>
 				<div class="long_ct">
 					<label>* 주소</label>
 					<input class="ct_txt" id="postcode" name="postcode" readonly="True" type="hidden" value/>
-					<input class="ct_txt" id="address" name="address" maxlength="50" readonly="True" type="text" value/>
+					<input class="ct_txt" id="inf_address" name="inf_address" maxlength="50" readonly="True" type="text" value/>
 				</div>
 				<div class="long_ct">
 					<label>상세주소</label>
-					<input class="ct_txt" id="address2" name="address2" maxlength="50" type="text" value/>
+					<input class="ct_txt" id="inf_address2" name="inf_address2" maxlength="50" type="text" value/>
 				</div>
-				<ul class="f_three" id=PROFILE_YN">
-					<li class="long_ct cut">
-						<label>* 프로필(정면사진)
-						<span class="help">* 이미지파일('gif', 'pmg', 'jpg', 'jpeg'), 2M 이하</span>
-						</label>
-						<br>
-						<input class="ct_txt" id="profile"  name="profile" placeholder="선택한 파일이 없습니다." type="file" value/>
-						<div id="profile_filename"></div>
-						<div id="profile_progress"></div>
-						<div id="profile-progressBar" class="progressBar"></div>
-						<input id="profile_ur1" name="profile_url" type="hidden" vlaue/>
-						<input id="profile_name" name="profile_name" type="hidden" value/>
-						<script>
-
-					    $(document).ready(function () {
-
-					        $('input[name=profile]').change(function () {
-					            $(this).simpleUpload("/Audition/UploadFiles", {
-
-					                allowedExts: ['gif', 'png', 'jpg', 'jpeg'],
-
-					                maxFileSize: 50000000, //50MB in bytes
-					                start: function (file) {
-					                    //upload started
-					                    $('#profile_filename').html(file.name);
-					                    $('#profile_progress').html("");
-					                    $('#profile_progressBar').width(0);
-					                },
-
-					                progress: function (progress) {
-					                    //received progress
-					                    $('#profile_progress').html("Progress: " + Math.round(progress) + "%");
-					                    $('#profile_progressBar').width(progress + "%");
-					                },
-
-					                success: function (data) {
-					                    //upload successful
-					                    //$('#progress').html("Success!<br>Data: " + JSON.stringify(data));
-
-					                    var json = JSON.parse(JSON.stringify(data));
-
-					                    $("#src").html(json.Url);
-
-
-					                    var templete = '<div class="file_item"><a href="#" id="src">' + json.FileName + '</a><a href="#none"> <img src="/Content/images/icon_delete.gif" alt="삭제" id="del"></a></div>';
-					                    $(".fileaddarea").append(templete);
-					                    $("#profile_url").val(json.Url);
-					                    $("#profile_name").val(json.FileName);
-
-					                    $("#del").on("click", function () {
-					                        $(this).parent().parent().remove();
-					                        $("#src").html('');
-					                        $("#file").val('');
-					                        $("#profile_url").val('');
-					                        $("#profile_name").val('');
-
-					                        $('#profile_filename').html("");
-					                        $('#profile_progress').html("");
-					                        $('#profile_progressBar').width(0);
-
-					                    });
-					                },
-
-					                error: function (error) {
-					                    //upload failed
-					                    alert("Failure!\n" + error.name + ": " + error.message);
-					                    $('#profile_filename').html("");
-					                    $('#profile_progress').html("");
-					                    $('#profile_progressBar').width(0);
-					                    //$('#progress').html("Failure!<br>" + error.name + ": " + error.message);
-					                }
-
-					            });
-
-					        });
-					    });
-						</script>
-					</li>		
-					<li class="long_ct ut f_long" id="AUDIO_YN">
-						<label>* 음원 <span class="help">* 음원파일('mp3') 50M 이하</span></label>
-						<br>
-						<input class="ct_txt" id="musicpp"  name="musicpp" placeholder="선택한 파일이 없습니다." type="file" value/>
-						<div id="music_filename"></div>
-						<div id="music_progress"></div>
-						<div id="music-progressBar" class="progressBar"></div>
-						<input id="music_ur1" name="music_url" type="hidden" vlaue/>
-						<input id="music_name" name="music_name" type="hidden" value/>
-						<script type="text/javascript">
-						    $(document).ready(function () {
-	
-						        $('input[name=musicpp]').change(function () {
-						            $(this).simpleUpload("/Audition/UploadFiles", {
-	
-						                    
-						                    allowedExts: ["mp3"],
-	
-						                    
-	
-						                maxFileSize: 50000000, //50MB in bytes
-						                start: function (file) {
-						                    //upload started
-						                    $('#music_filename').html(file.name);
-						                    $('#music_progress').html("");
-						                    $('#music_progressBar').width(0);
-						                },
-	
-						                progress: function (progress) {
-						                    //received progress
-						                    $('#music_progress').html("Progress: " + Math.round(progress) + "%");
-						                    $('#music_progressBar').width(progress + "%");
-						                },
-	
-						                success: function (data) {
-						                    //upload successful
-						                    //$('#progress').html("Success!<br>Data: " + JSON.stringify(data));
-	
-						                    var json = JSON.parse(JSON.stringify(data));
-	
-						                    $("#src").html(json.Url);
-	
-	
-						                    var templete = '<div class="file_item"><a href="#" id="src">' + json.FileName + '</a><a href="#none"> <img src="/Content/images/icon_delete.gif" alt="삭제" id="del"></a></div>';
-						                    $(".fileaddarea").append(templete);
-						                    $("#music_url").val(json.Url);
-						                    $("#music_name").val(json.FileName);
-	
-						                    $("#del").on("click", function () {
-						                        $(this).parent().parent().remove();
-						                        $("#src").html('');
-						                        $("#file").val('');
-						                        $("#music_url").val('');
-						                        $("#music_name").val('');
-	
-						                        $('#music_filename').html("");
-						                        $('#music_progress').html("");
-						                        $('#music_progressBar').width(0);
-	
-						                    });
-						                },
-	
-						                error: function (error) {
-						                    //upload failed
-						                    alert("Failure!\n" + error.name + ": " + error.message);
-						                    $('#music_filename').html("");
-						                    $('#music_progress').html("");
-						                    $('#music_progressBar').width(0);
-						                    //$('#progress').html("Failure!<br>" + error.name + ": " + error.message);
-						                }
-						            });
-						        });
-						    });
-						</script> 
-					</li>
-					<li class="long_ct cut no f_long" id="MOVIE_YN">
-						<label>* 영상<span class="help">*영상 파일('mp4'm 'mov', 'avi'), 50M 이하, 10분 이내</span></label>
-						<br>
-						<input class="ct_txt" id="filepp"  name="filepp" placeholder="선택한 파일이 없습니다." type="file" value/>
-						<div id="file_filename"></div>
-						<div id="file_progress"></div>
-						<div id="file-progressBar" class="progressBar"></div>
-						<input id="file_ur1" name="file_url" type="hidden" vlaue/>
-						<input id="file_name" name="file_name" type="hidden" value/>
-						<script type="text/javascript">
-					    $(document).ready(function () {
-
-					        $('input[name=filepp]').change(function () {
-					            $(this).simpleUpload("/Audition/UploadFiles", {
-
-					                    
-					                    allowedExts: ["mp4", "mov", "avi"],
-					                    
-
-					                maxFileSize: 50000000, //50MB in bytes
-					                start: function (file) {
-					                    //upload started
-					                    $('#file_filename').html(file.name);
-					                    $('#file_progress').html("");
-					                    $('#file_progressBar').width(0);
-					                },
-
-					                progress: function (progress) {
-					                    //received progress
-					                    $('#file_progress').html("Progress: " + Math.round(progress) + "%");
-					                    $('#file_progressBar').width(progress + "%");
-					                },
-
-					                success: function (data) {
-					                    //upload successful
-					                    //$('#progress').html("Success!<br>Data: " + JSON.stringify(data));
-
-					                    var json = JSON.parse(JSON.stringify(data));
-
-					                    $("#src").html(json.Url);
-
-
-					                    var templete = '<div class="file_item"><a href="#" id="src">' + json.FileName + '</a><a href="#none"> <img src="/Content/images/icon_delete.gif" alt="삭제" id="del"></a></div>';
-					                    $(".fileaddarea").append(templete);
-					                    $("#file_url").val(json.Url);
-					                    $("#file_name").val(json.FileName);
-
-					                    $("#del").on("click", function () {
-					                        $(this).parent().parent().remove();
-					                        $("#src").html('');
-					                        $("#file").val('');
-					                        $("#file_url").val('');
-					                        $("#file_name").val('');
-
-					                        $('#file_filename').html("");
-					                        $('#file_progress').html("");
-					                        $('#file_progressBar').width(0);
-
-					                    });
-					                },
-
-					                error: function (error) {
-					                    //upload failed
-					                    alert("Failure!\n" + error.name + ": " + error.message);
-					                    $('#file_filename').html("");
-					                    $('#file_progress').html("");
-					                    $('#file_progressBar').width(0);
-					                    //$('#progress').html("Failure!<br>" + error.name + ": " + error.message);
-					                }
-					            });
-					        });
-					    });
-						</script>			
-					</li>
-				</ul>
-				<p class="f_limit">
-        			* 본 오디션을 위해 제작된 녹음/영상물의 대한 저작권은 GND피엔터테인먼트에 귀속됩니다.
-					<br>
-    				 단, 창작성이 인정되며 저작권에 준하는 권리보호의 필요성이 인정되는 컨텐츠는 제외 됩니다.
-				</p>
-			</div>
+				
 			<div class="f_cont memberinfo" style="margin-bottom:15px;">
 				<p class="f_tt">3. 추가 정보</p>
 					<ul class="f_three">
 						<li class="long_ct cut">
 							<label>언어(상,중,하)</label>
-							<input class="ct_txt" id="lang" maxlength="20" name="lang" type="text" value/>
+							<input class="ct_txt" id="inf_lan" maxlength="20" name="inf_lan" type="text" value/>
 						</li>
 						<li class="long_ct cut">
 							<label>취미</label>
-							<input class="ct_txt" id="hobby" maxlength="20" name="hobby" type="text" value/>
+							<input class="ct_txt" id="inf_hobby" maxlength="20" name="inf_hobby" type="text" value/>
 						</li>
 						<li class="long_ct cut">
 							<label>특기</label>
-							<input class="ct_txt" id="specialize" maxlength="20" name="specialize" type="text" value/>
+							<input class="ct_txt" id="inf_spec" maxlength="20" name="inf_spec" type="text" value/>
 						</li>
 					</ul>
 				<div class="long_ct">
 					<label>자기소개</label>
-					<textarea class="ct_txt pr" cols="20" id="introduce" maxlength="500" name="introduce" rows="2" style="height:200px"></textarea>
+					<textarea class="ct_txt pr" cols="20" id="inf_intro" maxlength="500" name="inf_intro" rows="2" style="height:200px"></textarea>
 				</div>
 				<input id="emailauthyn" name="emailauthyn" type="hidden" value/>
 				<input id="agree" name="agree" type="hidden" value/>
-				<button type="submit" class="btn sub_ck" id="MainContent_btn_apply">지원하기</button>
+				<button type="submit" class="btn sub_ck" id="apply">지원하기</button>
 			</div>
 		</div>
 	</div>
-</form>	
+</form>
+</div>
+<!--  동의 누르면 회원가입 폼으로 감 start-->	
+<script>
+	$('#apply').click(function () {
+		if (!$('#confirm').is('checked')) {
+   			alert('지원이 완료되었습니다.');
+   			location.href="../main/index.jsp";
+    	return false;
+    	}
+	});
+</script>
+<!-- 동의 누르면 회원가입 폼으로 감 end-->
+<!-- 중복 이메일 확인 start -->
+	<script>
+		var canUseId=false;
+		//중복 확인 버튼을 눌렀을때 실행할 함수 등록
+		$("#checkBtn").on("click", function(){
+			//입력한 아이디를 읽어온다.
+			var inputId=$("#email").val();
+			//ajax 를 이용해서 서버에 보낸후 결과를 응답 받는다.
+			$.ajax({
+				method:"GET",
+				url:"checkid.jsp",
+				data:"inputId="+inputId,
+				success:function(data){
+					//data => {isExist:true} or {isExist:false} 인 object 이다.
+					if(data.isExist){//이미 존재하는 아이디임으로 사용 불가
+						$("#checkResult")
+						.text("사용불가")
+						.css("color","red");
+						//아이디가 사용 불가 하다고 표시한다.
+						canUseId=false;
+					}else{//사용가능 
+						$("#checkResult")
+						.text("사용가능")
+						.css("color","green");
+						//아이디가 사용 가능 하다고 표시한다.
+						canUseId=true;
+					}
+	 			}
+			});
+			//form 안에 있는 일반 버튼을 눌러도 폼이 전송 되기 때문에 폼 전송을 막아준다.
+			return false;
+		});
+		//폼에 submit 이벤트가 일어났을때 호출될 함수 등록 
+		$("#myForm").on("submit", function(){
+			
+			if(!canUseId){//사용 불가한 아이디 이면 
+				alert("동일한 이메일로 가입한 정보가 있습니다.");
+				return false; //폼 제출 막기 
+			}
+	});
+		</script>
+<!-- 중복 이메일 확인 end -->
+<!-- 비밀번호 확인 Start -->
+<script>
+	//id 가 myForm  인 곳에 submit 이벤트가 일어 났을때 실행할 함수 등록 
+	$("#frm").on("submit", function(){
+		//입력한 새로운 비밀번호 2개를 읽어와서 
+		var pwd1=$("#password").val();
+		var pwd2=$("#confirm_password").val();
+		//만일 일치하지 않으면 
+		if(pwd1 != pwd2){
+			//알림을 띄우고 
+			alert("비밀번호가 일치 하지 않아요");
+			//비밀번호 입력란을 초기화 하고 포커스도 주고 
+			$("#password").val("").focus();
+			$("#confirm_password").val("");
+			//폼전송을 막는다. 
+			return false;
+		}
+	});
+</script>
+<!-- 비밀번호 확인 end -->
+<div class="footer" style="background-color:#202020;">
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col mt-5">
+				<a href="index.jsp">
+					<img src="${pageContext.request.contextPath }/image/L_gnd.png" alt="GnD_Logo_Image" />
+				</a>
+			</div>
+			<div class="col mt-5">
+				<div class="container">
+					<h3 class="title" style="color:#ffffff; font-size:12px;">
+						<span>CONTACT US</span>
+					</h3>
+				</div>
+				<div class="container">
+					<a href="mailto:clairiamport@gmail.com" style="color:#777777; font-size:12px;">GnDMusic.korea@gmail.com</a>
+				</div>
+			</div>
+			<div class="col mt-5">
+				<div class="container">
+					<h3 class="title"  style="color:#ffffff; font-size:12px;">
+						<span>TERMS AND CONDITIONS</span>
+					</h3>
+				</div>
+				<div class="container">
+					<p>
+						<a href="#" target="_blank" style="color:#777777; font-size:12px;">이용약관</a>
+					</p>
+					<p>
+						<a href="#" target="_blank" style="color:#777777; font-size:12px;">개인정보 처리방침</a>
+					</p>
+					<p>
+						<a href="#" target="_blank" style="color:#777777; font-size:12px;">개인정보 처리방침 - 입사지원자용</a>
+					</p>
+				</div>
+			</div>
+			<div class="col mt-5">
+				<div class="container">
+					<h3 class="title"  style="color:#ffffff; font-size:12px;">
+						<span>SUBSCRIPTION</span>
+					</h3>
+				</div>
+				<div class="container">
+					<p>
+						<a href="#" target="_blank" style="color:#777777; font-size:12px;">뉴스레터 구독</a>
+					</p>
+					<p>
+						<a href="#" target="_blank" style="color:#777777; font-size:12px;">블로그 방문</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer" style="background-color:#171717;">
+	<div class="container">
+		<div class="row">
+			<div class="col mt-3" style="color:#898989; font-size:12px;">
+				<p>COPYRIGHT © 2020 GND MUSIC KOREA. All Rights Reserved.</p>
+			</div>
+			<div class="col mt-3">
+				<div class="social-icons float-right">
+					<a href="https://www.facebook.com/warnermusickorea/">
+						<i class="fab fa-facebook-f" style="color: white;"></i>
+					</a>
+					<a href="https://www.instagram.com/warnermusickorea/">
+						<i class="fab fa-youtube" style="color: white;"></i>
+					</a>
+					<a href="https://www.youtube.com/user/WMK2011">
+						<i	class="fab fa-instagram" style="color: white;"></i>
+					</a>
+					<a href="https://twitter.com/Warner_Music_Kr">
+						<i	class="fab fa-twitter" style="color: white;"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 </body>
 </html>
