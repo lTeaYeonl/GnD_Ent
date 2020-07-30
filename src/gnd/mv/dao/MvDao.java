@@ -64,7 +64,7 @@ public class MvDao {
          //Connection 객체의 참조값 얻어오기 
          conn = new DbcpBean().getConn();
          //실행할 sql 문 준비하기
-         String sql = "SELECT n_mv.mv_link, n_mv.at_id, image.image_name"
+         String sql = "SELECT n_mv.mv_link, n_mv.at_id, image.img_name"
                + " FROM n_mv, image"
                + " WHERE image.page_id=3" 
                + " AND image.at_id=artist.at_id";
