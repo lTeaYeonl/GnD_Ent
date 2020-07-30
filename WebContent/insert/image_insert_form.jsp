@@ -39,6 +39,7 @@
 					<ul class="list-group">
 						<li class="list-group-item">1 : Main</li>
 						<li class="list-group-item">2 : Artist-Info</li>
+						<li class="list-group-item">3 : Music-Video</li>
 					</ul>
 				</div>
 				<button type="submit" class="btn btn-primary">저장</button>
