@@ -28,19 +28,13 @@
 				<div class="form-group">
 					<label for="at_id">※ 아티스트 번호</label>
 					<input class="form-control"  type="text" name="at_id" id="at_id" />
-					<ul class="list-group">
-						<li class="list-group-item">1 : Ed-Sheeran</li>
-						<li class="list-group-item">2 : Anne-Marie</li>
-					</ul>
+					<!-- artist list -->
+					<jsp:include page="artist_list.jsp"></jsp:include>
+					<!-- artist list close -->
 				</div>
 				<div class="form-group">
 					<label for="page_id">※ 페이지 번호</label>
 					<input class="form-control"  type="text" name="page_id" id="page_id" />
-					<ul class="list-group">
-						<li class="list-group-item">1 : Main</li>
-						<li class="list-group-item">2 : Artist-Info</li>
-						<li class="list-group-item">3 : Music-Video</li>
-					</ul>
 				</div>
 				<button type="submit" class="btn btn-primary">저장</button>
 				<button type="reset" class="btn btn-danger">초기화</button>
