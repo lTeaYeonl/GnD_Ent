@@ -1,5 +1,5 @@
-<%@page import="informdto.InformDto"%>
 <%@page import="informdao.InformDao"%>
+<%@page import="informdto.InformDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
@@ -57,7 +57,6 @@
 <%if(isSuccess){ %>
 	<p> 
 		<strong><%=inf_name %></strong> 회원님 가입 되었습니다. 
-
 	</p>
 	location.href="../main/index.jsp";
 <%}else{ %>
