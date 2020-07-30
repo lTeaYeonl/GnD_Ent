@@ -39,7 +39,7 @@
 				List<ImageDto> list = ImageDao.getinstance().getList(new ImageDto());
 			%>
 			<%if(list.size()!=0){ %>
-			<div class="container-fluid px-0">
+			<div class="container-fluid px-0" id="carouselimage">
 				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 					<ol class="carousel-indicators">
 						<%for (int i=0; i<list.size(); i++){ %>
@@ -458,11 +458,25 @@
 		<!-- Footer -->
 		<jsp:include page="../bottom/footer.jsp"></jsp:include>
 		<!-- Footer Close -->
+		<!-- Fixed Button -->
+			<a href="#" id="topbutton"style="position:fixed; bottom: 10%; right: 10%; display:none;">
+				<button class="btn btn-dark">
+					<i class="fas fa-chevron-up"></i>
+				</button>
+			</a>
+		<!-- Fixed Button Close -->
 	</div>
 	<!-- Main Page Close -->
 	<!-- Script -->
 	<script src="${pageContext.request.contextPath }/js/jquery-3.5.1.js"></script>
 	<script src="${pageContext.request.contextPath }/js/bootstrap.js"></script>
+	<script>
+		$("#carouselimage").mouseenter(function(){
+			$("#topbutton").hide();
+		}).mouseleave(function(){
+			$("#topbutton").show();
+		});
+	</script>
 	<!-- Script Close -->
 </body>
 </html>
