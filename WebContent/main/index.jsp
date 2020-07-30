@@ -19,6 +19,11 @@
 	href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
 	integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
 	crossorigin="anonymous /">
+<style>
+	html {
+	scroll-behavior: smooth;
+	}
+</style>
 </head>
 <body>
 	<!-- Main Page -->
@@ -122,7 +127,7 @@
                 </div>
             	<!-- New Music Video -->
 				<!-- Latest News -->
-				<div class="container mt-5">
+				<div class="container mt-5" id="news">
 					<div class="container">
 						<p style="font-size: 12px; color: #a3a3a3; line-height: 1; text-align: center; letter-spacing: 0px;">
 							새로운 소식
@@ -235,7 +240,7 @@
 			</div>
 			<!-- Official Channel Close -->
 			<!-- PlayList -->
-			<div class="container">
+			<div class="container" id="playlist">
 				<div class="mt-5">
 					<div class="container">
 						<p
@@ -286,7 +291,7 @@
 			</div>
 			<!-- PlayList Close -->
 			<!-- Artist -->
-			<div class="container mt-5">
+			<div class="container mt-5" id="artist">
 				<div class="mt-5">
 					<div class="container">
 						<div class="col mt-5">
@@ -357,7 +362,7 @@
 			</div>
 			<!-- Artist Close-->
 			<!-- News Letter -->
-			<div class="container mt-5" style="text-align: center">
+			<div class="container mt-5" id="newsletter" style="text-align: center">
 				<div class="row">
 					<div class="col-1"></div>
 					<div class="col">
