@@ -29,7 +29,7 @@ public class MvDao {
          //실행할 sql 문 준비하기 
          String sql = "INSERT INTO n_mv"
                + " (mv_id, mv_link, at_id)"
-               + " VALUES(n_mv_seq.NEXTVAL, ?, ?,)";
+               + " VALUES(n_mv_seq.NEXTVAL, ?, ?)";
          pstmt = conn.prepareStatement(sql);
          //? 에 바인딩 할 값이 있으면 바인딩한다.
          pstmt.setString(1, dto.getLink());
@@ -67,7 +67,7 @@ public class MvDao {
          String sql = "SELECT n_mv.mv_link, n_mv.at_id, image.img_name"
                + " FROM n_mv, image"
                + " WHERE image.page_id=3" 
-               + " AND image.at_id=artist.at_id";
+               + " AND image.at_id=n_mv.at_id";
          pstmt = conn.prepareStatement(sql);
          //select 문 수행하고 결과 받아오기 
          rs = pstmt.executeQuery();
