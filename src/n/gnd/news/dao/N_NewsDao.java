@@ -27,7 +27,7 @@ public class N_NewsDao {
 			//실행할 sql 문 준비하기 
 			String sql = "INSERT INTO m_news"
 					+ " (news_id, artist_id, artist_name, artist_e_name, news_writer, news_title, news_content, news_regdate, image_name)"
-					+ " VALUES(m_nuews_seq.NEXTVAL, ?, ?, ?, ?, ?, ?, SYSDATE, ?)";
+					+ " VALUES(m_news_seq.NEXTVAL, ?, ?, ?, ?, ?, ?, SYSDATE, ?)";
 			pstmt = conn.prepareStatement(sql);
 			//? 에 바인딩 할 값이 있으면 바인딩한다.
 			pstmt.setString(1, dto.getArtist_id());
