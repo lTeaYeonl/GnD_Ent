@@ -35,8 +35,7 @@
 			</div>
 			<div class="row">
 				<div class="col-3">
-					<a
-						href="${pageContext.request.contextPath}/artist/artist_list/artist_info/at_tones-and-i.jsp">
+					<a href="${pageContext.request.contextPath}/artist/artist_list/artist_info/at_tones-and-i.jsp">
 						<img class="img-fluid"
 						src="${pageContext.request.contextPath }/image/AT_tones-and-i_thumb.jpg"
 						alt="Tones-And_I_Thumbnail_Image" />

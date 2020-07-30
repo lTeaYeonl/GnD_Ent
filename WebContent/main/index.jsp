@@ -91,7 +91,7 @@
 						List<MvDto> mvlist=MvDao.getinstance().getList(new MvDto());
 	               %>
 	               <%for(int i=0; i<mvlist.size();i++) {%>
-	               <% console. %> %>
+	               
                		<div class="col-4">
                			<button type="button" class="btn btn-default" data-toggle="modal" data-target="#mvModal<%=i %>">
                    			<img class="img-fluid" src="${pageContext.request.contextPath }/image/<%=mvlist.get(i).getImg_name() %>" alt="<%=mvlist.get(i).getImg_name() %>" />
