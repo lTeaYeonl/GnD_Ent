@@ -216,9 +216,8 @@
 								엔터테인먼트 공식 채널</p>
 						</div>
 						<div class="col-2">
-							<a href="https://www.facebook.com/warnermusickorea/"> <i
-								class="fab fa-facebook-square"
-								style="font-size: 4vw; color: black;"></i>
+							<a href="https://www.facebook.com/warnermusickorea/">
+							<i class="fab fa-facebook-square" style="font-size: 4vw; color: black;"></i>
 							</a>
 						</div>
 						<div class="col-2">
