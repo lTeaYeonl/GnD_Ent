@@ -5,7 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>terms</title>
-<<<<<<< HEAD
 <script src="cpath"></script>
 <link rel="stylesheet" href="${pageContext.request.contextPath }/css/bootstrap.css" />
  <script src="${pageContext.request.contextPath }/js/jquery-3.5.1.js"></script>
@@ -26,13 +25,10 @@
 
 	</script>
 	<!-- 버튼 전체선택 & 해제 기능 end -->
-=======
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath }/css/bootstrap.css" />
 <script src="${pageContext.request.contextPath }/js/jquery-3.5.1.js"></script>
 <script src="${pageContext.request.contextPath }/js/bootstrap.js"></script>
-
->>>>>>> refs/heads/hongil
 <style>
 .main {
 	position: relative;
@@ -42,8 +38,6 @@
 	overflow: hidden;
 	padding-bottom: 0;
 }
-
-<<<<<<< HEAD
     #header_main {
     position: absolute;
     max-width: 1200px;
@@ -109,7 +103,6 @@
 	    overflow: hidden;
 	    padding: 50px 0 20px 0;
 	}
-=======
 ;
 ul, li {
 	list-style: none;
@@ -121,8 +114,6 @@ ul, li {
 	padding-inline-start: 40px;
 	list-style: none;
 }
->>>>>>> refs/heads/hongil
-
 ;
 img {
 	border: none;
@@ -153,8 +144,6 @@ input {
 	overflow: hidden;
 	padding: 50px 0 20px 0;
 }
-
-<<<<<<< HEAD
  	.terms .pp_stt span {
          color: #009be6;
          margin-left: 3px;
@@ -167,7 +156,6 @@ input {
         margin: 10px 0 60px 0;
         text-align: left;
     }
-=======
 .terms .pp_tt {
 	position: relative;
 	width: 100%;
@@ -177,19 +165,14 @@ input {
 	color: #373737;
 	padding-bottom: 30px;
 }
->>>>>>> refs/heads/hongil
-
-<<<<<<< HEAD
     .terms .ck_box.all_ok {
         padding-top: 40px;
         border-top: 1px solid #eee;
         }
-=======
 .terms .pp_tt span {
 	color: #009be6;
 	margin-left: 3px;
 }
->>>>>>> refs/heads/hongil
 
 .terms .pp_tt:before {
 	content: '';
@@ -314,7 +297,6 @@ input {
 </style>
 </head>
 <body>
-<<<<<<< HEAD
 <div class="main">
 	<!-- 화면 상단에 로고와 함께 화면이동(아직 미구현) -->
 	<div class="header_main">
@@ -326,18 +308,15 @@ input {
 
 	<div class="sub_bg">
 		<div class="bk_bg"></div>
-=======
 	<div class="main">
 		<!-- Top Navigation -->
 		<jsp:include page="../top/navbar.jsp"></jsp:include>
 		<!-- Top Navigation Close -->
 		<div class="sub_bg">
 			<div class="bk_bg"></div>
->>>>>>> refs/heads/hongil
 			<ul class="sub_top">
 				<li class="sub_tt">AUDITION</li>
 			</ul>
-<<<<<<< HEAD
 	</div>
 	<!-- 개인 약관 폼 -->
 	<form action="" method="post" name="frm" id="frm" >
@@ -352,7 +331,6 @@ input {
 				<div class="pp_tt">
 					</br>이용약관
 					<span>(필수)</span>
-=======
 		</div>
 		<!-- 개인 약관 폼 -->
 		<form action="" method="post" name="frm" id="frm">
@@ -362,7 +340,6 @@ input {
 				<div class="join">
 					<!-- 약관동의 -->
 					회원가입 지원을 위해서 이용약관 및 개인정보 수집 및 이용에 대한 안내를 읽고 동의해 주세요.
->>>>>>> refs/heads/hongil
 				</div>
 				<div class="terms">
 					<br>
@@ -414,7 +391,6 @@ GND 오디션사이트에 오신 것을 환영합니다. GND 온라인 오디션
 2. 본 이용약관에 대한 동의는 이용신청 당시 해당 당 사이트의 '동의함' 버튼을 누름으로써 의사표시를 합니다.
  "
 				</textarea>
-<<<<<<< HEAD
 				<p class="ck_box">
 					<label>
 					<input type="checkbox" class="chk" id="c1" name="chk" value="1" />
@@ -428,7 +404,6 @@ GND 오디션사이트에 오신 것을 환영합니다. GND 온라인 오디션
 				</div>
 				<textarea class="pp_stt">
 "주식회사 GND엔터테인먼트(이하 “회사”)는 다음과 같이 귀하의 개인정보를 수집 및 이용합니다.
-=======
 					<p class="ck_box">
 						<label> <input type="checkbox" class="chk" id="c1"
 							name="chk" value="1" /> <span></span> 동의 합니다
@@ -440,7 +415,6 @@ GND 오디션사이트에 오신 것을 환영합니다. GND 온라인 오디션
 					</div>
 					<textarea class="pp_stt">
 "GND엔터테인먼트(이하 “회사”)는 다음과 같이 귀하의 개인정보를 수집 및 이용합니다.
->>>>>>> refs/heads/hongil
 
 - 수집하는 개인정보의 항목: 국적, 현 거주지역, 비밀번호, 성명, 성별, 생년월일, 신장, 체중, 자택 전화번호, 휴대 전화번호, 이메일, 직업/회사명 또는 학교/학교명, SNS주소, 주소, 서비스 이용기록, 접속 로그, 쿠키, 접속 IP 정보
 
@@ -464,7 +438,6 @@ GND 오디션사이트에 오신 것을 환영합니다. GND 온라인 오디션
 
 귀하는 위와 같은 개인정보의 수집 및 이용에 대해 동의를 거부할 수 있으며, 이 경우에도 서비스 이용은 가능하나, 오디션 지원서 제출이 제한되거나 해당 항목들이 합격 여부를 검토함에 있어 고려되지 않을 수 있음을 알려드립니다."	
 				</textarea>
-<<<<<<< HEAD
 				<p class="ck_box">
 					<label>
 					<input type="checkbox" class="chk" name="chk" value="3" />
@@ -485,7 +458,6 @@ GND 오디션사이트에 오신 것을 환영합니다. GND 온라인 오디션
 		</div>
 	</form>
 </div>
-=======
 					<p class="ck_box">
 						<label> <input type="checkbox" class="chk" name="chk"
 							id="c3" value="3" /> <span></span> 동의합니다.
@@ -540,6 +512,5 @@ GND 오디션사이트에 오신 것을 환영합니다. GND 온라인 오디션
 			}
 		});
 	</script>
->>>>>>> refs/heads/hongil
 </body>
 </html>
