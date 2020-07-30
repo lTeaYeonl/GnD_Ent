@@ -161,3 +161,4 @@ public class InformDto {
 		this.inf_spec = inf_spec;
 		this.inf_intro = inf_intro;
 	}
+}
