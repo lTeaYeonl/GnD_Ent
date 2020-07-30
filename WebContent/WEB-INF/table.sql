@@ -8,7 +8,6 @@ CREATE TABLE image(
 
 CREATE SEQUENCE image_seq;
 
-<<<<<<< HEAD
 -- 아티스트의 정보를 저장할 테이블
 CREATE TABLE artist(
 	at_id NUMBER PRIMARY KEY,
@@ -27,7 +26,10 @@ CREATE TABLE artist(
 	twitter_link VARCHAR2(255) NOT NULL,
 	youtube_link VARCHAR2(255) NOT NULL,
 	official_site VARCHAR2(255) NOT NULL
-=======
+);
+
+CREATE SEQUENCE artist_seq;
+
 CREATE TABLE inform(
 	inf_name VARCHAR2(100) PRIMARY KEY,
 	inf_email VARCHAR2(100) NOT NULL,
@@ -48,10 +50,7 @@ CREATE TABLE inform(
 	inf_hobby VARCHAR2(100),
 	inf_spec VARCHAR2(255),
 	inf_intro CLOB
->>>>>>> refs/heads/hongil
 );
-
-CREATE SEQUENCE artist_seq;
 
 -- 최신 뮤직비디오의 정보를 저장할 테이블
 CREATE TABLE n_mv(

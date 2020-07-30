@@ -87,7 +87,7 @@
 			<!-- New Music Video -->
             <div class="container mt-5">
                <div class="container">
-                  <p   style="font-size: 12px; color: #a3a3a3; line-height: 1; text-align: center; letter-spacing: 0px;">
+                  <p style="font-size: 12px; color: #a3a3a3; line-height: 1; text-align: center; letter-spacing: 0px;">
                      최신뮤직비디오
                   </p>
                   <h3 style="font-size: 30px; line-height: 1; text-align: center; letter-spacing: 0px;">
@@ -128,6 +128,14 @@
                      	</div>
                    	</div>
 	               <%} %>
+	               <div class="col-4">
+	               		<div class="container text-center">
+	               			<div class="container" style="margin-top: 25%;">
+								<a href="${pageContext.request.contextPath }/insert/image_insert_form.jsp">이미지 추가하기</a><br />
+		               		<i class="fas fa-plus"></i>
+	               			</div>
+	               	</div>
+	               </div>
                 </div>
             	<!-- New Music Video -->
 				<!-- Latest News -->
