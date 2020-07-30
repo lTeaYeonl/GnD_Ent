@@ -27,13 +27,13 @@
 				</div>
 				<div class="container">
 					<p>
-						<a href="#" target="_blank" style="color:#777777; font-size:12px;">이용약관</a>
+						<a href="${pageContext.request.contextPath }/tac/terms_and_conditions.jsp" target="_blank" style="color:#777777; font-size:12px;">이용약관</a>
 					</p>
 					<p>
-						<a href="#" target="_blank" style="color:#777777; font-size:12px;">개인정보 처리방침</a>
+						<a href="${pageContext.request.contextPath }/tac/privacy-policy.jsp" target="_blank" style="color:#777777; font-size:12px;">개인정보 처리방침</a>
 					</p>
 					<p>
-						<a href="#" target="_blank" style="color:#777777; font-size:12px;">개인정보 처리방침 - 입사지원자용</a>
+						<a href="${pageContext.request.contextPath }/tac/privacy-policy.jsp" target="_blank" style="color:#777777; font-size:12px;">개인정보 처리방침 - 입사지원자용</a>
 					</p>
 				</div>
 			</div>
@@ -45,17 +45,16 @@
 				</div>
 				<div class="container">
 					<p>
-						<a href="#" target="_blank" style="color:#777777; font-size:12px;">뉴스레터 구독</a>
+						<a href="#" style="color:#777777; font-size:12px;">뉴스레터 구독</a>
 					</p>
 					<p>
-						<a href="#" target="_blank" style="color:#777777; font-size:12px;">블로그 방문</a>
+						<a href="#" style="color:#777777; font-size:12px;">블로그 방문</a>
 					</p>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-
 <div class="footer" style="background-color:#171717;">
 	<div class="container">
 		<div class="row">

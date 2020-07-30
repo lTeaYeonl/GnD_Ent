@@ -35,6 +35,9 @@
 				<div class="form-group">
 					<label for="page_id">※ 페이지 번호</label>
 					<input class="form-control"  type="text" name="page_id" id="page_id" />
+					<!-- page list -->
+					<jsp:include page="page_list.jsp"></jsp:include>
+					<!-- page list close -->
 				</div>
 				<button type="submit" class="btn btn-primary">저장</button>
 				<button type="reset" class="btn btn-danger">초기화</button>
