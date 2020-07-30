@@ -15,6 +15,7 @@
 	integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
 	crossorigin="anonymous /">
 <style>
+
 .img-fluid {
 	max-width: 100%;
 	height: auto;
@@ -23,9 +24,9 @@
 	display: block;
 }
 
-.container {
-	margin-top: 100px;
-	margin-bottom: 100px;
+.container-artistab {
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 #img_container img {
@@ -37,7 +38,7 @@
 </head>
 <body>
 	<!-- Top Navigation -->
-	
+	<jsp:include page="/top/navbar.jsp"></jsp:include>
 	<!-- Top Navigation Close -->
 	<!-- top image -->
 	<div class="wrap">
@@ -47,11 +48,11 @@
 	</div>
 	<!-- top image close -->
 	<!-- artist info -->
-	<div class="container">
+	<div class="container-artistab">
 		<div class="row">
 			<div class="col-sm-8">
 				<h1 style="text-align: left">
-					<strong>김하온(Kim haon)</strong>
+					<strong>톤즈 앤 아이(Tones And I)</strong>
 				</h1>
 				<p style="text-align: left">김하온은 고등래퍼2 우승자다 그리고 나는 집에 가고싶다 격하게</p>
 			</div>
@@ -116,7 +117,7 @@
 	<!-- artist info close-->
 
 	<!-- youtube_video -->
-	<div class="container">
+	<div class="container-artistab">
 		<div class="row">
 			<iframe width="1753" height="776"
 				src="https://www.youtube.com/embed/Fm5iP0S1z9w?rel=0&amp;autoplay=1&amp;loop=1;playlist=Fm5iP0S1z9w"
@@ -128,7 +129,7 @@
 	<!-- youtube_video close -->
 
 	<!-- artist_ab_link -->
-	<div class="container">
+	<div class="container-artistab">
 		<h3
 			style="font-size: 12px; color: #a1a1a1; line-height: 1; text-align: center; font-family: Abril Fatface; font-weight: 400; font-style: normal; letter-spacing: 1px;">아티스트
 			음반</h3>
@@ -146,12 +147,28 @@
 	<!-- artist_ab_link close-->
 
 	<!-- artist_ab_news -->
-	<div class="container">
+	<div class="container-artistab">
 		<h3
-			style="font-size: 12px; color: #a1a1a1; line-height: 1; text-align: center; font-family: Abril Fatface; font-weight: 400; font-style: normal; letter-spacing: 1px;">최신뉴스</h3>
+			style="font-size: 12px; color: #a1a1a1; line-height: 1; text-align: center; font-family: Abril Fatface; font-weight: 400; font-style: normal; letter-spacing: 1px;">최신 뉴스</h3>
 		<h3
 			style="font-size: 30px; color: #000000; line-height: 1; text-align: center; font-family: Abril Fatface; font-weight: 400; font-style: normal; letter-spacing: 1px;">News</h3>
+		<div id="img_container col-sm-3">
+			<a
+				href="${pageContext.request.contextPath}/artist/at_news/at_news_tones-and-i.jsp">
+				<img class="img-fluid"
+				src="${pageContext.request.contextPath }/image/AT_Tones-and-i_ab.jpg"
+				alt="tones_ab_img" />
+			</a>
+		</div>
 	</div>
 	<!-- artist_ab_news close-->
+	
+	<!-- Footer -->
+	<jsp:include page="/bottom/footer.jsp"></jsp:include>
+	<!-- Footer Close -->
+	<!-- Script -->
+	<script src="${pageContext.request.contextPath }/js/jquery-3.5.1.js"></script>
+	<script src="${pageContext.request.contextPath }/js/bootstrap.js"></script>
+	<!-- Script Close -->
 </body>
 </html>

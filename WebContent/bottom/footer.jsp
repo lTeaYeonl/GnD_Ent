@@ -49,13 +49,14 @@
 					</p>
 					<p>
 						<a href="#" target="_blank" style="color:#777777; font-size:12px;">블로그 방문</a>
-						</p>
-					</div>
+					</p>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="footer" style="background-color:#171717;">
+</div>
+
+<div class="footer" style="background-color:#171717;">
 	<div class="container">
 		<div class="row">
 			<div class="col mt-3" style="color:#898989; font-size:12px;">

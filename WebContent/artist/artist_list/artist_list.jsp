@@ -18,6 +18,9 @@
 </style>
 </head>
 <body>
+	<!-- Top Navigation -->
+	<jsp:include page="/top/navbar.jsp"></jsp:include>
+	<!-- Top Navigation Close -->
 	<header></header>
 	<div class="container"
 		style="padding-top: 234px; padding-bottom: 234px; font-size: large;">
@@ -95,5 +98,12 @@
 			</div>
 		</div>
 	</div>
+	<!-- Footer -->
+	<jsp:include page="/bottom/footer.jsp"></jsp:include>
+	<!-- Footer Close -->
+	<!-- Script -->
+	<script src="${pageContext.request.contextPath }/js/jquery-3.5.1.js"></script>
+	<script src="${pageContext.request.contextPath }/js/bootstrap.js"></script>
+	<!-- Script Close -->
 </body>
 </html>
