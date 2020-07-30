@@ -24,11 +24,11 @@
 				<label for="officialchannel_icon_name">※ 공식 채널 아이콘 코드</label>
 				<input type="text" class="form-control" name="officialchannel_icon_name" id="officialchannel_icon_name"/>
 				<ul class="list-group">
-					<li class="list-group-item">YouTube : " i class="fab fa-youtube" style="font-size: 4vw; color: black;" "</li>
-					<li class="list-group-item">Instagram : " i class="fab fa-instagram" style="font-size: 4vw; color: black;" "</li>
-					<li class="list-group-item">FaceBook : " i class="fab fa-facebook-square" style="font-size: 4vw; color: black;" "</li>
-					<li class="list-group-item">Twitter : " i class="fab fa-twitter" style="font-size: 4vw; color: black;" "</li>
-					<li class="list-group-item">Google : " i class="fab fa-google" style="font-size: 4vw; color: black;" "</li>
+					<li class="list-group-item">YouTube : youtube</li>
+					<li class="list-group-item">Instagram : instagram</li>
+					<li class="list-group-item">FaceBook : facebook</li>
+					<li class="list-group-item">Twitter : twitter</li>
+					<li class="list-group-item">Google : google</li>
 				</ul>
 			</div>
 			<button type="submit" class="btn btn-primary">저장</button>
