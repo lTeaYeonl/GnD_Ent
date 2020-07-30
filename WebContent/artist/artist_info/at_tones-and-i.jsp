@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>/artist_info/at_kim.jsp</title>
+<title>/artist_info/at_tones-and-i.jsp</title>
 <!-- css 로딩 -->
 <link rel="stylesheet" href="/GnD_Ent/css/bootstrap.css" />
 <!-- fontawesome 에서 제공해주는 icon을 사용하기 위해 로딩  -->
@@ -94,7 +94,7 @@
 	<h3 style="font-size: 12px;color: #a1a1a1;line-height: 1;text-align: center;font-family:Abril Fatface;font-weight:400;font-style:normal;letter-spacing: 1px;">아티스트 음반</h3>
 	<h3 style="font-size: 30px;color: #000000;line-height: 1;text-align: center;font-family:Abril Fatface;font-weight:400;font-style:normal;letter-spacing: 1px;">Discography</h3>
 	<div id="img_container">
-		<a href="${pageContext.request.contextPath}/artist/artist_ab/at_ab_kim.jsp">
+		<a href="${pageContext.request.contextPath}/artist/artist_ab/at_ab_tones-and-i.jsp">
 			<img class="img-fluid" src="${pageContext.request.contextPath }/image/AT_Tones-and-i_ab.jpg" alt="tones_ab_img" />
 		</a>
 	</div>
