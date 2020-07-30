@@ -58,9 +58,12 @@
 						<div class="carousel-item">
 					<%} %>
 							<img class="d-block w-100" src="${pageContext.request.contextPath }/image/<%=list.get(i).getName() %>" alt="<%=i %> slide" />
-							<div class="carousel-caption d-none d-md-block">
-								<h1><%=list.get(i).getE_name()%></h1>
-								<p><%=list.get(i).getK_name()%></p>
+							<div class="carousel-caption d-none d-md-block" style="bottom: 15%">
+								<h1 style="bottom: 10%;"><%=list.get(i).getE_name()%></h1>
+								<p style="bottom: 10%;"><%=list.get(i).getK_name()%></p>
+								<button style="color: white; bottom: 10%;" type="button" class="btn btn-secondary" onclick="location.href='cpath.jsp?<%=list.get(i).getAt_id()%>'">
+									더 보기
+								</button>
 							</div>
 						</div>
 					<%} %>
@@ -148,7 +151,7 @@
 									<p class="card-text">2019 국내 음원차트 1위, 앤-마리 새 싱글 ‘To Be
 										Young’ 7월 17일 정오 발매 ‘국민 팝스타’ 앤-마리(Anne-Marie)가 7월 17일 정오에 새 싱글
 										‘To Be Young’을 발매한다....</p>
-									<a href="#" class="btn btn-primary">더보기 ></a>
+									<a href="" class="btn btn-primary">더보기 ></a>
 								</div>
 							</div>
 						</div>
@@ -164,7 +167,7 @@
 									<p class="card-text">2019 국내 음원차트 1위, 앤-마리 새 싱글 ‘To Be
 										Young’ 7월 17일 정오 발매 ‘국민 팝스타’ 앤-마리(Anne-Marie)가 7월 17일 정오에 새 싱글
 										‘To Be Young’을 발매한다....</p>
-									<a href="#" class="btn btn-primary">더보기 ></a>
+									<a href="" class="btn btn-primary">더보기 ></a>
 								</div>
 							</div>
 						</div>
@@ -180,7 +183,7 @@
 									<p class="card-text">2019 국내 음원차트 1위, 앤-마리 새 싱글 ‘To Be
 										Young’ 7월 17일 정오 발매 ‘국민 팝스타’ 앤-마리(Anne-Marie)가 7월 17일 정오에 새 싱글
 										‘To Be Young’을 발매한다....</p>
-									<a href="#" class="btn btn-primary">더보기 ></a>
+									<a href="" class="btn btn-primary">더보기 ></a>
 								</div>
 							</div>
 						</div>
@@ -189,7 +192,7 @@
 			</div>
 			<div class="container" style="text-align: center;">
 				<div class="col mt-5">
-					<a href="#" style="color: gray">전체보기 <i
+					<a href="" style="color: gray">전체보기 <i
 						class="fas fa-caret-right"></i></a>
 				</div>
 			</div>
@@ -304,49 +307,49 @@
 					</div>
 					<div class="row">
 						<div class="col-3">
-							<a href="#"> <img class="img-fluid"
+							<a href=""> <img class="img-fluid"
 								src="${pageContext.request.contextPath }/image/AT_tones-and-i_thumb.jpg"
 								alt="Tones-And_I_Thumbnail_Image" />
 							</a>
 						</div>
 						<div class="col-3">
-							<a href="#"> <img class="img-fluid"
+							<a href=""> <img class="img-fluid"
 								src="${pageContext.request.contextPath }/image/AT_jamie_thumb.jpg"
 								alt="Tones-And_I_Thumbnail_Image" />
 							</a>
 						</div>
 						<div class="col-3">
-							<a href="#"> <img class="img-fluid"
+							<a href=""> <img class="img-fluid"
 								src="${pageContext.request.contextPath }/image/AT_Lizzo_thumb.jpg"
 								alt="Tones-And_I_Thumbnail_Image" />
 							</a>
 						</div>
 						<div class="col-3">
-							<a href="#"> <img class="img-fluid"
+							<a href=""> <img class="img-fluid"
 								src="${pageContext.request.contextPath }/image/AT_AnneMarie_thumb.jpg"
 								alt="Tones-And_I_Thumbnail_Image" />
 							</a>
 						</div>
 						<div class="col-3">
-							<a href="#"> <img class="img-fluid"
+							<a href=""> <img class="img-fluid"
 								src="${pageContext.request.contextPath }/image/AT_ed-sheeran_thumb.jpg"
 								alt="Tones-And_I_Thumbnail_Image" />
 							</a>
 						</div>
 						<div class="col-3">
-							<a href="#"> <img class="img-fluid"
+							<a href=""> <img class="img-fluid"
 								src="${pageContext.request.contextPath }/image/AT_Cardi-B_thumb.jpg"
 								alt="Tones-And_I_Thumbnail_Image" />
 							</a>
 						</div>
 						<div class="col-3">
-							<a href="#"> <img class="img-fluid"
+							<a href=""> <img class="img-fluid"
 								src="${pageContext.request.contextPath }/image/AT_coldplay_thumb.jpg"
 								alt="Tones-And_I_Thumbnail_Image" />
 							</a>
 						</div>
 						<div class="col-3">
-							<a href="#"> <img class="img-fluid"
+							<a href=""> <img class="img-fluid"
 								src="${pageContext.request.contextPath }/image/AT_DuaLipa_thumb.jpg"
 								alt="Tones-And_I_Thumbnail_Image" />
 							</a>
@@ -356,7 +359,7 @@
 			</div>
 			<div class="container" style="text-align: center;">
 				<div class="col mt-4">
-					<a href="#" style="color: gray">전체보기 <i
+					<a href="" style="color: gray">전체보기 <i
 						class="fas fa-caret-right"></i></a>
 				</div>
 			</div>
