@@ -1,6 +1,5 @@
 package informdao;
 
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,7 +16,7 @@ public class InformDao {
 		}
 		return dao;
 	}
-	//인자로 전달된 아이디가 users 테이블에 존재하는지 여부를 리턴하는 메소드
+	//인자로 전달된 아이디가 inform 테이블에 존재하는지 여부를 리턴하는 메소드
 	public boolean isExist(String inputId) {
 		
 		boolean isExist=false;
@@ -29,9 +28,9 @@ public class InformDao {
 			//Connection 객체의 참조값 얻어오기 
 			conn = new DbcpBean().getConn();
 			//실행할 sql 문 준비하기
-			String sql = "SELECT id"
+			String sql = "SELECT inf_email"
 					+ " FROM inform"
-					+ " WHERE id=?";
+					+ " WHERE inf_email=?";
 			pstmt = conn.prepareStatement(sql);
 			//sql 문에 ? 에 바인딩할 값이 있으면 바인딩하고 
 			pstmt.setString(1, inputId);
@@ -57,7 +56,7 @@ public class InformDao {
 		return isExist; //아이디 존재 여부를 리턴한다. 
 	}
 
-	//UsersDto 객체에 있는 id, pwd 가 유효한 정보인지 여부를 리턴하는 메소드
+	//InformDto 객체에 있는 id, pwd 가 유효한 정보인지 여부를 리턴하는 메소드
 	public boolean isValid(InformDto dto) {
 		//유효한 정보인지 여부를 담을 지역변수 만들고 초기값 false 부여하기
 		boolean isValid=false;
@@ -69,9 +68,9 @@ public class InformDao {
 			//Connection 객체의 참조값 얻어오기 
 			conn = new DbcpBean().getConn();
 			//실행할 sql 문 준비하기
-			String sql = "SELECT id"
+			String sql = "SELECT inf_email"
 					+ " FROM inform"
-					+ " WHERE id=? AND pwd=?";
+					+ " WHERE inf_email=? AND inf_pwd=?";
 			pstmt = conn.prepareStatement(sql);
 			//sql 문에 ? 에 바인딩할 값이 있으면 바인딩하고 
 			pstmt.setString(1, dto.getInf_email());
@@ -100,7 +99,7 @@ public class InformDao {
 		return isValid;
 	}
 	
-	//회원정보를 저장하는 메소드 (profile 칼럼은 제외)
+	//회원정보를 저장하는 메소드 
 	public boolean insert(InformDto dto) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -109,8 +108,8 @@ public class InformDao {
 			conn = new DbcpBean().getConn();
 			//실행할 sql 문 준비하기 
 			String sql = "INSERT INTO inform"
-					+ " ( inf_name, inf_email, inf_pwd, inf_nt, inf_sel, inf_sex, inf_bday, inf_height, inf_weight, inf_phone, inf_job, inf_sns, inf_address, inf_address2, inf_lan, inf_hobby, inf_spec, inf_intro)"
-					+ " VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
+					+ " (inf_name, inf_email, inf_pwd, inf_nt, inf_sel, inf_sex, inf_bday, inf_height, inf_weight, inf_phone, inf_job, inf_sns, inf_address, inf_lan, inf_hobby, inf_spec, inf_intro)"
+					+ " VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
 			pstmt = conn.prepareStatement(sql);
 			//? 에 바인딩 할 값이 있으면 바인딩한다.
 			pstmt.setString(1, dto.getInf_name());
@@ -122,15 +121,14 @@ public class InformDao {
 			pstmt.setString(7, dto.getInf_bday());
 			pstmt.setInt(8, dto.getInf_height());
 			pstmt.setInt(9, dto.getInf_weight());
-			pstmt.setInt(10, dto.getInf_phone());
+			pstmt.setString(10, dto.getInf_phone());
 			pstmt.setString(11, dto.getInf_job());
 			pstmt.setString(12, dto.getInf_sns());
 			pstmt.setString(13, dto.getInf_address());
-			pstmt.setString(14, dto.getInf_address2());
-			pstmt.setString(15, dto.getInf_lan());
-			pstmt.setString(16, dto.getInf_hobby());
-			pstmt.setString(17, dto.getInf_spec());
-			pstmt.setString(18, dto.getInf_intro());
+			pstmt.setString(14, dto.getInf_lan());
+			pstmt.setString(15, dto.getInf_hobby());
+			pstmt.setString(16, dto.getInf_spec());
+			pstmt.setString(17, dto.getInf_intro());
 			
 			//sql  문 수행하고 update or insert or delete 된 row 의 갯수 리턴받기 
 			flag = pstmt.executeUpdate();
