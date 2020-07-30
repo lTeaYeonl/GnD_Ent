@@ -1,3 +1,5 @@
+<%@page import="gnd.mv.dao.MvDao"%>
+<%@page import="gnd.mv.dto.MvDto"%>
 <%@page import="java.util.List"%>
 <%@page import="gnd.image.dto.ImageDto"%>
 <%@page import="gnd.image.dao.ImageDao"%>
@@ -84,63 +86,40 @@
                   </h3>
                </div>
                <div class="row">
-                  <div class="col-4">
-                     <button type="button" class="btn btn-default" data-toggle="modal" data-target="#videoModal1">
-                        <img class="img-fluid" src="${pageContext.request.contextPath }/image/mv_coldplay.png" alt="mv_coldplay.png" />
-                     </button>
-                     <div class="modal fade bd-example-modal-xl" id="videoModal1" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
-                        <div class="modal-dialog modal-xl" role="document">
-                           <div class="modal-content">
-                              <div class="modal-header">
-                                 <h5 class="modal-title" id="videoModalLabel">Show Video</h5>
-                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                 </button>
-                              </div>
-                              <div class="modal-body">
-                                 <div class="embed-responsive embed-responsive-16by9">
-                                 	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/fA6eEN1vH1I" allowfullscreen="true"></iframe>
-                                 </div>
-                              </div>
-                              <div class="modal-footer">
-                                 <button type="button" class="btn btn-secondary"
-                                    data-dismiss="modal">close</button>
-                                 <button type="button" class="btn btn-primary">save</button>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
+	               <%
+	               		// 모든 뮤직비디오 정보 가져오기
+						List<MvDto> mvlist=MvDao.getinstance().getList(new MvDto());
+	               %>
+	               <%for(int i=0; i<mvlist.size();i++) {%>
+	               
+               		<div class="col-4">
+               			<button type="button" class="btn btn-default" data-toggle="modal" data-target="#mvModal<%=i %>">
+                   			<img class="img-fluid" src="${pageContext.request.contextPath }/image/<%=mvlist.get(i).getImg_name() %>" alt="<%=mvlist.get(i).getImg_name() %>" />
+                   		</button>
+                   		<div class="modal fade bd-example-modal-xl" id="mvModal<%=i %>" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+	                        <div class="modal-dialog modal-xl" role="document">
+	                           <div class="modal-content">
+	                              <div class="modal-header">
+	                                 <h5 class="modal-title" id="videoModalLabel"><%=mvlist.get(i).getAt_id() %></h5>
+	                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	                                    <span aria-hidden="true">&times;</span>
+	                                 </button>
+	                              </div>
+	                              <div class="modal-body">
+	                                 <div class="embed-responsive embed-responsive-16by9">
+	                                 	<iframe class="embed-responsive-item" src="<%=mvlist.get(i).getLink() %>" allowfullscreen="true"></iframe>
+	                                 </div>
+	                              </div>
+	                              <div class="modal-footer">
+	                                 <button type="button" class="btn btn-secondary"
+	                                    data-dismiss="modal">close</button>
+	                                 <button type="button" class="btn btn-primary">save</button>
+	                              </div>
+	                           </div>
+	                        </div>
+                     	</div>
+	               <%} %>
                   </div>
-                  <div class="col-4">
-                     <button type="button" class="btn btn-default" data-toggle="modal" data-target="#videoModal23">
-                        <img class="img-fluid" src="${pageContext.request.contextPath }/image/mv_tonesandi.png" alt="mv_tonesandi.png" />
-                     </button>
-                     <div class="modal fade bd-example-modal-xl" id="videoModal23" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
-                        <div class="modal-dialog modal-xl" role="document">
-                           <div class="modal-content">
-                              <div class="modal-header">
-                                 <h5 class="modal-title" id="videoModalLabel">Show Video</h5>
-                                 <button type="button" class="close" data-dismiss="modal"
-                                    aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                 </button>
-                              </div>
-                              <div class="modal-body">
-                                 <div class="embed-responsive embed-responsive-16by9">
-                                      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/q0hyYWKXF0Q" allowfullscreen></iframe>
-                                 </div>
-                              </div>
-                              <div class="modal-footer">
-                                 <button type="button" class="btn btn-secondary"
-                                    data-dismiss="modal">close</button>
-                                 <button type="button" class="btn btn-primary">save</button>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
             <!-- New Music Video -->
 				<!-- Latest News -->
 				<div class="container mt-5">

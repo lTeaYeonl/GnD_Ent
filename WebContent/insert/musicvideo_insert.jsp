@@ -17,11 +17,12 @@
 <head>
 <meta charset="UTF-8">
 <title>/insert/musicvideo_insert.jsp</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath }/css/bootstrap.css" />
 </head>
 <body>
 	<%if(isSuccess){ %>
 		<div class="container">
-			<p><strong><%=at_id %></strong> 아티스트의 뮤직비디오 정보가 성공적으로 저장 되었습니다.
+			<p><strong><%=at_id %> 번</strong> 아티스트의 뮤직비디오 정보가 성공적으로 저장 되었습니다.
 				<a href="musicvideo_insert_form.jsp">계속 추가하기</a>
 				<a href="${pageContext.request.contextPath }/main/index.jsp">메인 페이지로 돌아가기</a>
 			</p>

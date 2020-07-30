@@ -35,12 +35,16 @@
 			</div>
 			<div class="row">
 				<div class="col-3">
+<<<<<<< HEAD
 					<a
 <<<<<<< HEAD
 						href="${pageContext.request.contextPath}/artist/artist_info/at_tones-and-i.jsp">
 =======
 						href="${pageContext.request.contextPath}/artist/artist_list/artist_info/at_tones-and-i.jsp">
 >>>>>>> refs/heads/taehee
+=======
+					<a href="${pageContext.request.contextPath}/artist/artist_list/artist_info/at_tones-and-i.jsp">
+>>>>>>> refs/heads/taehee2
 						<img class="img-fluid"
 						src="${pageContext.request.contextPath }/image/AT_tones-and-i_thumb.jpg"
 						alt="Tones-And_I_Thumbnail_Image" />

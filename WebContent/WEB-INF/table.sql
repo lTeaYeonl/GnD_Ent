@@ -33,7 +33,8 @@ CREATE SEQUENCE artist_seq;
 -- 최신 뮤직비디오의 정보를 저장할 테이블
 CREATE TABLE n_mv(
 	mv_id NUMBER PRIMARY KEY,
-	mv_link VARCHAR2(255) NOT NULL
+	mv_link VARCHAR2(255) NOT NULL,
+	at_id NUMBER NOT NULL
 );
 
 CREATE SEQUENCE n_mv_seq;

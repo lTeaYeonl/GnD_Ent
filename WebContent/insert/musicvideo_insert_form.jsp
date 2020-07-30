@@ -18,7 +18,7 @@
 		<div class="container mt-3">
 			<h4 class="text-danger">※ 표시는 필수 입력 사항입니다.</h4>
 		</div>
-		<form action="musicvideo.jsp" method="post" id="artistForm">
+		<form action="musicvideo_insert.jsp" method="post" id="artistForm">
 			<div class="form-group">
 				<label for="mv_link">※ 뮤직비디오 링크 (youtube link만!))</label>
 				<input type="text" class="form-control" name="mv_link" id="mv_link"/>
@@ -26,10 +26,9 @@
 			<div class="form-group">
 				<label for="at_id">※ 아티스트 ID</label>
 				<input type="text" class="form-control" name="at_id" id="at_id"/>
-				<ul class="list-group">
-					<li class="list-group-item">1 : Ed-Sheeran</li>
-					<li class="list-group-item">2 : Anne-Marie</li>
-				</ul>
+				<!-- artist list -->
+				<jsp:include page="artist_list.jsp"></jsp:include>
+				<!-- artist list close -->
 			</div>
 			<button type="submit" class="btn btn-primary">저장</button>
 			<button type="reset" class="btn btn-danger">초기화</button>
