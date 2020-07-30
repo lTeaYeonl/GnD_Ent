@@ -86,28 +86,28 @@
 		</div>
 		<p style="color: #000000; text-align: left;">
 			<a
-				href="https://people.search.naver.com/search.naver?where=nexearch&query=HAON&sm=tab_etc&ie=utf8&key=PeopleService&os=8239825">공식
+				href="https://www.tonesandi.com/">공식
 				사이트</a>
 		</p>
 		<div class="row">
 			<div class="col-2 col-sm-2 col-xs-3">
-				<a href="https://www.facebook.com/warnermusickorea/"> <i
+				<a href="https://www.facebook.com/TONESANDI/"> <i
 					class="fab fa-facebook-square"
 					style="font-size: 1vw; color: black;"></i>
 				</a>
 			</div>
 			<div class="col-2 col-sm-2 col-xs-3">
-				<a href="https://www.instagram.com/warnermusickorea/"> <i
+				<a href="https://www.instagram.com/tonesandi/"> <i
 					class="fab fa-instagram" style="font-size: 1vw; color: black;"></i>
 				</a>
 			</div>
 			<div class="col-2 col-sm-2 col-xs-3">
-				<a href="https://www.youtube.com/user/WMK2011"> <i
+				<a href="https://www.youtube.com/embed/q0hyYWKXF0Q"> <i
 					class="fab fa-youtube" style="font-size: 1vw; color: black;"></i>
 				</a>
 			</div>
 			<div class="col-2 col-sm-2 col-xs-3">
-				<a href="https://twitter.com/warner_music_kr"> <i
+				<a href="https://twitter.com/tonesandimusic"> <i
 					class="fab fa-twitter" style="font-size: 1vw; color: black;"></i>
 				</a>
 			</div>
@@ -141,7 +141,7 @@
 				href="${pageContext.request.contextPath}/artist/artist_ab/at_ab_tones-and-i.jsp">
 				<img class="img-fluid"
 				src="${pageContext.request.contextPath }/image/AT_Tones-and-i_ab.jpg"
-				alt="tones_ab_img" />
+				width="300px;" height="300px;" alt="tones_ab_img" />
 			</a>
 		</div>
 	</div>
@@ -158,8 +158,8 @@
 			<a
 				href="${pageContext.request.contextPath}/artist/at_news/at_news_tones-and-i.jsp">
 				<img class="img-fluid"
-				src="${pageContext.request.contextPath }/image/AT_Tones-and-i_ab.jpg"
-				alt="tones_ab_img" />
+				src="${pageContext.request.contextPath}/image/AT_Tones-and-i_News_Title.jpg"
+				width="400px;" height="400px;" alt="tones_news_img" />
 			</a>
 		</div>
 	</div>

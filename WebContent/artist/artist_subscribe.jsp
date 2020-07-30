@@ -14,7 +14,6 @@
 	href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
 	integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
 	crossorigin="anonymous /">
-
 <meta charset="UTF-8">
 </head>
 <body>
@@ -35,16 +34,8 @@
 			</div>
 			<div class="row">
 				<div class="col-3">
-<<<<<<< HEAD
 					<a
-<<<<<<< HEAD
-						href="${pageContext.request.contextPath}/artist/artist_info/at_tones-and-i.jsp">
-=======
 						href="${pageContext.request.contextPath}/artist/artist_list/artist_info/at_tones-and-i.jsp">
->>>>>>> refs/heads/taehee
-=======
-					<a href="${pageContext.request.contextPath}/artist/artist_list/artist_info/at_tones-and-i.jsp">
->>>>>>> refs/heads/taehee2
 						<img class="img-fluid"
 						src="${pageContext.request.contextPath }/image/AT_tones-and-i_thumb.jpg"
 						alt="Tones-And_I_Thumbnail_Image" />
@@ -150,9 +141,10 @@
 									<li>보유 이용 기간 : 구독수신거부 전까지</li>
 								</ul>
 								<p style="text-align: left;">
-									<label> <input type="checkbox" id="confirm"
-										class="confirm" /> <span>위 내용에 동의 합니다.</span> <span
-										class="email"> <input type="email" placeholder="Email" />
+									<label> 
+									<input type="checkbox" id="confirm" class="confirm" />
+									<span>위 내용에 동의 합니다.</span> 
+									<span class="email"> <input type="text" placeholder="Email" />
 									</span>
 									</label>
 								</p>
@@ -180,10 +172,6 @@
 		<!-- modal script close-->
 		<!-- News Letter Modal Close-->
 	</div>
-<<<<<<< HEAD
-	<!-- News Letter Close-->
-=======
->>>>>>> refs/heads/taehee
 	<!-- Footer -->
 	<jsp:include page="../bottom/footer.jsp"></jsp:include>
 	<!-- Footer Close -->

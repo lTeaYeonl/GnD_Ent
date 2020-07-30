@@ -5,61 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>/artist/artist_ab/at_ab_tones-and-i.jsp</title>
-<<<<<<< HEAD
-<link rel="stylesheet" href="/GnD_Ent/css/bootstrap.css" />
-<style>
-body {
-		background-image : url('${pageContext.request.contextPath }/image/AT_Tones-and-i_ab.jpg');
-		background-repeat : no-repeat;
-		background-size : cover;
-}
-img{
-	height: 337px;
-}
-</style>
-</head>
-<body>
-<div class="container col-3">
-	<img src="${pageContext.request.contextPath }/image/AT_tones-and-i_thumb.jpg" alt="" />
-
-<div class="layout-header">
-	<header class="header" style="background-color: white;">
-		<h1>Coldplay [A Rush Of Blood To The Head]</h1>
-		<p>서비스를 골라주세요</p>
-	</header>
-	</div>
-
-	<nav class="navbar navbar-light bg-light">
-		<a class="navbar-brand" href="#">Navbar</a>
-		<button type="submit">클릭</button>
-	</nav>
-	<nav class="navbar navbar-light bg-light">
-		<a class="navbar-brand" href="#">Navbar</a>
-		<button type="submit">클릭</button>
-	</nav>
-	<nav class="navbar navbar-light bg-light">
-		<a class="navbar-brand" href="#">Navbar</a>
-		<button type="submit">클릭</button>
-	</nav>
-	<nav class="navbar navbar-light bg-light">
-		<a class="navbar-brand" href="#">Navbar</a>
-		<button type="submit">클릭</button>
-	</nav>
-	<nav class="navbar navbar-light bg-light">
-		<a class="navbar-brand" href="#">Navbar</a>
-		<button type="submit">클릭</button>
-	</nav>
-	<nav class="navbar navbar-light bg-light">
-		<a class="navbar-brand" href="#">Navbar</a>
-		<button type="submit">클릭</button>
-	</nav>
-	<nav class="navbar navbar-light bg-light">
-		<a class="navbar-brand" href="#">Navbar</a>
-		<button type="submit">클릭</button>
-	</nav>
-	
-</div>
-=======
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath }/css/bootstrap.css" />
 
@@ -101,7 +46,6 @@ div {
 
 .header {
 	background-color: #ccc;
-	
 }
 
 .body {
@@ -122,14 +66,15 @@ div {
 			alt="" />
 		<header class="header" style="color: white; background-color: black;">
 
-			<h1>Coldplay</h1>
-			<h2>[A Rush Of Blood To The Head]</h2>
+			<h1>Tones and I</h1>
+			<h2>[The Kids Are Coming Ep]</h2>
 			<p>서비스를 골라주세요</p>
 
 			<nav class="navbar navbar-light bg-light">
 				<img src="${pageContext.request.contextPath}/image/logo_melon.jpeg"
 					style="max-width: 40%; height: 100px;" alt="melon_logo" /> <a
-					class="navbar-brand" href="#">
+					class="navbar-brand"
+					href="https://www.melon.com/album/detail.htm?albumId=10316394">
 					<button type="submit" class="btn btn-outline-secondary">play</button>
 				</a>
 			</nav>
@@ -137,7 +82,8 @@ div {
 				<img
 					src="${pageContext.request.contextPath}/image/logo_applemusic.png"
 					style="max-width: 40%; height: auto;" alt="applemusic_logo" /> <a
-					class="navbar-brand" href="#">
+					class="navbar-brand"
+					href="https://music.apple.com/kr/album/1475930038?app=music&at=1l3vpUI&lId=2408423&cId=none&sr=1&src=Linkfire&itscg=30440&itsct=catchall_p1&ct=LFV_766ab7847753e0ce95ce859a49807376&ls=1">
 					<button type="submit" class="btn btn-outline-secondary">play</button>
 				</a>
 			</nav>
@@ -145,7 +91,7 @@ div {
 				<img
 					src="${pageContext.request.contextPath}/image/logo_bugsmusic.png"
 					style="max-width: 40%; height: auto;" alt="bugsmusic_logo" /> <a
-					class="navbar-brand" href="#">
+					class="navbar-brand" href="https://music.bugs.co.kr/album/916978?wl_ref=list_tr_07_ar">
 					<button type="submit" class="btn btn-outline-secondary">play</button>
 				</a>
 			</nav>
@@ -153,7 +99,7 @@ div {
 				<img
 					src="${pageContext.request.contextPath}/image/logo_geniemusic.jpeg"
 					style="max-width: 40%; height: auto;" alt="geniemusic_logo" /> <a
-					class="navbar-brand" href="#">
+					class="navbar-brand" href="https://www.genie.co.kr/detail/albumInfo?axnm=81255286">
 					<button type="submit" class="btn btn-outline-secondary">play</button>
 				</a>
 			</nav>
@@ -161,28 +107,27 @@ div {
 				<img
 					src="${pageContext.request.contextPath}/image/logo_navermusic.png"
 					style="max-width: 40%; height: auto;" alt="navermusic_logo" /> <a
-					class="navbar-brand" href="#">
+					class="navbar-brand" href="https://music.naver.com/album/index.nhn?albumId=3137158">
 					<button type="submit" class="btn btn-outline-secondary">play</button>
 				</a>
 			</nav>
-			<nav class="navbar navbar-light bg-light">
+			<%-- <nav class="navbar navbar-light bg-light">
 				<img
 					src="${pageContext.request.contextPath}/image/logo_mnetmusic.png"
 					style="max-width: 40%; height: auto;" alt="mnetmusic_logo" /> <a
 					class="navbar-brand" href="#">
 					<button type="submit" class="btn btn-outline-secondary">play</button>
 				</a>
-			</nav>
+			</nav> --%>
 			<nav class="navbar navbar-light bg-light">
 				<img
 					src="${pageContext.request.contextPath}/image/logo_soribadamusic.jpeg"
 					style="max-width: 40%; height: auto;" alt="soribadamusic_logo" />
-				<a class="navbar-brand" href="#">
+				<a class="navbar-brand" href="http://www.soribada.com/music/album/PD0130044">
 					<button type="submit" class="btn btn-outline-secondary">play</button>
 				</a>
 			</nav>
 		</header>
 	</div>
->>>>>>> refs/heads/taehee
 </body>
 </html>
