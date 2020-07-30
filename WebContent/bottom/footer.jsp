@@ -30,10 +30,10 @@
 						<a href="${pageContext.request.contextPath }/tac/terms_and_conditions.jsp" target="_blank" style="color:#777777; font-size:12px;">이용약관</a>
 					</p>
 					<p>
-						<a href="#" target="_blank" style="color:#777777; font-size:12px;">개인정보 처리방침</a>
+						<a href="${pageContext.request.contextPath }/tac/privacy-policy.jsp" target="_blank" style="color:#777777; font-size:12px;">개인정보 처리방침</a>
 					</p>
 					<p>
-						<a href="#" target="_blank" style="color:#777777; font-size:12px;">개인정보 처리방침 - 입사지원자용</a>
+						<a href="${pageContext.request.contextPath }/tac/privacy-policy.jsp" target="_blank" style="color:#777777; font-size:12px;">개인정보 처리방침 - 입사지원자용</a>
 					</p>
 				</div>
 			</div>
