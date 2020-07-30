@@ -384,26 +384,39 @@
 								class="ct_txt" id="inf_height" inputmode="numeric" maxlength="3"
 								min="0" name="inf_height" oninput="maxLengthCheck(this)"
 								pattern="[0-9]*" type="number" /></li>
+								
 							<li class="long_ct no"><label>*체중</label> <input
 								class="ct_txt" id="inf_weight" inputmode="numeric" maxlength="3"
 								min="0" name="inf_weight" oninput="maxLengthCheck(this)"
 								pattern="[0-9]*" type="number" /></li>
 						</ul>
-						<ul class="f_wto">
-							<li class="long_ct cut"><label>* 휴대폰 <span
-									class="help"> EX."000-0000-0000"</span>
-							</label> <input class="ct_txt" id="inf_phone" name="inf_phone"
-								type="text" /></li>
+						<ul class="f_two">
+							<li class="long_ct cut">
+								<label>* 휴대폰 
+									<span class="help"> EX."000-0000-0000"</span>
+								</label> 
+								<input class="ct_txt" id="inf_phone" name="inf_phone"type="text" />
+							</li>
+							<li class="long_ct cut">
+								<label>*프로필
+									<span class="help"> 이미지파일('jpg', 'jpeg', 'png', 'JPG', 'JPRG')</span>
+								</label>
+								<input class="ct_txt" type="file" name="image" id="image"
+									accept=".jpg, .jpeg, .png, .JPG, .JPRG"/> <br/>
+							</li>	
 						</ul>
 						<ul class="f_two">
 							<li class="long_ct cut"><label>* 직업<span
-									class="help">회사명/학교명을 입력해 주세요.(예:OO기업/고등학교)</span></label> <input
-								class="ct_txt" id="inf_job" maxlength="30" name="inf_job"
-								type="text" /></li>
-							<li class="long_ct cut no"><label>SNS 주소 <span
-									class="help">url형식 (http://cafe.naver.com/)</span>
-							</label> <input class="ct_txt" id="inf_sns" maxlength="100"
-								name="inf_sns" style="ime-mode: disabled;" type="text" /></li>
+								class="help">회사명/학교명을 입력해 주세요.(예:OO기업/고등학교)</span></label> 
+								<input class="ct_txt" id="inf_job" maxlength="30" name="inf_job" type="text" />
+							</li>
+							<li class="long_ct cut no">
+								<label>SNS 주소
+									 <span class="help"> url형식 (http://cafe.naver.com/)</span>
+								</label>
+								<input class="ct_txt" id="inf_sns" maxlength="100"
+								name="inf_sns" style="ime-mode: disabled;" type="text" />
+							</li>
 						</ul>
 						<div class="long_ct">
 							<label>* 주소</label> <input class="ct_txt" id="inf_address"
@@ -428,7 +441,7 @@
 								<textarea class="ct_txt pr" cols="20" id="inf_intro"
 									maxlength="500" name="inf_intro" rows="2" style="height: 200px"></textarea>
 							</div>
-							<button type="submit" class="btn sub_ck" id="apply">지원하기</button>
+							<button type="submit" class="btn sub_ck" id="apply">가입하기</button>
 						</div>
 					</div>
 				</div>

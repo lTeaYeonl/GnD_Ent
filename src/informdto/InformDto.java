@@ -180,5 +180,5 @@ public class InformDto {
 	public void setInf_intro(String inf_intro) {
 		this.inf_intro = inf_intro;
 	}
-	
+
 }
