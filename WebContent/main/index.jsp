@@ -1,3 +1,5 @@
+<%@page import="gnd.artist.dto.ArtistDto"%>
+<%@page import="gnd.artist.dao.ArtistDao"%>
 <%@page import="gnd.mv.dao.MvDao"%>
 <%@page import="gnd.mv.dto.MvDto"%>
 <%@page import="java.util.List"%>
@@ -291,6 +293,8 @@
 			</div>
 			<!-- PlayList Close -->
 			<!-- Artist -->
+			//모든 아티스트 정보 가져오기
+				List<ArtistDto> ArtistInfolist = ArtistDao.getinstance().getList(new ArtistDto());
 			<div class="container mt-5" id="artist">
 				<div class="mt-5">
 					<div class="container">
