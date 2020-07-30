@@ -5,11 +5,30 @@
 <head>
 <meta charset="UTF-8">
 <title>terms</title>
+<script src="cpath"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath }/css/bootstrap.css" />
+ <script src="${pageContext.request.contextPath }/js/jquery-3.5.1.js"></script>
+ <!-- 버튼 전체선택 & 해제 기능 start -->
+	<script>
+         $(document).ready(function(){
+        	$("#c4").change(function(){
+        		$("input:checkbox").prop('checked',$(this).prop('checked'));
+        	}); 
+        	 $('.chk').on('click',function(){
+        		if($('.chk:checked').length==$('.chk').length){
+        		  $('#c4').prop('checked',true);	
+        		}else{
+        			$('#c4').prop('checked',false);
+        		}
+        	 });
+         });
+
+	</script>
+	<!-- 버튼 전체선택 & 해제 기능 end -->
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath }/css/bootstrap.css" />
 <script src="${pageContext.request.contextPath }/js/jquery-3.5.1.js"></script>
 <script src="${pageContext.request.contextPath }/js/bootstrap.js"></script>
-
 <style>
 .main {
 	position: relative;
@@ -19,7 +38,71 @@
 	overflow: hidden;
 	padding-bottom: 0;
 }
+    #header_main {
+    position: absolute;
+    max-width: 1200px;
+    /*가운데정렬법*/
+    margin: 0 auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    text-align: center
+}
 
+    #header_main .main_logo {
+        position: absolute;
+        width: 100px;
+        height: 36px;
+        top: 20px;
+        cursor: pointer;
+        z-index: 1113;
+    }
+
+        #header_main .main_logo img {
+            width: 100%;
+        }
+
+    ul, li{
+  		list-style:none;
+    	display: block;
+	    margin-block-start: 1em;
+	    margin-block-end: 1em;
+	    margin-inline-start: 0px;
+	    margin-inline-end: 0px;
+	    padding-inline-start: 40px;
+	    list-style:none;
+    };
+ 	img {
+    border: none;
+	};
+	
+	body {
+    font-size: 9pt;
+    font-family: 'Noto Sans', sans-serif;
+    color: #282828;
+    line-height: 130%;
+    overflow-x: hidden;
+    background-color: #fff;
+    max-width: 100%;
+    margin: 0 auto;
+	};
+	
+	input {
+    vertical-align: middle;
+	};
+	
+	
+	.terms {
+	    position: relative;
+	    width: 100%;
+	    height: auto;
+	    overflow: hidden;
+	    padding: 50px 0 20px 0;
+	}
 ;
 ul, li {
 	list-style: none;
@@ -31,7 +114,6 @@ ul, li {
 	padding-inline-start: 40px;
 	list-style: none;
 }
-
 ;
 img {
 	border: none;
@@ -62,7 +144,18 @@ input {
 	overflow: hidden;
 	padding: 50px 0 20px 0;
 }
-
+ 	.terms .pp_stt span {
+         color: #009be6;
+         margin-left: 3px;
+     }
+    .terms .ck_box {
+        position: relative;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        margin: 10px 0 60px 0;
+        text-align: left;
+    }
 .terms .pp_tt {
 	position: relative;
 	width: 100%;
@@ -72,7 +165,10 @@ input {
 	color: #373737;
 	padding-bottom: 30px;
 }
-
+    .terms .ck_box.all_ok {
+        padding-top: 40px;
+        border-top: 1px solid #eee;
+        }
 .terms .pp_tt span {
 	color: #009be6;
 	margin-left: 3px;
@@ -201,6 +297,17 @@ input {
 </style>
 </head>
 <body>
+<div class="main">
+	<!-- 화면 상단에 로고와 함께 화면이동(아직 미구현) -->
+	<div class="header_main">
+		<a href="">
+			<div class="main_logo" alt="gnd엔터테인먼트">
+			</div>
+		</a>
+	</div>
+
+	<div class="sub_bg">
+		<div class="bk_bg"></div>
 	<div class="main">
 		<!-- Top Navigation -->
 		<jsp:include page="../top/navbar.jsp"></jsp:include>
@@ -208,8 +315,22 @@ input {
 		<div class="sub_bg">
 			<div class="bk_bg"></div>
 			<ul class="sub_top">
-				<li class="sub_tt">Sign Up</li>
+				<li class="sub_tt">AUDITION</li>
 			</ul>
+	</div>
+	<!-- 개인 약관 폼 -->
+	<form action="" method="post" name="frm" id="frm" >
+		<input type="hidden" id="agreeyn" name="agreeyn" value/>
+		<input type="hidden" id="gubun" name="gubun" value="n" />
+		<div class="inner">
+			<div class="join">
+			<!-- 약관동의 -->
+			오디션 지원을 위해서 이용약관 및 개인정보 수집 및 이용에 대한 안내를 읽고 동의해 주세요.
+			</div>
+			<div class="terms">
+				<div class="pp_tt">
+					</br>이용약관
+					<span>(필수)</span>
 		</div>
 		<!-- 개인 약관 폼 -->
 		<form action="" method="post" name="frm" id="frm">
@@ -229,7 +350,7 @@ input {
  "제 1 장 총칙
 제 1 조 약관의 승낙
 					
-GND 회원가입 사이트에 오신 것을 환영합니다. GND(이하 "당사")는 귀하가 본 약정(이하 "본 약관") 내용에 동의하는 것을 조건으로 귀하에게 본 서비스를 제공할 것이며, 귀하가 본 약관의 내용에 동의하는 경우 당사의 본 서비스 제공 행위 및 귀하의 본 서비스 사용 행위에는 본 약관이 우선적으로 적용될 것입니다. 본 약관에 명시되지 않은 사항에 대해서는 전기통신기본법, 전기통신사업법, 정보통신 윤리위원회 심의규정, 정보통신 윤리강령, 프로그램 보호법 및 관계규정에 의합니다.
+GND 오디션사이트에 오신 것을 환영합니다. GND 온라인 오디션그룹(이하 "당사")은 귀하가 본 약정(이하 "본 약관") 내용에 동의하는 것을 조건으로 귀하에게 본 서비스를 제공할 것이며, 귀하가 본 약관의 내용에 동의하는 경우 당사의 본 서비스 제공 행위 및 귀하의 본 서비스 사용 행위에는 본 약관이 우선적으로 적용될 것입니다. 본 약관에 명시되지 않은 사항에 대해서는 전기통신기본법, 전기통신사업법, 정보통신 윤리위원회 심의규정, 정보통신 윤리강령, 프로그램 보호법 및 관계규정에 의합니다.
 					
 제 2 조 (약관의 명시와 개정)
 					
@@ -254,7 +375,7 @@ GND 회원가입 사이트에 오신 것을 환영합니다. GND(이하 "당사"
 
 2. 이용계약 : 서비스 이용과 관련하여 당 사이트와 이용자간에 체결하는 계약을 말합니다.
 
-3. 회원가입 지원 : 당 사이트가 제공하는 회원가입 신청서 양식에 해당 정보를 기입하고, 본 약관에 동의하여 서비스 이용계약을 완료시키는 행위
+3. 오디션 지원 : 당 사이트가 제공하는 오디션 신청서 양식에 해당 정보를 기입하고, 본 약관에 동의하여 서비스 이용계약을 완료시키는 행위
 
 4. 비밀번호(PW) : 이용자가 등록한 정보 조회 시 신원을 확인하고 통신상의 자신의 개인정보보호를 위하여 이용자 자신이 선정한 문자와 숫자의 조합
 
@@ -270,6 +391,19 @@ GND 회원가입 사이트에 오신 것을 환영합니다. GND(이하 "당사"
 2. 본 이용약관에 대한 동의는 이용신청 당시 해당 당 사이트의 '동의함' 버튼을 누름으로써 의사표시를 합니다.
  "
 				</textarea>
+				<p class="ck_box">
+					<label>
+					<input type="checkbox" class="chk" id="c1" name="chk" value="1" />
+					<span></span>
+					동의 합니다
+					</label>
+				</p>
+				<div class="pp_tt">
+					개인정보처리방침
+					<sapn>(필수)</sapn>
+				</div>
+				<textarea class="pp_stt">
+"주식회사 GND엔터테인먼트(이하 “회사”)는 다음과 같이 귀하의 개인정보를 수집 및 이용합니다.
 					<p class="ck_box">
 						<label> <input type="checkbox" class="chk" id="c1"
 							name="chk" value="1" /> <span></span> 동의 합니다
@@ -282,9 +416,9 @@ GND 회원가입 사이트에 오신 것을 환영합니다. GND(이하 "당사"
 					<textarea class="pp_stt">
 "GND엔터테인먼트(이하 “회사”)는 다음과 같이 귀하의 개인정보를 수집 및 이용합니다.
 
-- 수집하는 개인정보의 항목: 국적, 현 거주지역, 비밀번호, 성명, 성별, 생년월일, 신장, 체중, 휴대 전화번호, 이메일, 직업/회사명 또는 학교/학교명, SNS주소, 주소, 서비스 이용기록, 접속 로그, 쿠키, 접속 IP 정보
+- 수집하는 개인정보의 항목: 국적, 현 거주지역, 비밀번호, 성명, 성별, 생년월일, 신장, 체중, 자택 전화번호, 휴대 전화번호, 이메일, 직업/회사명 또는 학교/학교명, SNS주소, 주소, 서비스 이용기록, 접속 로그, 쿠키, 접속 IP 정보
 
-- 개인정보의 수집•이용 목적: 서비스 이용에 따른 본인확인 및 개인식별, 연령 확인, 불량회원의 부정 이용 및 비인가 사용 방지, 접속 빈도의 파악, 서비스 이용내역의 확인, 서비스의 제공 및 관련 사항의 이행, 각종 고지사항의 전달 및 연락, 웹사이트 이용에 따른 민원사항의 상담 및 처리 관련 업무
+- 개인정보의 수집•이용 목적: 서비스 이용에 따른 본인확인 및 개인식별, 연령 확인, 불량회원의 부정 이용 및 비인가 사용 방지, 접속 빈도의 파악, 서비스 이용내역의 확인, 서비스의 제공 및 관련 사항의 이행, 각종 고지사항의 전달 및 연락, 웹사이트 이용에 따른 민원사항의 상담 및 처리, 오디션 지원 이력 관리, 합격 여부의 결정•통지•공개 및 트레이닝 관련 업무
 
 - 개인정보의 보유•이용기간: 관계 법령의 규정에 따라 귀하의 개인정보를 보존하여야 하는 경우가 아닌 한, 귀하의 개인정보는 최장 3년 간 보유 및 이용되며, 이용 목적 달성 시 즉시 삭제됩니다..
 귀하는 위와 같은 개인정보의 수집 및 이용에 대해 동의를 거부할 수 있으며, 동의를 거부하는 경우 서비스 이용이 제한될 수 있음을 알려 드립니다."
@@ -298,12 +432,32 @@ GND 회원가입 사이트에 오신 것을 환영합니다. GND(이하 "당사"
 					<textarea class="pp_stt" style="height: 150px;">
 "회사는 다음과 같이 귀하의 개인정보를 수집 및 이용합니다.
 
-- 수집하는 개인정보의 항목: 사용 가능 언어 및 수준, 취미, 특기, 경력사항, 귀하가 기입하는 자기소개, 귀하가 웹사이트에 업로드하는 사진, 음원, 제작물 (“개인정보의 수집 및 이용에 대한 동의 [필수]” 부분에 기재되어 있는 “수집하는 개인정보의 항목” 중 일부도 아래 목적을 위해 이용될 수 있습니다)
+- 수집하는 개인정보의 항목: 사용 가능 언어 및 수준, 취미, 특기, 경력사항, 귀하가 기입하는 자기소개, 귀하가 웹사이트에 업로드하는 사진, 음원, 오디션 영상물 및 제작물 (“개인정보의 수집 및 이용에 대한 동의 [필수]” 부분에 기재되어 있는 “수집하는 개인정보의 항목” 중 일부도 아래 목적을 위해 이용될 수 있습니다)
 
-- 개인정보의 수집•이용 목적: 회원가입 관리, 개인정보의 보유•이용기간: 관계 법령의 규정에 따라 귀하의 개인정보를 보존하여야 하는 경우가 아닌 한, 귀하의 개인정보는 최장 3년 간 보유 및 이용되며, 이용 목적 달성 시 즉시 삭제됩니다.
+- 개인정보의 수집•이용 목적: 오디션 지원 이력 관리, 합격 여부의 결정•통지•공개 및 트레이닝 관련 업무 개인정보의 보유•이용기간: 관계 법령의 규정에 따라 귀하의 개인정보를 보존하여야 하는 경우가 아닌 한, 귀하의 개인정보는 최장 3년 간 보유 및 이용되며, 이용 목적 달성 시 즉시 삭제됩니다.
 
-귀하는 위와 같은 개인정보의 수집 및 이용에 대해 동의를 거부할 수 있으며, 이 경우에도 서비스 이용은 가능하나, 회원가입 지원서 제출이 제한되거나 해당 항목들이 회원가입 여부를 검토함에 있어 고려되지 않을 수 있음을 알려드립니다."	
+귀하는 위와 같은 개인정보의 수집 및 이용에 대해 동의를 거부할 수 있으며, 이 경우에도 서비스 이용은 가능하나, 오디션 지원서 제출이 제한되거나 해당 항목들이 합격 여부를 검토함에 있어 고려되지 않을 수 있음을 알려드립니다."	
 				</textarea>
+				<p class="ck_box">
+					<label>
+					<input type="checkbox" class="chk" name="chk" value="3" />
+						<span></span>
+						동의합니다.
+					</label>
+				</p>
+				<p class="ck_box all_ok">
+					
+					<label>
+					<input type="checkbox" id="c4" />
+					<span></span>
+					위 약관에 모두 동의합니다.
+					</label>
+				</p>
+				<button type="submit" class="btn sub_ck" onclick="retrun false" id="agree">동의</button>
+			</div>
+		</div>
+	</form>
+</div>
 					<p class="ck_box">
 						<label> <input type="checkbox" class="chk" name="chk"
 							id="c3" value="3" /> <span></span> 동의합니다.

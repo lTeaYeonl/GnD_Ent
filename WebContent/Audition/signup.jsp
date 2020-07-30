@@ -54,8 +54,7 @@
 <body>
 <%if(isSuccess){ %>
 	<p> 
-		<strong><%=inf_name %></strong> 회원님 가입 되었습니다. 
-		
+		<strong><%=inf_name %></strong> 회원님 가입 되었습니다.
 	</p>
 		<a href="${pageContext.request.contextPath }/main/index.jsp">main 으로 돌아가기</a>
 <%}else{ %>

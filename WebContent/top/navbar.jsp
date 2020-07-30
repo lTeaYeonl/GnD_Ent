@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <!-- /top/navbar.jsp -->
 <nav class="navbar navbar-expand-lg" style="background-color:#171717;">
-	<a class="navbar-brand" href="index.jsp">
+	<a class="navbar-brand" href="${pageContext.request.contextPath }/main/index.jsp">
 		<img src="${pageContext.request.contextPath }/image/L_gnd.png" alt="GnD_Logo" />
 	</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,16 +11,28 @@
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav">
 			<li class="nav-item active">
-				<a class="nav-link" href="#" style="color:white; font-size:12px;">뉴스</a>
+				<a class="nav-link" href="#news" style="color:white; font-size:12px;">뉴스</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#" style="color:white; font-size:12px;">플레이리스트</a>
+				<a class="nav-link" href="#playlist" style="color:white; font-size:12px;">플레이리스트</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#" style="color:white; font-size:12px;">아티스트</a>
+				<a class="nav-link" href="#artist" style="color:white; font-size:12px;">아티스트</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#" style="color:white; font-size:12px;">뉴스레터 구독</a>
+				<a class="nav-link" href="#newsletter" style="color:white; font-size:12px;">뉴스레터 구독</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="${pageContext.request.contextPath }/Audition/terms.jsp" style="color:white; font-size:12px;">회원가입</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="${pageContext.request.contextPath }/insert/image_insert_form.jsp" style="color:white; font-size:12px;">이미지 정보 입력</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="${pageContext.request.contextPath }/insert/artist_insert_form.jsp" style="color:white; font-size:12px;">아티스트 정보 입력</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="${pageContext.request.contextPath }/insert/musicvideo_insert_form.jsp" style="color:white; font-size:12px;">뮤직비디오 정보 입력</a>
 			</li>
 		</ul>
 	</div>
