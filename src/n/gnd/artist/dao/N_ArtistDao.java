@@ -100,4 +100,44 @@ public class N_ArtistDao {
 		}
 		return list;
 	}
+	//글하나의 정보를 리턴하는 메소드
+	public N_ArtistDto getData(int num) {
+		N_ArtistDto dto=null;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			conn = new DbcpBean().getConn();
+			String sql = "SELECT *"
+					+ " FROM m_artist"
+					+ " WHERE num=?";
+			pstmt = conn.prepareStatement(sql);
+			// ? 에 값 바인딩 
+			pstmt.setInt(1, num);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				dto=new N_ArtistDto();
+				dto.setArtist_id(rs.getString(num));
+				dto.setArtist_name(rs.getString("artist_name"));
+				dto.setArtist_e_name(rs.getString("artist_e_name"));
+				dto.setArtist_name(rs.getString("image_name"));
+				dto.setArtist_country(rs.getString("artist_country"));
+				dto.setArtist_description(rs.getString("artist_description"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (pstmt != null)
+					pstmt.close();
+				//connection pool 에 반납하기 
+				if (conn != null)
+					conn.close();
+			} catch (Exception e) {
+			}
+		}
+		return dto;
+	}
 }
