@@ -19,6 +19,11 @@
 	href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
 	integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
 	crossorigin="anonymous /">
+<style>
+	html {
+	scroll-behavior: smooth;
+	}
+</style>
 </head>
 <body>
 	<!-- Main Page -->
@@ -34,7 +39,7 @@
 				List<ImageDto> list = ImageDao.getinstance().getList(new ImageDto());
 			%>
 			<%if(list.size()!=0){ %>
-			<div class="container-fluid px-0">
+			<div class="container-fluid px-0" id="carouselimage">
 				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 					<ol class="carousel-indicators">
 						<%for (int i=0; i<list.size(); i++){ %>
@@ -90,8 +95,7 @@
 	               		// 모든 뮤직비디오 정보 가져오기
 						List<MvDto> mvlist=MvDao.getinstance().getList(new MvDto());
 	               %>
-	               <%for(int i=0; i<mvlist.size();i++) {%>
-	               
+	               <%for(int i=0; i<mvlist.size(); i++) {%>
                		<div class="col-4">
                			<button type="button" class="btn btn-default" data-toggle="modal" data-target="#mvModal<%=i %>">
                    			<img class="img-fluid" src="${pageContext.request.contextPath }/image/<%=mvlist.get(i).getImg_name() %>" alt="<%=mvlist.get(i).getImg_name() %>" />
@@ -118,18 +122,19 @@
 	                           </div>
 	                        </div>
                      	</div>
+                   	</div>
 	               <%} %>
-                  </div>
-            <!-- New Music Video -->
+                </div>
+            	<!-- New Music Video -->
 				<!-- Latest News -->
-				<div class="container mt-5">
+				<div class="container mt-5" id="news">
 					<div class="container">
-						<p
-							style="font-size: 12px; color: #a3a3a3; line-height: 1; text-align: center; letter-spacing: 0px;">새로운
-							소식</p>
-						<h3
-							style="font-size: 30px; line-height: 1; text-align: center; letter-spacing: 0px;">Lastest
-							News</h3>
+						<p style="font-size: 12px; color: #a3a3a3; line-height: 1; text-align: center; letter-spacing: 0px;">
+							새로운 소식
+						</p>
+						<h3 style="font-size: 30px; line-height: 1; text-align: center; letter-spacing: 0px;">
+							Lastest News
+						</h3>
 					</div>
 					<div class="row">
 						<div class="col-3">
@@ -235,7 +240,7 @@
 			</div>
 			<!-- Official Channel Close -->
 			<!-- PlayList -->
-			<div class="container">
+			<div class="container" id="playlist">
 				<div class="mt-5">
 					<div class="container">
 						<p
@@ -286,7 +291,7 @@
 			</div>
 			<!-- PlayList Close -->
 			<!-- Artist -->
-			<div class="container mt-5">
+			<div class="container mt-5" id="artist">
 				<div class="mt-5">
 					<div class="container">
 						<div class="col mt-5">
@@ -357,7 +362,7 @@
 			</div>
 			<!-- Artist Close-->
 			<!-- News Letter -->
-			<div class="container mt-5" style="text-align: center">
+			<div class="container mt-5" id="newsletter" style="text-align: center">
 				<div class="row">
 					<div class="col-1"></div>
 					<div class="col">
@@ -453,11 +458,25 @@
 		<!-- Footer -->
 		<jsp:include page="../bottom/footer.jsp"></jsp:include>
 		<!-- Footer Close -->
+		<!-- Fixed Button -->
+			<a href="#" id="topbutton"style="position:fixed; bottom: 10%; right: 10%; display:none;">
+				<button class="btn btn-dark">
+					<i class="fas fa-chevron-up"></i>
+				</button>
+			</a>
+		<!-- Fixed Button Close -->
 	</div>
 	<!-- Main Page Close -->
 	<!-- Script -->
 	<script src="${pageContext.request.contextPath }/js/jquery-3.5.1.js"></script>
 	<script src="${pageContext.request.contextPath }/js/bootstrap.js"></script>
+	<script>
+		$("#carouselimage").mouseenter(function(){
+			$("#topbutton").hide();
+		}).mouseleave(function(){
+			$("#topbutton").show();
+		});
+	</script>
 	<!-- Script Close -->
 </body>
 </html>
