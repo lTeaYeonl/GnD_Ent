@@ -396,30 +396,30 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-3">
-							<img class="img-fluid"
-								src="${pageContext.request.contextPath }/image/AT_tones-and-i_thumb.jpg"
-								alt="instgram_feed_image" />
+							<a href="${pageContext.request.contextPath }/instafeed/instagram_feed_tonseandi.jsp">
+								<img class="img-fluid" src="${pageContext.request.contextPath }/image/AT_tones-and-i_thumb.jpg" alt="instgram_feed_image" />
+							</a>
 						</div>
 						<div class="col-3">
-							<img class="img-fluid"
-								src="${pageContext.request.contextPath }/image/AT_tones-and-i_thumb.jpg"
-								alt="instgram_feed_image" />
+							<a href="${pageContext.request.contextPath }/instafeed/instagram_feed_dualipa.jsp">
+								<img class="img-fluid" src="${pageContext.request.contextPath }/image/AT_DuaLipa_thumb.jpg" alt="instgram_feed_image" />
+							</a>
 						</div>
 						<div class="col-3">
-							<img class="img-fluid"
-								src="${pageContext.request.contextPath }/image/AT_tones-and-i_thumb.jpg"
-								alt="instgram_feed_image" />
+							<a href="${pageContext.request.contextPath }/instafeed/instagram_feed_coldplay.jsp">
+								<img class="img-fluid" src="${pageContext.request.contextPath }/image/AT_coldplay_thumb.jpg" alt="instgram_feed_image" />
+							</a>
 						</div>
 						<div class="col-3">
-							<img class="img-fluid"
-								src="${pageContext.request.contextPath }/image/AT_tones-and-i_thumb.jpg"
-								alt="instgram_feed_image" />
+							<a href="${pageContext.request.contextPath }/instafeed/instagram_feed_annemarie.jsp">
+								<img class="img-fluid" src="${pageContext.request.contextPath }/image/AT_AnneMarie_thumb.jpg" alt="instgram_feed_image" />
+							</a>
 						</div>
 					</div>
 					<div class="container mt-3">
-						<button type="button" class="btn btn-dark"
-							onclick="location.href='https://www.instagram.com/warnermusickorea' ">
-							<i class="fab fa-instagram"></i> Follow on Instagram
+						<button type="button" class="btn btn-dark" onclick="location.href='https://www.instagram.com/warnermusickorea' ">
+							<i class="fab fa-instagram"></i>
+							Follow on Instagram
 						</button>
 					</div>
 				</div>
