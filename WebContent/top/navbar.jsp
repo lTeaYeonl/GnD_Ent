@@ -23,6 +23,9 @@
 				<a class="nav-link" href="#newsletter" style="color:white; font-size:12px;">뉴스레터 구독</a>
 			</li>
 			<li class="nav-item">
+				<a class="nav-link" href="${pageContext.request.contextPath }/Audition/terms.jsp" style="color:white; font-size:12px;">회원가입</a>
+			</li>
+			<li class="nav-item">
 				<a class="nav-link" href="${pageContext.request.contextPath }/insert/image_insert_form.jsp" style="color:white; font-size:12px;">이미지 정보 입력</a>
 			</li>
 			<li class="nav-item">
