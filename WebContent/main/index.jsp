@@ -396,7 +396,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-3">
-							<a href="${pageContext.request.contextPath }/instafeed/instagram_feed_tonseandi.jsp">
+							<a href="${pageContext.request.contextPath }/instafeed/instagram_feed_tonesandi.jsp">
 								<img class="img-fluid" src="${pageContext.request.contextPath }/image/AT_tones-and-i_thumb.jpg" alt="instgram_feed_image" />
 							</a>
 						</div>
