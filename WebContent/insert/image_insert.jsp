@@ -33,6 +33,6 @@
 		<div class="container">
 			<p>저장에 실패 했습니다. <a href="image_insert_form.jsp">다시 저장</a></p>
 		</div>
-		<%} %>
+	<%} %>
 </body>
 </html>
