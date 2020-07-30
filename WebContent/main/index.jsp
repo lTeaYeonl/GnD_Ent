@@ -90,8 +90,7 @@
 	               		// 모든 뮤직비디오 정보 가져오기
 						List<MvDto> mvlist=MvDao.getinstance().getList(new MvDto());
 	               %>
-	               <%for(int i=0; i<mvlist.size();i++) {%>
-	               <% console. %> %>
+	               <%for(int i=0; i<mvlist.size(); i++) {%>
                		<div class="col-4">
                			<button type="button" class="btn btn-default" data-toggle="modal" data-target="#mvModal<%=i %>">
                    			<img class="img-fluid" src="${pageContext.request.contextPath }/image/<%=mvlist.get(i).getImg_name() %>" alt="<%=mvlist.get(i).getImg_name() %>" />
@@ -118,18 +117,19 @@
 	                           </div>
 	                        </div>
                      	</div>
+                   	</div>
 	               <%} %>
-                  </div>
-            <!-- New Music Video -->
+                </div>
+            	<!-- New Music Video -->
 				<!-- Latest News -->
 				<div class="container mt-5">
 					<div class="container">
-						<p
-							style="font-size: 12px; color: #a3a3a3; line-height: 1; text-align: center; letter-spacing: 0px;">새로운
-							소식</p>
-						<h3
-							style="font-size: 30px; line-height: 1; text-align: center; letter-spacing: 0px;">Lastest
-							News</h3>
+						<p style="font-size: 12px; color: #a3a3a3; line-height: 1; text-align: center; letter-spacing: 0px;">
+							새로운 소식
+						</p>
+						<h3 style="font-size: 30px; line-height: 1; text-align: center; letter-spacing: 0px;">
+							Lastest News
+						</h3>
 					</div>
 					<div class="row">
 						<div class="col-3">
