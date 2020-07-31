@@ -116,7 +116,7 @@ public class N_NewsDao {
 			conn = new DbcpBean().getConn();
 			String sql = "SELECT *"
 					+ " FROM m_news"
-					+ " WHERE num=?";
+					+ " WHERE news_id=?";
 			pstmt = conn.prepareStatement(sql);
 			// ? 에 값 바인딩 
 			pstmt.setInt(1, num);

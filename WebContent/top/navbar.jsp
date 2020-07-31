@@ -28,9 +28,6 @@
 			<li class="nav-item">
 				<a class="nav-link" href="${pageContext.request.contextPath }/insert/m_image_insert_form.jsp" style="color:white; font-size:12px;">메인 이미지 추가</a>
 			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="${pageContext.request.contextPath }/insert/m_image_insert_form.jsp" style="color:white; font-size:12px;">메인 이미지 추가</a>
-			</li>
 		</ul>
 	</div>
 	<div class="social-icons">
