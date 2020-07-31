@@ -19,6 +19,7 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -76,7 +77,7 @@
 							<div class="carousel-caption d-none d-md-block" style="bottom: 15%">
 								<h1 style="bottom: 10%;"><%=list.get(i).getArtist_e_name() %></h1>
 								<p style="bottom: 10%;"><%=list.get(i).getArtist_name() %></p>
-								<button style="color: white; bottom: 10%;" type="button" class="btn btn-secondary" onclick="location.href='../artist_info/detail.jsp?num=<%=list.get(i).getArtist_id() %>">">
+								<button style="color: white; bottom: 10%;" type="button" class="btn btn-secondary" onclick="location.href='../artist_info/detail.jsp?num=<%=list.get(i).getArtist_id() %>">
 									더 보기
 								</button>
 							</div>
@@ -94,11 +95,11 @@
 				</div>
 			</div>
 			<%}else{ %>
-			<div class="container text-center mt-5">
 				<p class="text-danger">이미지 Data가 없습니다. Data를 추가해 주세요.</p>
+			<%} %>
+			<div class="container text-center mt-5">
 				<a href="${pageContext.request.contextPath }/insert/m_image_insert_form.jsp">추가하러 가기</a>
 			</div>
-			<%} %>
 			<!-- Carousel Image Close -->
 			<!-- New Music Video -->
             <div class="container mt-5">
@@ -145,10 +146,10 @@
 	               <div class="col-4">
 	               		<div class="container text-center">
 	               			<div class="container" style="margin-top: 25%;">
-								<a href="${pageContext.request.contextPath }/insert/m_image_insert_form.jsp">이미지 추가하기</a><br />
+								<a href="${pageContext.request.contextPath }/insert/m_musicvideo_insert_form.jsp">뮤직비디오 추가하기</a><br />
 		               		<i class="fas fa-plus"></i>
 	               			</div>
-	               	</div>
+	               		</div>
 	               </div>
                 </div>
             	<!-- New Music Video -->
@@ -175,30 +176,18 @@
 								<div class="card-body">
 									<h5 class="card-title"><%=newslist.get(i).getNews_title() %></h5>
 									<p class="card-text"><%=newslist.get(i).getNews_content() %></p>
-									<a href="<%=newslist.get(i).getNews_id() %>" class="btn btn-primary">더보기 ></a>
+									<a href="${pageContext.request.contextPath }/news/detail.jsp?num=<%=newslist.get(i).getNews_id() %>" class="btn btn-primary">더보기 ></a>
 								</div>
 							</div>
 						</div>
 						<%} %>
 						<div class="container text-center mt-5">
+				  			<%if(newslist.size()==0){ %>
 							<p class="text-danger">뉴스 Data가 없습니다. Data를 추가해 주세요.</p>
+							<%} %>
 							<a href="${pageContext.request.contextPath }/insert/m_news_insert_form.jsp">추가하러 가기</a>
 						</div>
 					</div>
-				</div>
-			</div>
-			<div class="container" style="text-align: center;">
-				<div class="col mt-5">
-				<%
-               		// 모든 뮤직비디오 정보 가져오기
-					List<N_NewsDto> newslist2=N_NewsDao.getInstance().getList(new N_NewsDto());
-               %>
-               <%for(int i=0; i<newslist2.size(); i++) {%>
-					<a href="<%=newslist2.get(i).getNews_id() %>" style="color: gray">
-						전체보기
-						<i class="fas fa-caret-right"></i>
-					</a>
-				<%} %>
 				</div>
 			</div>
 			<!-- Latest News Close -->
@@ -223,7 +212,9 @@
 						</div>
 						<%} %>
 						<div class="container text-center mt-5">
+				  			<%if(oclist.size()==0){ %>
 							<p class="text-danger">공식 채널 Data가 없습니다. Data를 추가해 주세요.</p>
+							<%} %>
 							<a href="${pageContext.request.contextPath }/insert/m_officialchannel_insert_form.jsp">추가하러 가기</a>
 						</div>
 					</div>
@@ -250,7 +241,7 @@
 									<img src="${pageContext.request.contextPath }/image/<%=pllist.get(i).getImage_name() %>" alt="<%=pllist.get(i).getImage_name() %>" class="card-img-top" />
 									<div class="card-body">
 										<h5 class="card-title">
-											<a href="${pageContext.request.contextPath }/playlist/some.jsp?num<%=pllist.get(i).getPlaylist_id()%>">
+											<a href="${pageContext.request.contextPath }/playlist/detail.jsp?num=<%=pllist.get(i).getPlaylist_id()%>">
 												<%=pllist.get(i).getPlaylist_title() %>
 											</a>
 										</h5>
@@ -259,7 +250,9 @@
 							</div>
 							<%} %>
 							<div class="container text-center mt-5">
-								<p class="text-danger">플레이리스트 Data가 없습니다. Data를 추가해 주세요.</p>
+				  			<%if(pllist.size()==0){ %>
+							<p class="text-danger">플레이리스트 Data가 없습니다. Data를 추가해 주세요.</p>
+							<%} %>
 								<a href="${pageContext.request.contextPath }/insert/m_playlist_insert_form.jsp">추가하러 가기</a>
 							</div>
 						</div>
@@ -290,13 +283,15 @@
 	               	%>
 	               	<%for(int i=0; i<atlist.size(); i++) {%>
 						<div class="col-3">
-							<a href="${pageContext.request.contextPath }/artist_info/some.jsp">
+							<a href="${pageContext.request.contextPath }/artist_info/detail.jsp?num=<%=atlist.get(i).getArtist_id() %>">
 								<img class="img-fluid" src="${pageContext.request.contextPath }/image/<%=atlist.get(i).getImage_name() %>" alt="<%=atlist.get(i).getImage_name() %>" />
 							</a>
 						</div>
 					<%} %>
 					<div class="container text-center mt-5">
+			  			<%if(atlist.size()==0){ %>
 						<p class="text-danger">아티스트 Data가 없습니다. Data를 추가해 주세요.</p>
+						<%} %>
 						<a href="${pageContext.request.contextPath }/insert/m_artist_insert_form.jsp">추가하러 가기</a>
 					</div>
 					</div>
@@ -304,7 +299,7 @@
 			</div>
 			<div class="container" style="text-align: center;">
 				<div class="col mt-4">
-					<a href="${pageContext.request.contextPath }/artist_info/some.jsp" style="color: gray">전체보기<i class="fas fa-caret-right"></i></a>
+					<a href="${pageContext.request.contextPath }/artist_info/list.jsp" style="color: gray">전체보기<i class="fas fa-caret-right"></i></a>
 				</div>
 			</div>
 			<!-- Artist Close-->
@@ -441,11 +436,11 @@
 		<jsp:include page="../bottom/footer.jsp"></jsp:include>
 		<!-- Footer Close -->
 		<!-- Fixed Button -->
-			<a href="#" id="topbutton"style="position:fixed; bottom: 10%; right: 10%; display:none;">
-				<button class="btn btn-dark">
-					<i class="fas fa-chevron-up"></i>
-				</button>
-			</a>
+		<a href="#" id="topbutton"style="position:fixed; bottom: 10%; right: 10%; display:none;">
+			<button class="btn btn-dark">
+				<i class="fas fa-chevron-up"></i>
+			</button>
+		</a>
 		<!-- Fixed Button Close -->
 	</div>
 	</div>

@@ -3,6 +3,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
+	request.setCharacterEncoding("UTF-8");
+
 	String mv_link=request.getParameter("mv_link");
 	String at_id=request.getParameter("at_id");
 	// MvDto 정보 담기
@@ -18,6 +20,7 @@
 <meta charset="UTF-8">
 <title>/insert/musicvideo_insert.jsp</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath }/css/bootstrap.css" />
+<link href='${pageContext.request.contextPath }/css/font.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
 	<%if(isSuccess){ %>

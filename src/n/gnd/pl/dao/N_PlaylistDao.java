@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import n.gnd.db.DbcpBean;
+import n.gnd.news.dto.N_NewsDto;
 import n.gnd.pl.dto.N_PlaylistDto;
 
 public class N_PlaylistDao {
@@ -107,5 +108,49 @@ public class N_PlaylistDao {
 			}
 		}
 		return list;
+	}
+	// 플레이리스트 하나의 정보를 리턴하는 메소드
+	public N_PlaylistDto getData(int num) {
+		N_PlaylistDto dto=null;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			conn = new DbcpBean().getConn();
+			String sql = "SELECT *"
+					+ " FROM m_playlist"
+					+ " WHERE playlist_id=?";
+			pstmt = conn.prepareStatement(sql);
+			// ? 에 값 바인딩 
+			pstmt.setInt(1, num);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				dto=new N_PlaylistDto();
+				dto.setPlaylist_id(rs.getString(num));
+				dto.setPlaylist_writer(rs.getString("playlist_writer"));
+				dto.setPlaylist_title(rs.getString("playlist_title"));
+				dto.setPlaylist_link(rs.getString("playlist_link"));
+				dto.setImage_name(rs.getString("image_name"));
+				dto.setPlaylist_list1(rs.getString("playlist_list1"));
+				dto.setPlaylist_list2(rs.getString("playlist_list2"));
+				dto.setPlaylist_list3(rs.getString("playlist_list3"));
+				dto.setPlaylist_list4(rs.getString("playlist_list4"));
+				dto.setPlaylist_list5(rs.getString("playlist_list5"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (pstmt != null)
+					pstmt.close();
+				//connection pool 에 반납하기 
+				if (conn != null)
+					conn.close();
+			} catch (Exception e) {
+			}
+		}
+		return dto;
 	}
 }

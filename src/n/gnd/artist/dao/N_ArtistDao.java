@@ -28,7 +28,7 @@ public class N_ArtistDao {
 			//실행할 sql 문 준비하기 
 			String sql = "INSERT INTO m_artist"
 					+ " (artist_id, artist_name, artist_e_name, image_name, artist_country, artist_description)"
-					+ " VALUES(m_artist_seq.NEXTVAL, ?, ?, ?, ?, ?,)";
+					+ " VALUES(m_artist_seq.NEXTVAL, ?, ?, ?, ?, ?)";
 			pstmt = conn.prepareStatement(sql);
 			//? 에 바인딩 할 값이 있으면 바인딩한다.
 			pstmt.setString(1, dto.getArtist_name());
@@ -110,7 +110,7 @@ public class N_ArtistDao {
 			conn = new DbcpBean().getConn();
 			String sql = "SELECT *"
 					+ " FROM m_artist"
-					+ " WHERE num=?";
+					+ " WHERE artist_id=?";
 			pstmt = conn.prepareStatement(sql);
 			// ? 에 값 바인딩 
 			pstmt.setInt(1, num);
@@ -120,7 +120,7 @@ public class N_ArtistDao {
 				dto.setArtist_id(rs.getString(num));
 				dto.setArtist_name(rs.getString("artist_name"));
 				dto.setArtist_e_name(rs.getString("artist_e_name"));
-				dto.setArtist_name(rs.getString("image_name"));
+				dto.setImage_name(rs.getString("image_name"));
 				dto.setArtist_country(rs.getString("artist_country"));
 				dto.setArtist_description(rs.getString("artist_description"));
 			}

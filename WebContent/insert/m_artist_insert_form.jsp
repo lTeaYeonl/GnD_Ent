@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>메인 아티스트 추가 폼</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath }/css/bootstrap.css" />
+<link href='${pageContext.request.contextPath }/css/font.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
 	<!-- Top Navigation -->
@@ -33,7 +34,7 @@
 				<input type="text" class="form-control" name="artist_country" id="artist_country"/>
 			</div>
 			<div class="form-group">
-				<label for="artist_description">※ 이미지 파일 명</label>
+				<label for="artist_description">※ 아티스트 설명</label>
 				<input type="text" class="form-control" name="artist_description" id="artist_description"/>
 			</div>
 			<button type="submit" class="btn btn-primary">저장</button>

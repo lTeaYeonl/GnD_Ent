@@ -3,6 +3,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
+	request.setCharacterEncoding("UTF-8");
+	
 	String artist_id=request.getParameter("artist_id");
 	String artist_e_name=request.getParameter("artist_e_name");
 	String musicvideo_name=request.getParameter("musicvideo_name");
@@ -24,6 +26,7 @@
 <meta charset="UTF-8">
 <title>뮤직비디오 추가 확인</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath }/css/bootstrap.css" />
+<link href='${pageContext.request.contextPath }/css/font.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
 	<!-- Top Navigation -->
