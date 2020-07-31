@@ -94,12 +94,12 @@
 					</a>
 				</div>
 			</div>
-			<%}else{ %>
 			<div class="container text-center mt-5">
+			<%}else{ %>
 				<p class="text-danger">이미지 Data가 없습니다. Data를 추가해 주세요.</p>
+			<%} %>
 				<a href="${pageContext.request.contextPath }/insert/m_image_insert_form.jsp">추가하러 가기</a>
 			</div>
-			<%} %>
 			<!-- Carousel Image Close -->
 			<!-- New Music Video -->
             <div class="container mt-5">
@@ -146,7 +146,7 @@
 	               <div class="col-4">
 	               		<div class="container text-center">
 	               			<div class="container" style="margin-top: 25%;">
-								<a href="${pageContext.request.contextPath }/insert/m_musicvideo_insert_form.jsp">이미지 추가하기</a><br />
+								<a href="${pageContext.request.contextPath }/insert/m_musicvideo_insert_form.jsp">뮤직비디오 추가하기</a><br />
 		               		<i class="fas fa-plus"></i>
 	               			</div>
 	               	</div>
@@ -176,7 +176,7 @@
 								<div class="card-body">
 									<h5 class="card-title"><%=newslist.get(i).getNews_title() %></h5>
 									<p class="card-text"><%=newslist.get(i).getNews_content() %></p>
-									<a href="<%=newslist.get(i).getNews_id() %>" class="btn btn-primary">더보기 ></a>
+									<a href="${pageContext.request.contextPath }/news/detail.jsp?num=<%=newslist.get(i).getNews_id() %>" class="btn btn-primary">더보기 ></a>
 								</div>
 							</div>
 						</div>
