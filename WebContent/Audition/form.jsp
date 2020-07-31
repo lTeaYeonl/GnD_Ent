@@ -249,7 +249,7 @@
 						 <span class="help">ex.OOO@OOO.com</span>
 						</label>
 						 <input type="text" class="ct_txt" id="inf_email" name="inf_email" maxlength="60" style="font-weight: 700" />
-						<button class="btn-layer file" id="checkBtn" name="checkBtn">중복확인</button>
+						<button class="btn btn-primary" id="checkBtn" name="checkBtn">중복확인</button>
 						<span id="checkResult"></span>
 					</div>
 				<ul class="f_two">
