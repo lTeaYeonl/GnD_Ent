@@ -45,7 +45,7 @@
 				</div>
 				<div class="container">
 					<p>
-						<a href="#" style="color:#777777; font-size:12px;">뉴스레터 구독</a>
+						<a href="#staticBackdrop" style="color:#777777; font-size:12px;" >뉴스레터 구독</a>
 					</p>
 					<p>
 						<a href="#" style="color:#777777; font-size:12px;">블로그 방문</a>

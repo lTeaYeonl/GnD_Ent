@@ -13,7 +13,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title><%=dto.getImage_name() %> 상세 페이지</title>
+<title><%=dto.getArtist_name() %></title>
 <link rel="stylesheet" href="${pageContext.request.contextPath }/css/bootstrap.css" />
 <link href='${pageContext.request.contextPath }/css/font.css' rel='stylesheet' type='text/css'>
 </head>
@@ -21,21 +21,9 @@
 	<!-- Top Navigation -->
 	<jsp:include page="../top/navbar.jsp"></jsp:include>
 	<!-- Top Navigation Close -->
-	<!-- Carousel Image -->
-	<div class="container-fluid px-0" id="carouselimage">
-		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-			<div class="carousel-inner">
-				<div class="carousel-item">
-					<img class="d-block w-100" src="${pageContext.request.contextPath }/image/<%=dto.getImage_name() %>" alt="<%=dto.getImage_name() %>" />
-					<div class="carousel-caption d-none d-md-block" style="bottom: 15%">
-						<h1 style="bottom: 10%;"><%=dto.getArtist_e_name() %></h1>
-						<p style="bottom: 10%;"><%=dto.getArtist_name() %></p>
-					</div>
-				</div>
-			</div>
-		</div>
+	<div class="container">
+		<img class="img-fluid" src="${pageContext.request.contextPath }/image/<%=dto.getImage_name() %>" alt="<%=dto.getImage_name() %>" />
 	</div>
-	<!-- Carousel Image Close -->
 	<!-- Main Content -->
 	<div class="container">
 		<div class="row mt-5">

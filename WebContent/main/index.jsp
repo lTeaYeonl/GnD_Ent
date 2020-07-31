@@ -94,10 +94,10 @@
 					</a>
 				</div>
 			</div>
-			<div class="container text-center mt-5">
 			<%}else{ %>
 				<p class="text-danger">이미지 Data가 없습니다. Data를 추가해 주세요.</p>
 			<%} %>
+			<div class="container text-center mt-5">
 				<a href="${pageContext.request.contextPath }/insert/m_image_insert_form.jsp">추가하러 가기</a>
 			</div>
 			<!-- Carousel Image Close -->
@@ -149,7 +149,7 @@
 								<a href="${pageContext.request.contextPath }/insert/m_musicvideo_insert_form.jsp">뮤직비디오 추가하기</a><br />
 		               		<i class="fas fa-plus"></i>
 	               			</div>
-	               	</div>
+	               		</div>
 	               </div>
                 </div>
             	<!-- New Music Video -->
@@ -182,24 +182,12 @@
 						</div>
 						<%} %>
 						<div class="container text-center mt-5">
+				  			<%if(newslist.size()==0){ %>
 							<p class="text-danger">뉴스 Data가 없습니다. Data를 추가해 주세요.</p>
+							<%} %>
 							<a href="${pageContext.request.contextPath }/insert/m_news_insert_form.jsp">추가하러 가기</a>
 						</div>
 					</div>
-				</div>
-			</div>
-			<div class="container" style="text-align: center;">
-				<div class="col mt-5">
-				<%
-               		// 모든 뮤직비디오 정보 가져오기
-					List<N_NewsDto> newslist2=N_NewsDao.getInstance().getList(new N_NewsDto());
-               %>
-               <%for(int i=0; i<newslist2.size(); i++) {%>
-					<a href="<%=newslist2.get(i).getNews_id() %>" style="color: gray">
-						전체보기
-						<i class="fas fa-caret-right"></i>
-					</a>
-				<%} %>
 				</div>
 			</div>
 			<!-- Latest News Close -->
@@ -224,7 +212,9 @@
 						</div>
 						<%} %>
 						<div class="container text-center mt-5">
+				  			<%if(oclist.size()==0){ %>
 							<p class="text-danger">공식 채널 Data가 없습니다. Data를 추가해 주세요.</p>
+							<%} %>
 							<a href="${pageContext.request.contextPath }/insert/m_officialchannel_insert_form.jsp">추가하러 가기</a>
 						</div>
 					</div>
@@ -251,7 +241,7 @@
 									<img src="${pageContext.request.contextPath }/image/<%=pllist.get(i).getImage_name() %>" alt="<%=pllist.get(i).getImage_name() %>" class="card-img-top" />
 									<div class="card-body">
 										<h5 class="card-title">
-											<a href="${pageContext.request.contextPath }/playlist/some.jsp?num<%=pllist.get(i).getPlaylist_id()%>">
+											<a href="${pageContext.request.contextPath }/playlist/detail.jsp?num=<%=pllist.get(i).getPlaylist_id()%>">
 												<%=pllist.get(i).getPlaylist_title() %>
 											</a>
 										</h5>
@@ -260,7 +250,9 @@
 							</div>
 							<%} %>
 							<div class="container text-center mt-5">
-								<p class="text-danger">플레이리스트 Data가 없습니다. Data를 추가해 주세요.</p>
+				  			<%if(pllist.size()==0){ %>
+							<p class="text-danger">플레이리스트 Data가 없습니다. Data를 추가해 주세요.</p>
+							<%} %>
 								<a href="${pageContext.request.contextPath }/insert/m_playlist_insert_form.jsp">추가하러 가기</a>
 							</div>
 						</div>
@@ -291,13 +283,15 @@
 	               	%>
 	               	<%for(int i=0; i<atlist.size(); i++) {%>
 						<div class="col-3">
-							<a href="${pageContext.request.contextPath }/artist_info/some.jsp">
+							<a href="${pageContext.request.contextPath }/artist_info/detail.jsp?num=<%=atlist.get(i).getArtist_id() %>">
 								<img class="img-fluid" src="${pageContext.request.contextPath }/image/<%=atlist.get(i).getImage_name() %>" alt="<%=atlist.get(i).getImage_name() %>" />
 							</a>
 						</div>
 					<%} %>
 					<div class="container text-center mt-5">
+			  			<%if(atlist.size()==0){ %>
 						<p class="text-danger">아티스트 Data가 없습니다. Data를 추가해 주세요.</p>
+						<%} %>
 						<a href="${pageContext.request.contextPath }/insert/m_artist_insert_form.jsp">추가하러 가기</a>
 					</div>
 					</div>
