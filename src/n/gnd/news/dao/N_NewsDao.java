@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import n.gnd.artist.dto.N_ArtistDto;
 import n.gnd.db.DbcpBean;
 import n.gnd.news.dto.N_NewsDto;
 
@@ -104,5 +105,48 @@ public class N_NewsDao {
 			}
 		}
 		return list;
+	}
+	// 뉴스 하나의 정보를 리턴하는 메소드
+	public N_NewsDto getData(int num) {
+		N_NewsDto dto=null;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			conn = new DbcpBean().getConn();
+			String sql = "SELECT *"
+					+ " FROM m_news"
+					+ " WHERE num=?";
+			pstmt = conn.prepareStatement(sql);
+			// ? 에 값 바인딩 
+			pstmt.setInt(1, num);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				dto=new N_NewsDto();
+				dto.setNews_id(rs.getString(num));
+				dto.setArtist_id(rs.getString("artist_name"));
+				dto.setArtist_name(rs.getString("artist_name"));
+				dto.setArtist_e_name(rs.getString("artist_e_name"));
+				dto.setNews_writer(rs.getString("news_writer"));
+				dto.setNews_title(rs.getString("news_title"));
+				dto.setNews_content(rs.getString("news_content"));
+				dto.setNews_regdate(rs.getString("news_regdate"));
+				dto.setImage_name(rs.getString("image_name"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (pstmt != null)
+					pstmt.close();
+				//connection pool 에 반납하기 
+				if (conn != null)
+					conn.close();
+			} catch (Exception e) {
+			}
+		}
+		return dto;
 	}
 }
