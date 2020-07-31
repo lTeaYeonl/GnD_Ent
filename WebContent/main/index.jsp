@@ -77,7 +77,7 @@
 							<div class="carousel-caption d-none d-md-block" style="bottom: 15%">
 								<h1 style="bottom: 10%;"><%=list.get(i).getArtist_e_name() %></h1>
 								<p style="bottom: 10%;"><%=list.get(i).getArtist_name() %></p>
-								<button style="color: white; bottom: 10%;" type="button" class="btn btn-secondary" onclick="location.href='../artist_info/detail.jsp?num=<%=list.get(i).getArtist_id() %>">">
+								<button style="color: white; bottom: 10%;" type="button" class="btn btn-secondary" onclick="location.href='../artist_info/detail.jsp?num=<%=list.get(i).getArtist_id() %>">
 									더 보기
 								</button>
 							</div>
