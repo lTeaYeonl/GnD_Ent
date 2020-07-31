@@ -128,7 +128,7 @@ public class InformDao {
 			pstmt.setString(14, dto.getInf_lan());
 			pstmt.setString(15, dto.getInf_hobby());
 			pstmt.setString(16, dto.getInf_spec());
-			pstmt.setString(1, dto.getInf_intro());
+			pstmt.setString(17, dto.getInf_intro());
 			
 			//sql  문 수행하고 update or insert or delete 된 row 의 갯수 리턴받기 
 			flag = pstmt.executeUpdate();
@@ -149,37 +149,4 @@ public class InformDao {
 			return false;
 		}
 	}
-	//이미지 정보를 DB 에 저장하는 메소드 
-		public boolean photoinsert(InformDto dto) {
-			Connection conn = null;
-			PreparedStatement pstmt = null;
-			int flag = 0;
-			try {
-				conn = new DbcpBean().getConn();
-				//실행할 sql 문 준비하기 
-				String sql = "INSERT INTO inform"
-						+ " (inf_photo)"
-						+ " VALUES(?)";
-				pstmt = conn.prepareStatement(sql);
-				//? 에 바인딩 할 값이 있으면 바인딩한다.
-				pstmt.setString(1, dto.getInf_photo());
-				//sql  문 수행하고 update or insert or delete 된 row 의 갯수 리턴받기 
-				flag = pstmt.executeUpdate();
-			} catch (Exception e) {
-				e.printStackTrace();
-			} finally {
-				try {
-					if (pstmt != null)
-						pstmt.close();
-					if (conn != null)
-						conn.close();
-				} catch (Exception e) {
-				}
-			}
-			if (flag > 0) {
-				return true;
-			} else {
-				return false;
-			}
-		}
 }
