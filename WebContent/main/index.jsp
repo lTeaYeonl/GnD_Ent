@@ -139,7 +139,7 @@
 	               <div class="col-4">
 	               		<div class="container text-center">
 	               			<div class="container" style="margin-top: 25%;">
-								<a href="${pageContext.request.contextPath }/insert/m_image_insert_form.jsp">이미지 추가하기</a><br />
+								<a href="${pageContext.request.contextPath }/insert/m_musicvideo_insert_form.jsp">이미지 추가하기</a><br />
 		               		<i class="fas fa-plus"></i>
 	               			</div>
 	               	</div>
@@ -294,7 +294,7 @@
 			</div>
 			<div class="container" style="text-align: center;">
 				<div class="col mt-4">
-					<a href="${pageContext.request.contextPath }/artist_info/some.jsp" style="color: gray">전체보기<i class="fas fa-caret-right"></i></a>
+					<a href="${pageContext.request.contextPath }/artist_info/list.jsp" style="color: gray">전체보기<i class="fas fa-caret-right"></i></a>
 				</div>
 			</div>
 			<!-- Artist Close-->
@@ -396,11 +396,11 @@
 		<jsp:include page="../bottom/footer.jsp"></jsp:include>
 		<!-- Footer Close -->
 		<!-- Fixed Button -->
-			<a href="#" id="topbutton"style="position:fixed; bottom: 10%; right: 10%; display:none;">
-				<button class="btn btn-dark">
-					<i class="fas fa-chevron-up"></i>
-				</button>
-			</a>
+		<a href="#" id="topbutton"style="position:fixed; bottom: 10%; right: 10%; display:none;">
+			<button class="btn btn-dark">
+				<i class="fas fa-chevron-up"></i>
+			</button>
+		</a>
 		<!-- Fixed Button Close -->
 	</div>
 	</div>
