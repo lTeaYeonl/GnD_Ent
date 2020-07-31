@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>메인 아티스트 추가 폼</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath }/css/bootstrap.css" />
+<link href='${pageContext.request.contextPath }/css/font.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
 	<!-- Top Navigation -->

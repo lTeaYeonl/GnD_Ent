@@ -18,6 +18,7 @@
 <meta charset="UTF-8">
 <title>/insert/musicvideo_insert.jsp</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath }/css/bootstrap.css" />
+<link href='${pageContext.request.contextPath }/css/font.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
 	<%if(isSuccess){ %>
