@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
+	request.setCharacterEncoding("UTF-8");
 	//폼 전송되는 가입할 회원의 정보를 읽어온다.
 	String inf_name=request.getParameter("inf_name");
 	String inf_email=request.getParameter("inf_email");
@@ -54,7 +55,7 @@
 <body>
 <%if(isSuccess){ %>
 	<script>
-		alert("메인화면으로 넘어갑니다.");
+		alert("회원가입이 되었습니다.");
 		location.href = "${pageContext.request.contextPath }/main/index.jsp";
 	</script>			
 <%}else{%>

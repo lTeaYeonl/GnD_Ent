@@ -1,14 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>form</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath }/css/bootstrap.css" />
 <script src="${pageContext.request.contextPath }/js/jquery-3.5.1.js"></script>
 <script src="${pageContext.request.contextPath }/js/bootstrap.js"></script>
 <script src="${pageContext.request.contextPath }/js/bootstrap.min.js"></script>
-<script src="${pageContext.request.contextPath }/css/bootstrap.css"></script>
+<link href='${pageContext.request.contextPath }/css/font.css' rel='stylesheet' type='text/css'>
 <style>
 
 .bg_gray {
@@ -169,7 +171,6 @@
 		padding: 0px 0px 0px 2px;
 		margin-top: -4px;
 		background: none;
-		font-family: Arial, sans-serif;
 		color: #2c2c2c;
 		outline: 0;
 		height: 35px;
@@ -204,7 +205,6 @@
 	border: none;
 	padding: 0px 0px 0px 2px;
 	margin-top: -4px;
-	font-family: Arial, sans-serif;
 	color: #2c2c2c;
 	height: 35px;
 	line-height: normal;
@@ -250,7 +250,7 @@
 						 <span class="help">ex.OOO@OOO.com</span>
 						</label>
 						 <input type="text" class="ct_txt" id="inf_email" name="inf_email" maxlength="60" style="font-weight: 700" />
-						<button class="btn-layer file" id="checkBtn" name="checkBtn">중복확인</button>
+						<button class="btn btn-primary" id="checkBtn" name="checkBtn">중복확인</button>
 						<span id="checkResult"></span>
 					</div>
 				<ul class="f_two">
