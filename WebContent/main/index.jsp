@@ -308,7 +308,24 @@
 				</div>
 			</div>
 			<!-- Artist Close-->
-			<!-- News Letter Modal -->
+			<!-- News Letter -->
+			<div class="container mt-5" style="text-align: center">
+				<div class="row">
+					<div class="col">
+						<h3>개노답뮤직 뉴스레터 구독</h3>
+					</div>
+					<div class="col">
+						<p style="font-size: 14px; color: #7c7c7c; line-height: 1.1; text-align: left; letter-spacing: -1px;">
+							개노답뮤직 아티스트와 최신 앨범 소식, <br />이벤트 뉴스 등을 빠르게 이메일로 받아보세요.</p>
+					</div>
+					<!-- Button trigger modal -->
+					<div class="col">
+						<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#staticBackdrop">구독</button>
+					</div>
+					<!-- Button trigger modal close-->
+				</div>
+			</div>
+			<!-- News Letter Modal-->
 			<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content">
@@ -332,7 +349,7 @@
 									<li>보유 이용 기간 : 구독수신거부 전까지</li>
 								</ul>
 								<p style="text-align: left;">
-									<label> <input type="checkbox" id="confirm" class="confirm" /> 
+									<label> <input type="checkbox" id="chkbox" class="chkbox" /> 
 										<span>위 내용에 동의 합니다.</span> 
 										<span class="email"> <input type="email" placeholder="Email" /></span>
 									</label>
@@ -340,7 +357,7 @@
 							</div>
 						</div>
 						<div class="modal-footer">
-							<form action="resetprocess.php">
+							<form action="#" method="post">
 								<button type="submit" id="subscbtn" class="btn btn-dark" data-dismiss="modal">신청</button>
 							</form>
 						</div>
@@ -349,10 +366,10 @@
 				</div>
 			</div>
 			<!-- News Letter Modal Close-->
+			<!-- News Letter close-->
 			<!-- Instagram Feed -->
 			<div class="container mt-5" style="text-align: center">
-				<p
-					style="font-size: 12px; color: #a3a3a3; line-height: 1; text-align: center; letter-spacing: 0px;">인스타그램
+				<p style="font-size: 12px; color: #a3a3a3; line-height: 1; text-align: center; letter-spacing: 0px;">인스타그램
 					피드</p>
 				<h3
 					style="font-size: 30px; line-height: 1; text-align: center; letter-spacing: 0px;">Instagram
