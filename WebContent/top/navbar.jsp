@@ -25,15 +25,6 @@
 			<li class="nav-item">
 				<a class="nav-link" href="${pageContext.request.contextPath }/Audition/terms.jsp" style="color:white; font-size:12px;">회원가입</a>
 			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="${pageContext.request.contextPath }/insert/image_insert_form.jsp" style="color:white; font-size:12px;">이미지 정보 입력</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="${pageContext.request.contextPath }/insert/artist_insert_form.jsp" style="color:white; font-size:12px;">아티스트 정보 입력</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="${pageContext.request.contextPath }/insert/musicvideo_insert_form.jsp" style="color:white; font-size:12px;">뮤직비디오 정보 입력</a>
-			</li>
 		</ul>
 	</div>
 	<div class="social-icons">
