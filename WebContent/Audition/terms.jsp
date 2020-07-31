@@ -7,7 +7,8 @@
 <title>terms</title>
  <script src="${pageContext.request.contextPath }/js/jquery-3.5.1.js"></script>
 <script src="${pageContext.request.contextPath }/js/bootstrap.js"></script>
-<script src="${pageContext.request.contextPath }/css/bootstrap.css"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath }/css/bootstrap.css" />
+<link href='${pageContext.request.contextPath }/css/font.css' rel='stylesheet' type='text/css'>
 <style>
 
 .main {
@@ -35,7 +36,6 @@ img {
 ;
 body {
 	font-size: 9pt;
-	font-family: 'Noto Sans', sans-serif;
 	color: #282828;
 	line-height: 130%;
 	overflow-x: hidden;

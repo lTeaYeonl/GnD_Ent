@@ -9,6 +9,7 @@
 <script src="${pageContext.request.contextPath }/js/jquery-3.5.1.js"></script>
 <script src="${pageContext.request.contextPath }/js/bootstrap.js"></script>
 <script src="${pageContext.request.contextPath }/js/bootstrap.min.js"></script>
+<link href='${pageContext.request.contextPath }/css/font.css' rel='stylesheet' type='text/css'>
 <style>
 
 .bg_gray {
@@ -169,7 +170,6 @@
 		padding: 0px 0px 0px 2px;
 		margin-top: -4px;
 		background: none;
-		font-family: Arial, sans-serif;
 		color: #2c2c2c;
 		outline: 0;
 		height: 35px;
@@ -204,7 +204,6 @@
 	border: none;
 	padding: 0px 0px 0px 2px;
 	margin-top: -4px;
-	font-family: Arial, sans-serif;
 	color: #2c2c2c;
 	height: 35px;
 	line-height: normal;
