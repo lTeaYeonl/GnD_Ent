@@ -3,6 +3,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
+	request.setCharacterEncoding("UTF-8");
+
 	String officialchannel_link=request.getParameter("officialchannel_link");
 	String officialchannel_icon_name=request.getParameter("officialchannel_icon_name");
 	// ImageDto에 이미지 정보 담기

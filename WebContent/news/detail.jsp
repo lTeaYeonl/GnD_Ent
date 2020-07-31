@@ -3,6 +3,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
+	request.setCharacterEncoding("UTF-8");
+	
 	//1. GET 방식 파라미터로 전달되는 글번호를 읽어온다.
 	int num=Integer.parseInt(request.getParameter("num"));
 	//2. DB 에서 해당 글 정보를 얻어온다.

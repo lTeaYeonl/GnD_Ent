@@ -3,6 +3,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
+	request.setCharacterEncoding("UTF-8");
+
 	String playlist_writer=request.getParameter("playllist_writer");
 	String playlist_title=request.getParameter("playlist_title");
 	String playlist_link=request.getParameter("playlist_link");

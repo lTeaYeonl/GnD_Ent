@@ -3,6 +3,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
+	request.setCharacterEncoding("UTF-8");
+
 	String artist_name=request.getParameter("artist_name");
 	String artist_e_name=request.getParameter("artist_e_name");
 	String image_name=request.getParameter("image_name");
