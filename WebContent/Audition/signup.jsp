@@ -11,9 +11,9 @@
 	String inf_sel=request.getParameter("inf_sel");
 	String inf_sex=request.getParameter("inf_sex");
 	String inf_bday=request.getParameter("inf_bday");
-	int inf_height=0; //Integer.parseInt(request.getParameter("inf_height"));
-	int inf_weight=0; //Integer.parseInt(request.getParameter("inf_weight"));
-	String inf_phone= request.getParameter("inf_phone");
+	int inf_height=Integer.parseInt(request.getParameter("inf_height"));
+	int inf_weight=Integer.parseInt(request.getParameter("inf_weight"));
+	String inf_phone=request.getParameter("inf_phone");
 	String inf_job=request.getParameter("inf_job");
 	String inf_sns=request.getParameter("inf_sns");
 	String inf_address=request.getParameter("inf_address");
@@ -53,12 +53,15 @@
 </head>
 <body>
 <%if(isSuccess){ %>
-	<p> 
-		<strong><%=inf_name %></strong> 회원님 가입 되었습니다.
-	</p>
-		<a href="${pageContext.request.contextPath }/main/index.jsp">main 으로 돌아가기</a>
-<%}else{ %>
-	<p> 가입이 실패 했습니다. <a href="form.jsp">다시 가입</a></p>
+	<script>
+		alert("메인화면으로 넘어갑니다.");
+		location.href = "${pageContext.request.contextPath }/main/index.jsp";
+	</script>			
+<%}else{%>
+<script>
+	alert("가입이 실패했습니다.")
+	location.href="${pageContext.request.contextPath }/Audition/form.jsp "
+</script>
 <%} %>
 </body>
 </html>
