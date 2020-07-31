@@ -132,14 +132,6 @@
 			</div>
 		</div>
 		<!-- modal script -->
-		<script>
-			$('#subscbtn').click(function() {
-				if (!$('#confirm').is(':checked')) {
-					alert('not checked');
-					return false;
-				}
-			});
-		</script>
 		<!-- modal script close-->
 		<!-- News Letter Modal Close-->
 	</div>
