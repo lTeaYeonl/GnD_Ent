@@ -1,10 +1,25 @@
+<%@page import="gnd.artist.dto.ArtistDto"%>
+<%@page import="gnd.artist.dao.ArtistDao"%>
 <%@page import="gnd.mv.dao.MvDao"%>
 <%@page import="gnd.mv.dto.MvDto"%>
+
+<%@page import="n.gnd.artist.dao.N_ArtistDao"%>
+<%@page import="n.gnd.artist.dto.N_ArtistDto"%>
+<%@page import="n.gnd.pl.dao.N_PlaylistDao"%>
+<%@page import="n.gnd.pl.dto.N_PlaylistDto"%>
+<%@page import="n.gnd.oc.dao.N_OfficialCDao"%>
+<%@page import="n.gnd.oc.dto.N_OfficialCDto"%>
+<%@page import="n.gnd.news.dao.N_NewsDao"%>
+<%@page import="n.gnd.news.dto.N_NewsDto"%>
+<%@page import="n.gnd.mv.dao.N_MvDao"%>
+<%@page import="n.gnd.mv.dto.N_MvDto"%>
+<%@page import="n.gnd.image.dao.N_ImageDao"%>
+<%@page import="n.gnd.image.dto.N_ImageDto"%>
+
 <%@page import="java.util.List"%>
-<%@page import="gnd.image.dto.ImageDto"%>
-<%@page import="gnd.image.dao.ImageDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,7 +52,7 @@
 			<!-- Carousel Image -->
 			<%
 				// 모든 아티스트 이미지 목록 가져오기
-				List<ImageDto> list = ImageDao.getinstance().getList(new ImageDto());
+				List<N_ImageDto> list = N_ImageDao.getInstance().getList(new N_ImageDto());
 			%>
 			<%if(list.size()!=0){ %>
 			<div class="container-fluid px-0" id="carouselimage">
@@ -58,11 +73,11 @@
 						<%}else{ %>
 						<div class="carousel-item">
 					<%} %>
-							<img class="d-block w-100" src="${pageContext.request.contextPath }/image/<%=list.get(i).getName() %>" alt="<%=i %> slide" />
+							<img class="d-block w-100" src="${pageContext.request.contextPath }/image/<%=list.get(i).getImage_name() %>" alt="<%=i %> slide" />
 							<div class="carousel-caption d-none d-md-block" style="bottom: 15%">
-								<h1 style="bottom: 10%;"><%=list.get(i).getE_name()%></h1>
-								<p style="bottom: 10%;"><%=list.get(i).getK_name()%></p>
-								<button style="color: white; bottom: 10%;" type="button" class="btn btn-secondary" onclick="location.href='cpath.jsp?<%=list.get(i).getAt_id()%>'">
+								<h1 style="bottom: 10%;"><%=list.get(i).getArtist_e_name() %></h1>
+								<p style="bottom: 10%;"><%=list.get(i).getArtist_name() %></p>
+								<button style="color: white; bottom: 10%;" type="button" class="btn btn-secondary" onclick="location.href='../artist_info/detail.jsp?num=<%=list.get(i).getArtist_id() %>">
 									더 보기
 								</button>
 							</div>
@@ -80,14 +95,16 @@
 				</div>
 			</div>
 			<%}else{ %>
+			<div class="container text-center mt-5">
 				<p class="text-danger">이미지 Data가 없습니다. Data를 추가해 주세요.</p>
-				<a href="${pageContext.request.contextPath }/insert/image_insert_form.jsp">추가하러 가기</a>
+				<a href="${pageContext.request.contextPath }/insert/m_image_insert_form.jsp">추가하러 가기</a>
+			</div>
 			<%} %>
 			<!-- Carousel Image Close -->
 			<!-- New Music Video -->
             <div class="container mt-5">
                <div class="container">
-                  <p   style="font-size: 12px; color: #a3a3a3; line-height: 1; text-align: center; letter-spacing: 0px;">
+                  <p style="font-size: 12px; color: #a3a3a3; line-height: 1; text-align: center; letter-spacing: 0px;">
                      최신뮤직비디오
                   </p>
                   <h3 style="font-size: 30px; line-height: 1; text-align: center; letter-spacing: 0px;">
@@ -97,37 +114,43 @@
                <div class="row">
 	               <%
 	               		// 모든 뮤직비디오 정보 가져오기
-						List<MvDto> mvlist=MvDao.getinstance().getList(new MvDto());
+						List<N_MvDto> mvlist=N_MvDao.getInstance().getList(new N_MvDto());
 	               %>
 	               <%for(int i=0; i<mvlist.size(); i++) {%>
                		<div class="col-4">
                			<button type="button" class="btn btn-default" data-toggle="modal" data-target="#mvModal<%=i %>">
-                   			<img class="img-fluid" src="${pageContext.request.contextPath }/image/<%=mvlist.get(i).getImg_name() %>" alt="<%=mvlist.get(i).getImg_name() %>" />
+                   			<img class="img-fluid" src="${pageContext.request.contextPath }/image/<%=mvlist.get(i).getMusicvideo_thumbnail_name() %>" alt="<%=mvlist.get(i).getMusicvideo_thumbnail_name() %>" />
                    		</button>
                    		<div class="modal fade bd-example-modal-xl" id="mvModal<%=i %>" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
 	                        <div class="modal-dialog modal-xl" role="document">
 	                           <div class="modal-content">
 	                              <div class="modal-header">
-	                                 <h5 class="modal-title" id="videoModalLabel"><%=mvlist.get(i).getAt_id() %></h5>
+	                                 <h5 class="modal-title" id="videoModalLabel"><%=mvlist.get(i).getArtist_e_name() %> - <%=mvlist.get(i).getMusicvideo_name() %></h5>
 	                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	                                    <span aria-hidden="true">&times;</span>
 	                                 </button>
 	                              </div>
 	                              <div class="modal-body">
 	                                 <div class="embed-responsive embed-responsive-16by9">
-	                                 	<iframe class="embed-responsive-item" src="<%=mvlist.get(i).getLink() %>" allowfullscreen="true"></iframe>
+	                                 	<iframe class="embed-responsive-item" src="<%=mvlist.get(i).getMusicvideo_link() %>" allowfullscreen="true"></iframe>
 	                                 </div>
 	                              </div>
 	                              <div class="modal-footer">
-	                                 <button type="button" class="btn btn-secondary"
-	                                    data-dismiss="modal">close</button>
-	                                 <button type="button" class="btn btn-primary">save</button>
+	                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
 	                              </div>
 	                           </div>
 	                        </div>
                      	</div>
                    	</div>
 	               <%} %>
+	               <div class="col-4">
+	               		<div class="container text-center">
+	               			<div class="container" style="margin-top: 25%;">
+								<a href="${pageContext.request.contextPath }/insert/m_musicvideo_insert_form.jsp">이미지 추가하기</a><br />
+		               		<i class="fas fa-plus"></i>
+	               			</div>
+	               	</div>
+	               </div>
                 </div>
             	<!-- New Music Video -->
 				<!-- Latest News -->
@@ -141,60 +164,42 @@
 						</h3>
 					</div>
 					<div class="row">
+					<%
+	               		// 모든 뮤직비디오 정보 가져오기
+						List<N_NewsDto> newslist=N_NewsDao.getInstance().getList(new N_NewsDto());
+	               %>
+	               <%for(int i=0; i<newslist.size(); i++) {%>
 						<div class="col-3">
 							<div class="card" style="width: 18rem;">
 								<img class="card-img-top"
-									src="${pageContext.request.contextPath }/image/test1.jpg"
-									alt="Card image cap">
+									src="${pageContext.request.contextPath }/image/<%=newslist.get(i).getImage_name() %>" alt="<%=newslist.get(i).getImage_name() %>">
 								<div class="card-body">
-									<h5 class="card-title">앤-마리, 도자 캣과 함께한 싱글 'To Be
-										Young(feat.Doja Cat)' 발매</h5>
-									<p class="card-text">2019 국내 음원차트 1위, 앤-마리 새 싱글 ‘To Be
-										Young’ 7월 17일 정오 발매 ‘국민 팝스타’ 앤-마리(Anne-Marie)가 7월 17일 정오에 새 싱글
-										‘To Be Young’을 발매한다....</p>
-									<a href="" class="btn btn-primary">더보기 ></a>
+									<h5 class="card-title"><%=newslist.get(i).getNews_title() %></h5>
+									<p class="card-text"><%=newslist.get(i).getNews_content() %></p>
+									<a href="<%=newslist.get(i).getNews_id() %>" class="btn btn-primary">더보기 ></a>
 								</div>
 							</div>
 						</div>
-						<div class="col"></div>
-						<div class="col-3">
-							<div class="card" style="width: 18rem;">
-								<img class="card-img-top"
-									src="${pageContext.request.contextPath }/image/test1.jpg"
-									alt="Card image cap">
-								<div class="card-body">
-									<h5 class="card-title">앤-마리, 도자 캣과 함께한 싱글 'To Be
-										Young(feat.Doja Cat)' 발매</h5>
-									<p class="card-text">2019 국내 음원차트 1위, 앤-마리 새 싱글 ‘To Be
-										Young’ 7월 17일 정오 발매 ‘국민 팝스타’ 앤-마리(Anne-Marie)가 7월 17일 정오에 새 싱글
-										‘To Be Young’을 발매한다....</p>
-									<a href="" class="btn btn-primary">더보기 ></a>
-								</div>
-							</div>
-						</div>
-						<div class="col"></div>
-						<div class="col-3">
-							<div class="card" style="width: 18rem;">
-								<img class="card-img-top"
-									src="${pageContext.request.contextPath }/image/test1.jpg"
-									alt="Card image cap">
-								<div class="card-body">
-									<h5 class="card-title">앤-마리, 도자 캣과 함께한 싱글 'To Be
-										Young(feat.Doja Cat)' 발매</h5>
-									<p class="card-text">2019 국내 음원차트 1위, 앤-마리 새 싱글 ‘To Be
-										Young’ 7월 17일 정오 발매 ‘국민 팝스타’ 앤-마리(Anne-Marie)가 7월 17일 정오에 새 싱글
-										‘To Be Young’을 발매한다....</p>
-									<a href="" class="btn btn-primary">더보기 ></a>
-								</div>
-							</div>
+						<%} %>
+						<div class="container text-center mt-5">
+							<p class="text-danger">뉴스 Data가 없습니다. Data를 추가해 주세요.</p>
+							<a href="${pageContext.request.contextPath }/insert/m_news_insert_form.jsp">추가하러 가기</a>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="container" style="text-align: center;">
 				<div class="col mt-5">
-					<a href="" style="color: gray">전체보기 <i
-						class="fas fa-caret-right"></i></a>
+				<%
+               		// 모든 뮤직비디오 정보 가져오기
+					List<N_NewsDto> newslist2=N_NewsDao.getInstance().getList(new N_NewsDto());
+               %>
+               <%for(int i=0; i<newslist2.size(); i++) {%>
+					<a href="<%=newslist2.get(i).getNews_id() %>" style="color: gray">
+						전체보기
+						<i class="fas fa-caret-right"></i>
+					</a>
+				<%} %>
 				</div>
 			</div>
 			<!-- Latest News Close -->
@@ -207,37 +212,20 @@
 								style="font-size: 12px; color: #a3a3a3; line-height: 1; text-align: center; letter-spacing: 0px;">개노답
 								엔터테인먼트 공식 채널</p>
 						</div>
+						<%
+							// 모든 뮤직비디오 정보 가져오기
+							List<N_OfficialCDto> oclist=N_OfficialCDao.getInstance().getList(new N_OfficialCDto());
+		             	%>
+		              	<%for(int i=0; i<oclist.size(); i++) {%>
 						<div class="col-2">
-							<a href="https://www.facebook.com/warnermusickorea/"> <i
-								class="fab fa-facebook-square"
-								style="font-size: 4vw; color: black;"></i>
+							<a href="<%=oclist.get(i).getOfficialchannel_link() %>">
+								<i class="fab fa-<%=oclist.get(i).getOfficialchannel_icon_name() %>" style="font-size: 4vw; color: black;"></i>
 							</a>
 						</div>
-						<div class="col-2">
-							<a href="https://www.instagram.com/warnermusickorea/"> <i
-								class="fab fa-instagram" style="font-size: 4vw; color: black;"></i>
-							</a>
-						</div>
-						<div class="col-2">
-							<a href="https://www.youtube.com/user/WMK2011"> <i
-								class="fab fa-youtube" style="font-size: 4vw; color: black;"></i>
-							</a>
-						</div>
-						<div class="col-2">
-							<a href="https://twitter.com/warner_music_kr"> <i
-								class="fab fa-twitter" style="font-size: 4vw; color: black;"></i>
-							</a>
-						</div>
-						<div class="col-2">
-							<a href="https://www.tiktok.com/@warnermusickorea"> <i
-								class="fab fa-google" style="font-size: 4vw; color: black;"></i>
-							</a>
-						</div>
-						<div class="col-2">
-							<a
-								href="http://blog.naver.com/PostList.nhn?blogId=warnermusickorea">
-								<i class="fab fa-google" style="font-size: 4vw; color: black;"></i>
-							</a>
+						<%} %>
+						<div class="container text-center mt-5">
+							<p class="text-danger">공식 채널 Data가 없습니다. Data를 추가해 주세요.</p>
+							<a href="${pageContext.request.contextPath }/insert/m_officialchannel_insert_form.jsp">추가하러 가기</a>
 						</div>
 					</div>
 				</div>
@@ -253,41 +241,27 @@
 					</div>
 					<div class="container">
 						<div class="row">
+						<%
+	               			// 모든 뮤직비디오 정보 가져오기
+							List<N_PlaylistDto> pllist=N_PlaylistDao.getInstance().getList(new N_PlaylistDto());
+		               	%>
+		               	<%for(int i=0; i<pllist.size(); i++) {%>
 							<div class="col-3">
 								<div class="card">
-									<img src="${pageContext.request.contextPath }/image/PL_1.jpg"
-										alt="PlayList_First_Image" class="card-img-top" />
+									<img src="${pageContext.request.contextPath }/image/<%=pllist.get(i).getImage_name() %>" alt="<%=pllist.get(i).getImage_name() %>" class="card-img-top" />
 									<div class="card-body">
-										<h5 class="card-title">개노답뮤직 신작 모음</h5>
+										<h5 class="card-title">
+											<a href="${pageContext.request.contextPath }/playlist/some.jsp?num<%=pllist.get(i).getPlaylist_id()%>">
+												<%=pllist.get(i).getPlaylist_title() %>
+											</a>
+										</h5>
 									</div>
 								</div>
 							</div>
-							<div class="col-3">
-								<div class="card">
-									<img src="${pageContext.request.contextPath }/image/PL_2.jpg"
-										alt="PlayList_Second_Image" class="card-img-top" />
-									<div class="card-body">
-										<h5 class="card-title">신나는 댄스팝 뮤직!</h5>
-									</div>
-								</div>
-							</div>
-							<div class="col-3">
-								<div class="card">
-									<img src="${pageContext.request.contextPath }/image/PL_3.jpg"
-										alt="PlayList_Third_Image" class="card-img-top" />
-									<div class="card-body">
-										<h5 class="card-title">한글 가사 번역 뮤직비디오</h5>
-									</div>
-								</div>
-							</div>
-							<div class="col-3">
-								<div class="card">
-									<img src="${pageContext.request.contextPath }/image/PL_4.jpg"
-										alt="PlayList_Four_Image" class="card-img-top" />
-									<div class="card-body">
-										<h5 class="card-title">비 내리는 날 듣는 감성팝</h5>
-									</div>
-								</div>
+							<%} %>
+							<div class="container text-center mt-5">
+								<p class="text-danger">플레이리스트 Data가 없습니다. Data를 추가해 주세요.</p>
+								<a href="${pageContext.request.contextPath }/insert/m_playlist_insert_form.jsp">추가하러 가기</a>
 							</div>
 						</div>
 					</div>
@@ -295,6 +269,10 @@
 			</div>
 			<!-- PlayList Close -->
 			<!-- Artist -->
+			<%
+			 	//모든 아티스트 정보 가져오기
+				List<ArtistDto> ArtistInfolist = ArtistDao.getinstance().getList(new ArtistDto());
+			%>
 			<div class="container mt-5" id="artist">
 				<div class="mt-5">
 					<div class="container">
@@ -307,88 +285,92 @@
 						</div>
 					</div>
 					<div class="row">
+					<%
+               			// 모든 뮤직비디오 정보 가져오기
+						List<N_ArtistDto> atlist=N_ArtistDao.getInstance().getList(new N_ArtistDto());
+	               	%>
+	               	<%for(int i=0; i<atlist.size(); i++) {%>
 						<div class="col-3">
-							<a href=""> <img class="img-fluid"
-								src="${pageContext.request.contextPath }/image/AT_tones-and-i_thumb.jpg"
-								alt="Tones-And_I_Thumbnail_Image" />
+							<a href="${pageContext.request.contextPath }/artist_info/some.jsp">
+								<img class="img-fluid" src="${pageContext.request.contextPath }/image/<%=atlist.get(i).getImage_name() %>" alt="<%=atlist.get(i).getImage_name() %>" />
 							</a>
 						</div>
-						<div class="col-3">
-							<a href=""> <img class="img-fluid"
-								src="${pageContext.request.contextPath }/image/AT_jamie_thumb.jpg"
-								alt="Tones-And_I_Thumbnail_Image" />
-							</a>
-						</div>
-						<div class="col-3">
-							<a href=""> <img class="img-fluid"
-								src="${pageContext.request.contextPath }/image/AT_Lizzo_thumb.jpg"
-								alt="Tones-And_I_Thumbnail_Image" />
-							</a>
-						</div>
-						<div class="col-3">
-							<a href=""> <img class="img-fluid"
-								src="${pageContext.request.contextPath }/image/AT_AnneMarie_thumb.jpg"
-								alt="Tones-And_I_Thumbnail_Image" />
-							</a>
-						</div>
-						<div class="col-3">
-							<a href=""> <img class="img-fluid"
-								src="${pageContext.request.contextPath }/image/AT_ed-sheeran_thumb.jpg"
-								alt="Tones-And_I_Thumbnail_Image" />
-							</a>
-						</div>
-						<div class="col-3">
-							<a href=""> <img class="img-fluid"
-								src="${pageContext.request.contextPath }/image/AT_Cardi-B_thumb.jpg"
-								alt="Tones-And_I_Thumbnail_Image" />
-							</a>
-						</div>
-						<div class="col-3">
-							<a href=""> <img class="img-fluid"
-								src="${pageContext.request.contextPath }/image/AT_coldplay_thumb.jpg"
-								alt="Tones-And_I_Thumbnail_Image" />
-							</a>
-						</div>
-						<div class="col-3">
-							<a href=""> <img class="img-fluid"
-								src="${pageContext.request.contextPath }/image/AT_DuaLipa_thumb.jpg"
-								alt="Tones-And_I_Thumbnail_Image" />
-							</a>
-						</div>
+					<%} %>
+					<div class="container text-center mt-5">
+						<p class="text-danger">아티스트 Data가 없습니다. Data를 추가해 주세요.</p>
+						<a href="${pageContext.request.contextPath }/insert/m_artist_insert_form.jsp">추가하러 가기</a>
+					</div>
 					</div>
 				</div>
 			</div>
 			<div class="container" style="text-align: center;">
 				<div class="col mt-4">
-					<a href="" style="color: gray">전체보기 <i
-						class="fas fa-caret-right"></i></a>
+					<a href="${pageContext.request.contextPath }/artist_info/list.jsp" style="color: gray">전체보기<i class="fas fa-caret-right"></i></a>
 				</div>
 			</div>
 			<!-- Artist Close-->
 			<!-- News Letter -->
-			<div class="container mt-5" id="newsletter" style="text-align: center">
+			<div class="container mt-5" style="text-align: center">
 				<div class="row">
-					<div class="col-1"></div>
 					<div class="col">
 						<h3>개노답뮤직 뉴스레터 구독</h3>
 					</div>
 					<div class="col">
-						<p
-							style="font-size: 14px; color: #7c7c7c; line-height: 1.1; text-align: left; letter-spacing: -1px;">
-							개노답뮤직 아티스트와 최신 앨범 소식, <br />이벤트 뉴스 등을 빠르게 이메일로 받아보세요.
-						</p>
+						<p style="font-size: 14px; color: #7c7c7c; line-height: 1.1; text-align: left; letter-spacing: -1px;">
+							개노답뮤직 아티스트와 최신 앨범 소식, <br />이벤트 뉴스 등을 빠르게 이메일로 받아보세요.</p>
 					</div>
-					<div class="col-1">
-						<button class="btn btn-secondary">구독</button>
+					<!-- Button trigger modal -->
+					<div class="col">
+						<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#staticBackdrop">구독</button>
 					</div>
-					<div class="col-1"></div>
+					<!-- Button trigger modal close-->
 				</div>
 			</div>
-			<!-- News Letter Close-->
+			<!-- News Letter Modal-->
+			<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="staticBackdropLabel">뉴스레터 구독신청</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<div class="container">
+								<p style="text-align: left;">Warner Music Korea 뉴스레터 구독을 위해
+									다음과 같이 귀하의 개인정보를 수집합니다. 수집된 개인정보는 뉴스레터 발송 이외의 목적으로는 사용되지 않습니다.
+									귀하는 개인정보의 수집 및 이용에 대한 동의를 거부할 수 있으며, 이 경우 뉴스레터 발송을 신청할 수 없습니다.</p>
+								<p style="text-align: left;">
+									<strong>개인정보 수집 및 이용 동의</strong>
+								</p>
+								<ul style="text-align: left;">
+									<li>개인정보 수집 목적 : Warner Music Korea 뉴스레터 발송</li>
+									<li>개인정보 수집 항목 : 이메일 주소</li>
+									<li>보유 이용 기간 : 구독수신거부 전까지</li>
+								</ul>
+								<p style="text-align: left;">
+									<label> <input type="checkbox" id="chkbox" class="chkbox" /> 
+										<span>위 내용에 동의 합니다.</span> 
+										<span class="email"> <input type="email" placeholder="Email" /></span>
+									</label>
+								</p>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<form action="#" method="post">
+								<button type="submit" id="subscbtn" class="btn btn-dark" data-dismiss="modal">신청</button>
+							</form>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- News Letter Modal Close-->
+			<!-- News Letter close-->
 			<!-- Instagram Feed -->
 			<div class="container mt-5" style="text-align: center">
-				<p
-					style="font-size: 12px; color: #a3a3a3; line-height: 1; text-align: center; letter-spacing: 0px;">인스타그램
+				<p style="font-size: 12px; color: #a3a3a3; line-height: 1; text-align: center; letter-spacing: 0px;">인스타그램
 					피드</p>
 				<h3
 					style="font-size: 30px; line-height: 1; text-align: center; letter-spacing: 0px;">Instagram
@@ -463,11 +445,11 @@
 		<jsp:include page="../bottom/footer.jsp"></jsp:include>
 		<!-- Footer Close -->
 		<!-- Fixed Button -->
-			<a href="#" id="topbutton"style="position:fixed; bottom: 10%; right: 10%; display:none;">
-				<button class="btn btn-dark">
-					<i class="fas fa-chevron-up"></i>
-				</button>
-			</a>
+		<a href="#" id="topbutton"style="position:fixed; bottom: 10%; right: 10%; display:none;">
+			<button class="btn btn-dark">
+				<i class="fas fa-chevron-up"></i>
+			</button>
+		</a>
 		<!-- Fixed Button Close -->
 	</div>
 	</div>

@@ -1,3 +1,8 @@
+<%@page import="gnd.artist.dto.ArtistDto"%>
+<%@page import="java.util.List"%>
+<%@page import="gnd.artist.dao.ArtistDao"%>
+<%@page import="gnd.image.dto.ImageDto"%>
+<%@page import="gnd.image.dao.ImageDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -14,6 +19,7 @@
 	href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
 	integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
 	crossorigin="anonymous /">
+
 <meta charset="UTF-8">
 </head>
 <body>
@@ -21,6 +27,10 @@
 	<jsp:include page="../top/navbar.jsp"></jsp:include>
 	<!-- Top Navigation Close -->
 	<!-- Artist -->
+	<% 
+		//모든 아티스트 정보 가져오기
+		List<ArtistDto> Artistlist = ArtistDao.getinstance().getList(new ArtistDto());
+	%>
 	<div class="container mt-5">
 		<div class="mt-5">
 			<div class="container">
@@ -33,56 +43,18 @@
 				</div>
 			</div>
 			<div class="row">
+			<%if(Artistlist.size()!=0){ %>
+				<%for (int i=0; i<Artistlist.size(); i++){%>
 				<div class="col-3">
-					<a
-						href="${pageContext.request.contextPath}/artist/artist_list/artist_info/at_tones-and-i.jsp">
-						<img class="img-fluid"
-						src="${pageContext.request.contextPath }/image/AT_tones-and-i_thumb.jpg"
-						alt="Tones-And_I_Thumbnail_Image" />
+					<a href="${pageContext.request.contextPath}/artist/artist_list/artist_info/at_info.jsp?num<%=Artistlist.get(i).getId() %>">
+						<img class="img-fluid" src="${pageContext.request.contextPath }/image/<%=Artistlist.get(i).getArt_img() %>" alt="artist_Thumbnail_Image" />
 					</a>
 				</div>
-				<div class="col-3">
-					<a href="#"> <img class="img-fluid"
-						src="${pageContext.request.contextPath }/image/AT_jamie_thumb.jpg"
-						alt="Tones-And_I_Thumbnail_Image" />
-					</a>
-				</div>
-				<div class="col-3">
-					<a href="#"> <img class="img-fluid"
-						src="${pageContext.request.contextPath }/image/AT_Lizzo_thumb.jpg"
-						alt="Tones-And_I_Thumbnail_Image" />
-					</a>
-				</div>
-				<div class="col-3">
-					<a href="#"> <img class="img-fluid"
-						src="${pageContext.request.contextPath }/image/AT_AnneMarie_thumb.jpg"
-						alt="Tones-And_I_Thumbnail_Image" />
-					</a>
-				</div>
-				<div class="col-3">
-					<a href="#"> <img class="img-fluid"
-						src="${pageContext.request.contextPath }/image/AT_ed-sheeran_thumb.jpg"
-						alt="Tones-And_I_Thumbnail_Image" />
-					</a>
-				</div>
-				<div class="col-3">
-					<a href="#"> <img class="img-fluid"
-						src="${pageContext.request.contextPath }/image/AT_Cardi-B_thumb.jpg"
-						alt="Tones-And_I_Thumbnail_Image" />
-					</a>
-				</div>
-				<div class="col-3">
-					<a href="#"> <img class="img-fluid"
-						src="${pageContext.request.contextPath }/image/AT_coldplay_thumb.jpg"
-						alt="Tones-And_I_Thumbnail_Image" />
-					</a>
-				</div>
-				<div class="col-3">
-					<a href="#"> <img class="img-fluid"
-						src="${pageContext.request.contextPath }/image/AT_DuaLipa_thumb.jpg"
-						alt="Tones-And_I_Thumbnail_Image" />
-					</a>
-				</div>
+				<%} %>
+			<%}else {%>
+				<p class="text-danger">이미지 Data가 없습니다. Data를 추가해 주세요.</p>
+				<a href="${pageContext.request.contextPath }/insert/image_insert_form.jsp">추가하러 가기</a>
+			<%} %>
 			</div>
 		</div>
 	</div>
@@ -141,10 +113,9 @@
 									<li>보유 이용 기간 : 구독수신거부 전까지</li>
 								</ul>
 								<p style="text-align: left;">
-									<label> 
-									<input type="checkbox" id="confirm" class="confirm" />
-									<span>위 내용에 동의 합니다.</span> 
-									<span class="email"> <input type="text" placeholder="Email" />
+									<label> <input type="checkbox" id="confirm"
+										class="confirm" /> <span>위 내용에 동의 합니다.</span> <span
+										class="email"> <input type="email" placeholder="Email" />
 									</span>
 									</label>
 								</p>
@@ -176,8 +147,8 @@
 	<jsp:include page="../bottom/footer.jsp"></jsp:include>
 	<!-- Footer Close -->
 	<!-- Script -->
-	<script src="${pageContext.request.contextPath }/js/jquery-3.5.1.js"></script>
-	<script src="${pageContext.request.contextPath }/js/bootstrap.js"></script>
+	<script src="${pageContext.request.contextPath}/js/jquery-3.5.1.js"></script>
+	<script src="${pageContext.request.contextPath}/js/bootstrap.js"></script>
 	<!-- Script Close -->
 </body>
 </html>

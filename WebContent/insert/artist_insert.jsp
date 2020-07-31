@@ -3,6 +3,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
+	request.setCharacterEncoding("UTF-8");
+
 	String e_name=request.getParameter("e_name");
 	String k_name =request.getParameter("k_name");
 	String r_name=request.getParameter("r_name");

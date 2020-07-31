@@ -40,11 +40,25 @@
 	<jsp:include page="/top/navbar.jsp"></jsp:include>
 	<!-- Top Navigation Close -->
 	<!-- top image -->
-	<div class="wrap">
+	<div id="carouselExampleSlidesOnly" class="carousel slide"
+		data-ride="carousel">
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img
+					src="${pageContext.request.contextPath }/image/AT_Tones-and-i_profile_main.jpg"
+					class="d-block w-100" alt="main_tones-and-i_image">
+				<div class="carousel-caption">
+					<h1>Tones And I</h1>
+					<h3>세계 정상 버스커. 귀에 꽂히는 라이브. 깊이 빠져드는 음색.</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+	<%-- 	<div class="wrap">
 		<img class="img-fluid"
 			src="${pageContext.request.contextPath }/image/AT_Tones-and-i_profile_main.jpg"
 			alt="main_tones-and-i_image" />
-	</div>
+	</div> --%>
 	<!-- top image close -->
 	<!-- artist info -->
 	<div class="container-artistab">
@@ -62,15 +76,15 @@
 			<div class="col-sm-4">
 				<p style="text-align: center">
 					<strong>본명</strong><br />
-					<p style="text-align: center">Toni Watson</p>
+				<p style="text-align: center">Toni Watson</p>
 				</p>
 				<p style="text-align: center">
 					<strong>고향</strong>
-					<p style="text-align: center">호주</p>
+				<p style="text-align: center">호주</p>
 				</p>
 				<p style="text-align: center">
 					<strong>생년 월일</strong>
-					<p style="text-align: center">2000년 08월 15일</p>
+				<p style="text-align: center">2000년 08월 15일</p>
 				</p>
 			</div>
 		</div>
@@ -85,9 +99,7 @@
 			<div class="col-6 col-md-4"></div>
 		</div>
 		<p style="color: #000000; text-align: left;">
-			<a
-				href="https://www.tonesandi.com/">공식
-				사이트</a>
+			<a href="https://www.tonesandi.com/">공식 사이트</a>
 		</p>
 		<div class="row">
 			<div class="col-2 col-sm-2 col-xs-3">
