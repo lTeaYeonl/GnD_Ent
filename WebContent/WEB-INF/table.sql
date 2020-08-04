@@ -70,7 +70,7 @@ CREATE SEQUENCE page_id_seq;
 
 -- 뉴스레터 독자 이메일 정보를 저장 할 테이블
 CREATE TABLE news_email(
-	email_id VARCHAR2(255) NOT NULL
+	email_id VARCHAR2(255) PRIMARY KEY
 );
 
 CREATE SEQUENCE news_email_seq;

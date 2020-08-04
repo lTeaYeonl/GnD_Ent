@@ -332,30 +332,27 @@
 						</div>
 						<div class="modal-body">
 							<div class="container">
-								<p style="text-align: left;">Warner Music Korea 뉴스레터 구독을 위해
-									다음과 같이 귀하의 개인정보를 수집합니다. 수집된 개인정보는 뉴스레터 발송 이외의 목적으로는 사용되지 않습니다.
-									귀하는 개인정보의 수집 및 이용에 대한 동의를 거부할 수 있으며, 이 경우 뉴스레터 발송을 신청할 수 없습니다.</p>
+								<p style="text-align: left;">GnD_Ent 뉴스레터 구독을 위해 Email을 요청 해주세요.</p>
+									
 								<p style="text-align: left;">
-									<strong>개인정보 수집 및 이용 동의</strong>
+									<p>Gnd_Ent는 대중문화계에 새로운 방향을 제시하고 재능 있는 대중 예술인을 발굴, 육성한다는
+										미션 아래 설립이후 재능 있고 스타성을 갖춘 아티스트를 배출, 이후 다양한 시도와 마케팅으로 주목을 받고있습니다.
+									</p>
 								</p>
 								<ul style="text-align: left;">
-									<li>개인정보 수집 목적 : Warner Music Korea 뉴스레터 발송</li>
-									<li>개인정보 수집 항목 : 이메일 주소</li>
-									<li>보유 이용 기간 : 구독수신거부 전까지</li>
+									<li>GnD_Ent 뉴스레터 발송</li>
+									<li>이메일 주소</li>
 								</ul>
-								<p style="text-align: left;">
-									<label> <input type="checkbox" id="chkbox" class="chkbox" /> 
-										<span>위 내용에 동의 합니다.</span> 
-										<span class="email"> <input type="email" placeholder="Email" /></span>
+								<form action="../artist/at_news/signup.jsp" method="post">
+									<label>
+										<span style="text-align: left;">메일을 작성 해주세요.</span>
 									</label>
-								</p>
+									<span class="email"> 
+										<input type="text" name="email_id" placeholder="Email" />
+									</span>
+									<button type="submit" id="subbtn" class="btn btn-dark" >신청</button>
+								</form>
 							</div>
-						</div>
-						<div class="modal-footer">
-							<form action="#" method="post">
-								<button type="submit" id="subscbtn" class="btn btn-dark" data-dismiss="modal">신청</button>
-							</form>
-						</div>
 						</div>
 					</div>
 				</div>

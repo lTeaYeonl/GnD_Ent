@@ -1,18 +1,23 @@
 package n.gnd.newsletter.dto;
 
 public class N_NewsLetterDto {
-	private String l_id;
+	private String email_id;
+	
+	//디폴트 생성자
+	public N_NewsLetterDto() {}
 
-	public N_NewsLetterDto(String l_id) {
+	public N_NewsLetterDto(String email_id) {
 		super();
-		this.l_id = l_id;
+		this.email_id = email_id;
 	}
 
-	public String getL_id() {
-		return l_id;
+	public String getEmail_id() {
+		return email_id;
 	}
 
-	public void setL_id(String l_id) {
-		this.l_id = l_id;
+	public void setEmail_id(String email_id) {
+		this.email_id = email_id;
 	}
+
+	
 }
