@@ -125,7 +125,7 @@
 	                        <div class="modal-dialog modal-xl" role="document">
 	                           <div class="modal-content">
 	                              <div class="modal-header">
-	                                 <h5 class="modal-title" id="videoModalLabel"><%=mvlist.get(i).getArtist_e_name() %> - <%=mvlist.get(i).getMusicvideo_name() %></h5>
+	                                 <h5 class="modal-title" id="videoModalLabel">아티스트 : <%=mvlist.get(i).getArtist_e_name() %> <br /> 뮤비이름 : <%=mvlist.get(i).getMusicvideo_name() %></h5>
 	                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	                                    <span aria-hidden="true">&times;</span>
 	                                 </button>
