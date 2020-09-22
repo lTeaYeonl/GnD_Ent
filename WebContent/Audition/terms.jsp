@@ -277,18 +277,18 @@ GND 회원가입 사이트에 오신 것을 환영합니다. GND(이하 "당사"
 	
 	<!-- 버튼 전체선택 & 해제 기능 start -->
 	<script>
-		$(document).ready(
-				function() {$("#c4").change(function() {
-					$("input:checkbox").prop('checked',
-						$(this).prop('checked', true));
+		$(document).ready(function() {
+			$("#c4").change(function() {
+				$("input:checkbox").prop('checked',
+				$(this).prop('checked', true));
+			});
+			$('.chk').on('click', function() {
+				if ($('.chk:checked').length == $('.chk').length) {
+					$('#c4').prop('checked', true);
+				}else {
+					$('#c4').prop('checked', false);
+					}
 				});
-					$('.chk').on('click', function() {
-						if ($('.chk:checked').length == $('.chk').length) {
-							$('#c4').prop('checked', true);
-						} else {
-							$('#c4').prop('checked', false);
-						}
-					});
 		});
 	</script>
 	<!-- 버튼 전체선택 & 해제 기능 end -->
@@ -298,11 +298,9 @@ GND 회원가입 사이트에 오신 것을 환영합니다. GND(이하 "당사"
 			var isChecked1 = $('#c1').prop("checked");
 			var isChecked2 = $('#c2').prop("checked");
 			if (isChecked1 && isChecked2) {
-				//두개가 모두 체크된 경우 
 				location.href = "form.jsp";
 				alert("회원가입으로 넘어갑니다.");
 			} else {
-				//아닌경우
 				alert("필수 항목을 체크해 주세요.");
 			}
 		});

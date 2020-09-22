@@ -384,7 +384,7 @@
 						<label>자기소개</label>
 						<textarea class="ct_txt pr" cols="20" id="inf_intro" maxlength="500" name="inf_intro" rows="2" style="height: 200px"></textarea>
 					</div>
-					<button type="submit" class="btn sub_ck" id="apply">지원하기</button>
+					<button type="submit" class="btn sub_ck" id="apply">가입하기</button>
 					</div>
 				</div>
 			</div>
@@ -397,28 +397,21 @@
 <!-- 버튼 전체선택 & 해제 기능 start -->
 <script>
 	$("#checkBtn").on("click", function() {
-		//아이디 중복확인은 여기서 한다.
-		//입력한 아이디를 읽어온다.
 		var inputId = $("#inf_email").val();
-		//ajax 를 이용해서 서버에 보낸후 결과를 응답 받는다.
 		$.ajax({
 			method : "GET",
 			url : "checkid.jsp",
 			data : "inputId=" + inputId,
 			success : function(data) {
-				//data => {isExist:true} or {isExist:false} 인 object 이다.
-				if (data.isExist) {//이미 존재하는 아이디임으로 사용 불가
+				if (data.isExist) {
 					$("#checkResult").text("사용불가").css("color", "red");
-					//아이디가 사용 불가 하다고 표시한다.
 					canUseId = false;
-				} else {//사용가능 
+				} else {
 					$("#checkResult").text("사용가능").css("color", "green");
-					//아이디가 사용 가능 하다고 표시한다.
 					canUseId = true;
 				}
 			}
 		});
-		//form 안에 있는 일반 버튼을 눌러도 폼이 전송 되기 때문에 폼 전송을 막아준다.
 		return false;
 	});
 
